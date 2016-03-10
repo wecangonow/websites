@@ -134,6 +134,7 @@ body {
       <li class="menu-item"><a href="index_info.php?id=23" target="main-frame">投资策略</a></li>
     </ul>
   </li>
+  <!--
   <li class="explode"><a href="javascript:;" target="main-frame">投资项目</a>
     <ul>
       <li class="menu-item"><a href="pic_view.php?id=12" target="main-frame">PCBanner图</a></li>
@@ -142,7 +143,8 @@ body {
       <li class="menu-item"><a href="guandian_add.php?cat_id=11" target="main-frame">添加信息</a></li>
     </ul>
   </li>
-  <li class="explode"><a href="javascript:;" target="main-frame">关于我们</a>
+  -->
+  <li class="explode"><a href="javascript:;" target="main-frame">关于联信</a>
     <ul>
       <li class="menu-item"><a href="pic_view.php?id=3" target="main-frame">PCBanner图</a></li>
       <li class="menu-item"><a href="pic_view.php?id=21" target="main-frame">手机Banner图</a></li>
@@ -161,6 +163,7 @@ body {
     </ul>
   </li>
 
+  <!--
   <li class="explode"><a href="javascript:;" target="main-frame">总裁观点</a>
     <ul>
       <li class="menu-item"><a href="pic_view.php?id=5" target="main-frame">PCBanner图</a></li>
@@ -170,6 +173,7 @@ body {
       <li class="menu-item"><a href="guandian_add.php?cat_id=5" target="main-frame">添加信息</a></li>
     </ul>
   </li>
+  -->
   <li class="explode"><a href="javascript:;" target="main-frame">公司优势</a>
     <ul>
       <li class="menu-item"><a href="pic_view.php?id=6" target="main-frame">PCBanner图</a></li>
@@ -181,6 +185,7 @@ body {
       <li class="menu-item"><a href="jigou_add.php?cat_id=7" target="main-frame">添加服务机构</a></li>
     </ul>
   </li>
+  <!--
   <li class="explode"><a href="javascript:;" target="main-frame">投资策略</a>
     <ul>
       <li class="menu-item"><a href="pic_view.php?id=7" target="main-frame">PCBanner图</a></li>
@@ -189,7 +194,8 @@ body {
       <li class="menu-item"><a href="celue_add.php?cat_id=8" target="main-frame">添加信息</a></li>
     </ul>
   </li>
-  <li class="explode"><a href="javascript:;" target="main-frame">诚聘精英</a>
+  -->
+  <li class="explode"><a href="javascript:;" target="main-frame">招贤纳士</a>
     <ul>
       <li class="menu-item"><a href="pic_view.php?id=8" target="main-frame">PCBanner图</a></li>
       <li class="menu-item"><a href="pic_view.php?id=26" target="main-frame">手机Banner图</a></li>
@@ -205,6 +211,7 @@ body {
       <li class="menu-item"><a href="contact_add.php?cat_id=10" target="main-frame">添加信息</a></li>
     </ul>
   </li>
+  <!--
   <li class="explode"><a href="javascript:;" target="main-frame">华兴公益</a>
     <ul>
       <li class="menu-item"><a href="pic_view.php?id=15" target="main-frame">PCBanner图</a></li>
@@ -213,6 +220,7 @@ body {
       <li class="menu-item"><a href="hxgy_add.php?cat_id=12" target="main-frame">添加信息</a></li>
     </ul>
   </li>
+  -->
   <li class="explode"><a href="javascript:;" target="main-frame">华兴荣誉</a>
     <ul>
       <li class="menu-item"><a href="pic_view.php?id=16" target="main-frame">PCBanner图</a></li>
@@ -221,6 +229,7 @@ body {
       <li class="menu-item"><a href="hxry_add.php?cat_id=13" target="main-frame">添加信息</a></li>
     </ul>
   </li>
+  <!--
   <li class="explode"><a href="javascript:;" target="main-frame">公司月刊</a>
     <ul>
       <li class="menu-item"><a href="pic_view.php?id=31" target="main-frame">PCBanner图</a></li>
@@ -228,6 +237,7 @@ body {
       <li class="menu-item"><a href="yuekan_add.php?cat_id=14" target="main-frame">添加信息</a></li>
     </ul>
   </li>
+  -->
   <li class="explode"><a href="javascript:;" target="main-frame">成员企业</a>
     <ul>
       <li class="menu-item"><a href="chengyuanqiye_list.php?cat_id=4" target="main-frame">信息列表</a></li>
