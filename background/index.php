@@ -1,4 +1,5 @@
-<script src="http://siteapp.baidu.com/static/webappservice/uaredirect.js" type="text/javascript"></script><script type="text/javascript">uaredirect("http://m.hxkgjt.com/");</script>
+<script src="http://siteapp.baidu.com/static/webappservice/uaredirect.js" type="text/javascript"></script>
+<script type="text/javascript">uaredirect("http://m.hxkgjt.com/");</script>
 
 <?php
 require(dirname(__FILE__) . '/includes/home_config.php');

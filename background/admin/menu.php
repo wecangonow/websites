@@ -123,7 +123,9 @@ body {
     <ul>
       <li class="menu-item"><a href="sys_config.php" target="main-frame">网站配置</a></li>
       <li class="menu-item"><a href="flash.php?cat_id=1" target="main-frame">PC首页焦点</a></li>
+	  <!--
       <li class="menu-item"><a href="flash.php?cat_id=3" target="main-frame">手机首页焦点</a></li>
+	  -->
       <li class="menu-item"><a href="links_pic.php?cat_id=2" target="main-frame">友情链接</a></li>
     </ul>
   </li>
@@ -147,7 +149,9 @@ body {
   <li class="explode"><a href="javascript:;" target="main-frame">关于联信</a>
     <ul>
       <li class="menu-item"><a href="pic_view.php?id=3" target="main-frame">PCBanner图</a></li>
+  <!--
       <li class="menu-item"><a href="pic_view.php?id=21" target="main-frame">手机Banner图</a></li>
+	  -->
       <li class="menu-item"><a href="about_list.php?cat_id=1" target="main-frame">信息列表</a></li>
       <li class="menu-item"><a href="about_add.php?cat_id=1" target="main-frame">添加信息</a></li>
     </ul>
@@ -156,7 +160,9 @@ body {
   <li class="explode"><a href="javascript:;" target="main-frame">新闻动态</a>
     <ul>
       <li class="menu-item"><a href="pic_view.php?id=4" target="main-frame">PCBanner图</a></li>
+	  <!--
       <li class="menu-item"><a href="pic_view.php?id=22" target="main-frame">手机Banner图</a></li>
+	  -->
       <li class="menu-item"><a href="news_category.php?parent_id=2" target="main-frame">分类管理</a></li>
       <li class="menu-item"><a href="dongtai_list.php?parent_id=2" target="main-frame">信息列表</a></li>
       <li class="menu-item"><a href="dongtai_add.php?parent_id=2" target="main-frame">添加信息</a></li>
@@ -198,7 +204,9 @@ body {
   <li class="explode"><a href="javascript:;" target="main-frame">招贤纳士</a>
     <ul>
       <li class="menu-item"><a href="pic_view.php?id=8" target="main-frame">PCBanner图</a></li>
+  <!--
       <li class="menu-item"><a href="pic_view.php?id=26" target="main-frame">手机Banner图</a></li>
+  -->
       <li class="menu-item"><a href="job_list.php?cat_id=9" target="main-frame">信息列表</a></li>
       <li class="menu-item"><a href="job_add.php?cat_id=9" target="main-frame">添加信息</a></li>
     </ul>
@@ -206,9 +214,11 @@ body {
   <li class="explode"><a href="javascript:;" target="main-frame">联系我们</a>
     <ul>
       <li class="menu-item"><a href="pic_view.php?id=9" target="main-frame">PCBanner图</a></li>
-      <li class="menu-item"><a href="pic_view.php?id=27" target="main-frame">手机Banner图</a></li>
       <li class="menu-item"><a href="contact_list.php?cat_id=10" target="main-frame">信息列表</a></li>
+  <!--
+      <li class="menu-item"><a href="pic_view.php?id=27" target="main-frame">手机Banner图</a></li>
       <li class="menu-item"><a href="contact_add.php?cat_id=10" target="main-frame">添加信息</a></li>
+  -->
     </ul>
   </li>
   <!--
@@ -220,7 +230,6 @@ body {
       <li class="menu-item"><a href="hxgy_add.php?cat_id=12" target="main-frame">添加信息</a></li>
     </ul>
   </li>
-  -->
   <li class="explode"><a href="javascript:;" target="main-frame">华兴荣誉</a>
     <ul>
       <li class="menu-item"><a href="pic_view.php?id=16" target="main-frame">PCBanner图</a></li>
@@ -229,7 +238,6 @@ body {
       <li class="menu-item"><a href="hxry_add.php?cat_id=13" target="main-frame">添加信息</a></li>
     </ul>
   </li>
-  <!--
   <li class="explode"><a href="javascript:;" target="main-frame">公司月刊</a>
     <ul>
       <li class="menu-item"><a href="pic_view.php?id=31" target="main-frame">PCBanner图</a></li>
