@@ -129,6 +129,7 @@ body {
       <li class="menu-item"><a href="links_pic.php?cat_id=2" target="main-frame">友情链接</a></li>
     </ul>
   </li>
+  <!--
   <li class="explode"><a href="javascript:;" target="main-frame">首页栏目</a>
     <ul>
       <li class="menu-item"><a href="index_info.php?id=21" target="main-frame">关于我们</a></li>
@@ -136,7 +137,6 @@ body {
       <li class="menu-item"><a href="index_info.php?id=23" target="main-frame">投资策略</a></li>
     </ul>
   </li>
-  <!--
   <li class="explode"><a href="javascript:;" target="main-frame">投资项目</a>
     <ul>
       <li class="menu-item"><a href="pic_view.php?id=12" target="main-frame">PCBanner图</a></li>
@@ -154,6 +154,8 @@ body {
 	  -->
       <li class="menu-item"><a href="about_list.php?cat_id=1" target="main-frame">信息列表</a></li>
       <li class="menu-item"><a href="about_add.php?cat_id=1" target="main-frame">添加信息</a></li>
+      <li class="menu-item"><a href="tuandui_list.php?cat_id=6" target="main-frame">精英团队列表</a></li>
+      <li class="menu-item"><a href="tuandui_add.php?cat_id=6" target="main-frame">添加精英团队</a></li>
     </ul>
   </li>
   
@@ -179,7 +181,6 @@ body {
       <li class="menu-item"><a href="guandian_add.php?cat_id=5" target="main-frame">添加信息</a></li>
     </ul>
   </li>
-  -->
   <li class="explode"><a href="javascript:;" target="main-frame">公司优势</a>
     <ul>
       <li class="menu-item"><a href="pic_view.php?id=6" target="main-frame">PCBanner图</a></li>
@@ -191,7 +192,6 @@ body {
       <li class="menu-item"><a href="jigou_add.php?cat_id=7" target="main-frame">添加服务机构</a></li>
     </ul>
   </li>
-  <!--
   <li class="explode"><a href="javascript:;" target="main-frame">投资策略</a>
     <ul>
       <li class="menu-item"><a href="pic_view.php?id=7" target="main-frame">PCBanner图</a></li>
@@ -231,10 +231,12 @@ body {
     </ul>
   </li>
   -->
-  <li class="explode"><a href="javascript:;" target="main-frame">华兴荣誉</a>
+  <li class="explode"><a href="javascript:;" target="main-frame">资质荣誉</a>
     <ul>
+  <!--
       <li class="menu-item"><a href="pic_view.php?id=16" target="main-frame">PCBanner图</a></li>
       <li class="menu-item"><a href="pic_view.php?id=30" target="main-frame">手机Banner图</a></li>
+	  -->
       <li class="menu-item"><a href="hxry_list.php?cat_id=13" target="main-frame">信息列表</a></li>
       <li class="menu-item"><a href="hxry_add.php?cat_id=13" target="main-frame">添加信息</a></li>
     </ul>

@@ -85,7 +85,7 @@ $contact = $mysql->get_one($sql);
               	</div>
           	</li>
             <li>
-            	<a href="job.html" class="items">
+            	<a href="job.php" class="items">
                 	<div class="qing it_jie">
                         <div class="qing it1">招贤纳士</div>
                         <div class="qing it2">招贤纳士</div>
