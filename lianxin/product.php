@@ -22,9 +22,6 @@ $top=2;
 require('head.php');
 $id = empty($_GET["id"]) ? $chanpin_categories[0]['cat_id'] : $_GET['id'];
 
-$sql = "SELECT * FROM news where 1=1 and is_show=1 and cat_id=$id";
-$sql = $sql." order by sort_order asc,id desc limit 4 ";
-$content = $mysql->get_one($sql);
 ?>
 <!--标题-->
 <div class="qing mtop">
@@ -68,11 +65,21 @@ foreach ($chanpin_categories as $category) {
      		<div class="qing pro_more"><a href="product_list.php?cat_id=<?php echo $category['cat_id'];?>" class="qing"><div class="qing pm1">查看更多</div><div class="qing pm2">查看更多</div></a></div>
  		</div>
    		<ul class="lf pro_jie">
+            <?php
+$sql = "SELECT * FROM news where 1=1 and is_show=1 and cat_id=" . $category['cat_id'];
+$sql = $sql." order by sort_order asc,id desc limit 4 ";
+$contents = $mysql->get_all($sql);
+            foreach ($contents as $content) {
+            ?>
         	<li class="lf">
-            	<a href="#" class="qing fu_bt">北京《老年康复护理医院投资基》</a>
-              	<a href="#" class="qing ab_jian">与北京市政府合作打造《北京市养老产业综合服务平台》项目，旨在为北京市老年人解决和和落实达到真正“老有所养”的目的。 联信基金与“北京社会福利促进会”...</a>
+            	<a href="#" class="qing fu_bt"><?php echo $content["title"];?></a>
+              	<a href="#" class="qing ab_jian">
+                    <?php echo $content['note'];?>
+                </a>
                 <div class="qing xint"></div>
             </li>
+            <?php }
+            ?>
         </ul>
 	</div>
 </div>
