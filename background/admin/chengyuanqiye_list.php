@@ -9,7 +9,7 @@ if($_REQUEST["action"]=="add")
     $sort_order=!empty($_POST['sort_order']) ? $_POST['sort_order'] : 50;
     $dataArray = array("cat_id"=>$cat_id,"title"=>$title,"picture"=>$picture,"link_url"=>$link_url,"sort_order"=>$sort_order);
 	$mysql->insert("pic",$dataArray);
-	echo '<script>alert("操作成功");location.href="chengyuanqiye_list.php?cat_id='.$cat_id.'";</script>';
+	echo '<script>alert("操作成功");location.href="hezuohuoban_list.php?cat_id='.$cat_id.'";</script>';
 	exit;
 }
 
@@ -23,7 +23,7 @@ if($_REQUEST["action"]=="edit")
 	$condition="id=".$id;
     $dataArray = array("title"=>$title,"picture"=>$picture,"link_url"=>$link_url,"sort_order"=>$sort_order);
 	$mysql->update("pic",$dataArray,$condition);
-	echo '<script>alert("操作成功");location.href="chengyuanqiye_list.php?cat_id='.$cat_id.'";</script>';
+	echo '<script>alert("操作成功");location.href="hezuohuoban_list.php?cat_id='.$cat_id.'";</script>';
 	exit;
 }
 
@@ -32,7 +32,7 @@ if ($_REQUEST['action'] == 'delete')
 	$id=$_REQUEST['id'];
 	$condition="id=".$id;
 	$mysql->delete("pic",$condition);
-	echo '<script>alert("操作成功");location.href="chengyuanqiye_list.php?cat_id='.$cat_id.'";</script>';
+	echo '<script>alert("操作成功");location.href="hezuohuoban_list.php?cat_id='.$cat_id.'";</script>';
 	exit;
 }
 ?>

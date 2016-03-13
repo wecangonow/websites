@@ -1,10 +1,10 @@
 <?php
 require(dirname(__FILE__) . '/includes/home_config.php');
 require(dirname(__FILE__) . '/includes/lib_common.php');
-$top=8;
+$top=6;
 
-$sql="select * from pic where id=9";
-$banner_view = $mysql->get_one($sql);
+$sql     = "select * from news where cat_id=10 order by sort_order asc,id asc";
+$contact = $mysql->get_one($sql);
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -27,6 +27,7 @@ $banner_view = $mysql->get_one($sql);
 <!--本页样式-->
 <style type="text/css">
 .title,.ti_bg,.ti_jie{ height:132px; }
+.contact{ height:802px; position:relative; z-index:10; margin-top:-12px; background:url(<?php echo $contact["picture"];?>) center top no-repeat; }
 </style>
 
 </head>

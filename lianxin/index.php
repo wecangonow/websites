@@ -36,9 +36,16 @@ require('head.php');
 	<div class="main_visual">
         <div class="main_image">
             <ul>
-                <li><a href="#" style="background:url(images/banner.jpg) center top no-repeat;"></a></li>
-                <li><a href="#" style="background:url(images/banner.jpg) center top no-repeat;"></a></li>
-                <li><a href="#" style="background:url(images/banner.jpg) center top no-repeat;"></a></li>
+                <?php
+                $sql="select * from pic where cat_id=1 order by sort_order asc,id asc";
+                $index_flash = $mysql->get_all($sql);
+                foreach($index_flash as $index_flash_list)
+                {
+                    ?>
+                    <li><a href="<?php echo $index_flash_list['link_url'];?>" style="background:url(<?php echo $index_flash_list['picture'];?>) center top no-repeat;"></a></li>
+                <?php
+                }
+                ?>
             </ul>
             <a href="javascript:;" id="btn_prev"></a>
             <a href="javascript:;" id="btn_next"></a>
@@ -298,33 +305,23 @@ require('head.php');
         <div class="qing he1"><span class="qing"></span></div>
         <div class="qing he2"></div>
     </div>
+
+    <?php
+        $sql    ="select * from pic where cat_id=4 order by sort_order asc,id asc";
+        $huoban = $mysql->get_all($sql);
+    ?>
     <div class="qing center">
     	<div class="main_visual3">
             <div class="main_image3">
                 <ul>
                     <li>
-                    	<a href="#" target="_blank"><img src="images/hz1.jpg" width="208" height="75" /></a>
-                        <a href="#" target="_blank"><img src="images/hz2.jpg" width="208" height="75" /></a>
-                        <a href="#" target="_blank"><img src="images/hz3.jpg" width="208" height="75" /></a>
-                        <a href="#" target="_blank"><img src="images/hz4.jpg" width="208" height="75" /></a>
-                        <a href="#" target="_blank"><img src="images/hz5.jpg" width="208" height="75" /></a>
-                        <a href="#" target="_blank"><img src="images/hz6.jpg" width="208" height="75" /></a>
+                        <?php  foreach($huoban as $info) { ?>
+                    	<a href="<?php echo $info['link_url'];?>" target="_blank"><img src="<?php echo $info['picture'];?>" width="208" height="75" /></a>
+                        <?php } ?>
                     </li>
                     <li>
-                    	<a href="#" target="_blank"><img src="images/hz2.jpg" width="208" height="75" /></a>
-                        <a href="#" target="_blank"><img src="images/hz3.jpg" width="208" height="75" /></a>
-                        <a href="#" target="_blank"><img src="images/hz4.jpg" width="208" height="75" /></a>
-                        <a href="#" target="_blank"><img src="images/hz5.jpg" width="208" height="75" /></a>
                         <a href="#" target="_blank"><img src="images/hz6.jpg" width="208" height="75" /></a>
                         <a href="#" target="_blank"><img src="images/hz1.jpg" width="208" height="75" /></a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank"><img src="images/hz3.jpg" width="208" height="75" /></a>
-                        <a href="#" target="_blank"><img src="images/hz4.jpg" width="208" height="75" /></a>
-                        <a href="#" target="_blank"><img src="images/hz5.jpg" width="208" height="75" /></a>
-                        <a href="#" target="_blank"><img src="images/hz6.jpg" width="208" height="75" /></a>
-                        <a href="#" target="_blank"><img src="images/hz1.jpg" width="208" height="75" /></a>
-                        <a href="#" target="_blank"><img src="images/hz2.jpg" width="208" height="75" /></a>
                     </li>
                 </ul>
                 <a href="javascript:;" id="btn_prev3"></a>

@@ -11,7 +11,7 @@ Class cls_mysql {
 	//var $database="qdm20940510_db";//数据库名称
 	var $hostname="localhost";//服务器地址
 	var $username="root";//数据库用户名
-	var $password="123456";//数据库密码
+	var $password="308217";//数据库密码
 	var $database="lianxinjijin";//数据库名称
 	var $pconnect=0;//开启持久连接
 	var $charset="utf8";//数据库编码

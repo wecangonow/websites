@@ -1,7 +1,7 @@
 <?php
 require(dirname(__FILE__) . '/includes/home_config.php');
 require(dirname(__FILE__) . '/includes/lib_common.php');
-$top=7;
+$top=5;
 //$sql="select * from pic where id=8";
 //$banner_view = $mysql->get_one($sql);
 ?>

@@ -1,6 +1,11 @@
 <?php
 $sql     = "select * from news where cat_id=10 order by sort_order asc,id asc";
 $contact = $mysql->get_one($sql);
+
+$sql = "select * from `news_category` where parent_id = 5 order by sort_order asc,cat_id desc";
+$hegui_categories = $mysql->get_all($sql);
+$sql = "select * from `news_category` where parent_id = 11 order by sort_order asc,cat_id desc";
+$chanpin_categories = $mysql->get_all($sql);
  ?>
 <!--头部-->
 <div class="navi">
@@ -28,7 +33,7 @@ $contact = $mysql->get_one($sql);
                 </a>
             </li>
             <li>
-                <a href="about.html" class="items">
+                <a href="#" class="items <?php if($top==1){?>items_on<?php }?>">
                 	<div class="qing it_jie">
                         <div class="qing it1">关于联信</div>
                         <div class="qing it2">关于联信</div>
@@ -36,15 +41,15 @@ $contact = $mysql->get_one($sql);
                     <div class="qing itt"><span class="qing"></span></div>
                 </a>
                 <div class="navi_content">
-                    <a href="ab_profiles.html">公司简介</a>
-                    <a href="ab_profiles.html">企业文化</a>
-                    <a href="ab_organization.html">组织架构</a>
-                    <a href="ab_team.html">精英团队</a>
-                    <a href="ab_honor.html">资质荣誉</a>
+                    <a href="ab_profiles.php?id=1">公司简介</a>
+                    <a href="ab_profiles.php?id=2">企业文化</a>
+                    <a href="ab_organization.php">组织架构</a>
+                    <a href="ab_team.php">精英团队</a>
+                    <a href="ab_honor.php">资质荣誉</a>
               	</div>
           	</li>
             <li>
-                <a href="product.html" class="items">
+                <a href="product.php" class="items <?php if($top==2){?>items_on<?php }?>">
                 	<div class="qing it_jie">
                         <div class="qing it1">联信产品</div>
                         <div class="qing it2">联信产品</div>
@@ -52,13 +57,14 @@ $contact = $mysql->get_one($sql);
                     <div class="qing itt"><span class="qing"></span></div>
                 </a>
                 <div class="navi_content">
-                    <a href="#">认购期产品</a>
-                    <a href="#">封闭期产品</a>
-                    <a href="#">历史产品</a>
+                    <?php foreach($chanpin_categories as $category) {
+                    ?>
+                        <a href="product_list.php?id=<?php echo $category['cat_id'];?>"><?php echo $category['cat_name'];?></a>
+                    <?php }?>
               	</div>
           	</li>
             <li>
-                <a href="management.html" class="items">
+                <a href="#" class="items <?php if($top==3){?>items_on<?php }?>">
                 	<div class="qing it_jie">
                         <div class="qing it1">合规管理</div>
                         <div class="qing it2">合规管理</div>
@@ -66,12 +72,15 @@ $contact = $mysql->get_one($sql);
                     <div class="qing itt"><span class="qing"></span></div>
                 </a>
                 <div class="navi_content">
-                    <a href="#">法律声明</a>
-                    <a href="#">风险管控</a>
+                    <?php foreach($hegui_categories as $category) {
+
+                    ?>
+                    <a href="management.php?id=<?php echo $category['cat_id'];?>"><?php echo $category['cat_name'];?></a>
+                    <?php }?>
               	</div>
           	</li>
             <li>
-                <a href="service.html" class="items">
+                <a href="service.html" class="items <?php if($top==4){?>items_on<?php }?>">
                 	<div class="qing it_jie">
                         <div class="qing it1">合作服务</div>
                         <div class="qing it2">合作服务</div>
@@ -85,7 +94,7 @@ $contact = $mysql->get_one($sql);
               	</div>
           	</li>
             <li>
-            	<a href="job.php" class="items">
+            	<a href="job.php" class="items <?php if($top==5){?>items_on<?php }?>">
                 	<div class="qing it_jie">
                         <div class="qing it1">招贤纳士</div>
                         <div class="qing it2">招贤纳士</div>
@@ -94,7 +103,7 @@ $contact = $mysql->get_one($sql);
                 </a>
             </li>
             <li>
-            	<a href="contact.php" class="items">
+            	<a href="contact.php" class="items <?php if($top==6){?>items_on<?php }?>">
                 	<div class="qing it_jie">
                         <div class="qing it1">联系我们</div>
                         <div class="qing it2">联系我们</div>

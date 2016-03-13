@@ -8,22 +8,16 @@
         <div class="lf links">
         	<div class="qing links_bt">友情链接</div>
             <ul class="qing links_nav">
-            	<li><a href="#" target="_blank">申万宏源</a></li>
-                <li><a href="#" target="_blank">国金证券</a></li>
-                <li><a href="#" target="_blank">中信证券</a></li>
-                <li><a href="#" target="_blank">湘财证券</a></li>
-                <li><a href="#" target="_blank">信达证券</a></li>
-                <li><a href="#" target="_blank">东北证券</a></li>
-                <li><a href="#" target="_blank">申万宏源</a></li>
-                <li><a href="#" target="_blank">国金证券</a></li>
-                <li><a href="#" target="_blank">申万宏源</a></li>
-                <li><a href="#" target="_blank">国金证券</a></li>
-                <li><a href="#" target="_blank">中信证券</a></li>
-                <li><a href="#" target="_blank">湘财证券</a></li>
-                <li><a href="#" target="_blank">信达证券</a></li>
-                <li><a href="#" target="_blank">东北证券</a></li>
-                <li><a href="#" target="_blank">申万宏源</a></li>
-                <li><a href="#" target="_blank">国金证券</a></li>
+                <?php
+                $sql="select * from pic where cat_id=2 order by sort_order asc,id asc limit 0,7";
+                $index_links = $mysql->get_all($sql);
+                foreach($index_links as $index_links_list)
+                {
+                ?>
+            	<li><a href="<?php echo $index_links_list['link_url'];?>" target="_blank"><?php echo $index_links_list['title'];?></a></li>
+                <?php
+                }
+                ?>
             </ul>
         </div>
         <div class="rf fo_tel" style="width:255px;">
