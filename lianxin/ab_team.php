@@ -121,7 +121,7 @@ require('head.php');
                 <div class="qing du2"><img src="<?php echo $row_list["picture"];?>" width="110" height="110" /></div>
             </div>
             <div class="rf dui_jie">
-                <a href="people.php?id=<?php echo $row_list["id"];?>" class="qing fu_bt">
+                <a href="people.php?id=<?php echo $row_list["id"];?>&cat_id=6" class="qing fu_bt">
                     <?php echo $row_list["title"];?>
                 </a>
                 <a href="#" class="qing ab_jian">

@@ -4,6 +4,8 @@ require(dirname(__FILE__) . '/includes/lib_common.php');
 $top=1;
 $sql="select * from news where id=".$_REQUEST['id'];
 $info = $mysql->get_one($sql);
+$sql = "SELECT * FROM news_category where 1=1 and cat_id=6";
+$cat_info = $mysql->get_one($sql);
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -34,7 +36,7 @@ require('head.php');
 	<div class="qing title">
     	<div class="qing ti_bg"></div>
         <div class="qing ti_jie">
-            <div class="qing ti_bt">专家介绍<span class="qing">Expert Introduction</span></div>
+            <div class="qing ti_bt"><?php echo $cat_info["cat_name"];?><span class="qing"><?php echo $cat_info["english_name"];?></span></div>
             <div class="qing t1"></div>
             <div class="qing t2"></div>
         </div>

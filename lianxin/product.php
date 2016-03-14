@@ -21,14 +21,15 @@ $top=2;
 <?php
 require('head.php');
 $id = empty($_GET["id"]) ? $chanpin_categories[0]['cat_id'] : $_GET['id'];
-
+$sql = "SELECT * FROM news_category where 1=1 and cat_id=11";
+$cat_info = $mysql->get_one($sql);
 ?>
 <!--标题-->
 <div class="qing mtop">
 	<div class="qing title">
     	<div class="qing ti_bg"></div>
         <div class="qing ti_jie">
-            <div class="qing ti_bt">联信产品<span class="qing">Product</span></div>
+            <div class="qing ti_bt"><?php echo $cat_info["cat_name"];?><span class="qing"><?php echo $cat_info["english_name"];?></span></div>
             <div class="qing t1"></div>
             <div class="qing t2"></div>
             <div class="qing ti_nav">
@@ -36,7 +37,6 @@ $id = empty($_GET["id"]) ? $chanpin_categories[0]['cat_id'] : $_GET['id'];
                   	<tr>
                     	<td align="center" valign="top">
                             <?php foreach ($chanpin_categories as $category) {
-
                             ?>
                         	<a href="product_list.php?cat_id=<?php echo $category['cat_id'];?>" class="lf">
                             	<div class="qing tn1"><?php echo $category['cat_name'];?></div>
@@ -72,7 +72,7 @@ $contents = $mysql->get_all($sql);
             foreach ($contents as $content) {
             ?>
         	<li class="lf">
-            	<a href="#" class="qing fu_bt"><?php echo $content["title"];?></a>
+            	<a href="news_view.php?id=<?php echo $content["id"];?>&cat_id=<?php echo $category["cat_id"];?>" class="qing fu_bt"><?php echo $content["title"];?></a>
               	<a href="#" class="qing ab_jian">
                     <?php echo $content['note'];?>
                 </a>
