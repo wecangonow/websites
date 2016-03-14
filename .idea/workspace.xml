@@ -2,30 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6347d191-ad1c-4a98-aa33-8076905cb71f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lianxin/ab_team.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lianxin/jj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lianxin/job.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lianxin/job_view.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lianxin/js/jquery点击小图全屏显示大图的相册代码.rar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lianxin/product.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lianxin/product_list.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lianxin/ab_organization.php" afterPath="$PROJECT_DIR$/lianxin/ab_organization.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lianxin/ab_team.php" afterPath="$PROJECT_DIR$/lianxin/ab_team.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lianxin/about.php" afterPath="$PROJECT_DIR$/lianxin/about.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lianxin/includes/cls_mysql.php" afterPath="$PROJECT_DIR$/lianxin/includes/cls_mysql.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lianxin/admin/dongtai_add.php" afterPath="$PROJECT_DIR$/lianxin/admin/dongtai_add.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lianxin/head.php" afterPath="$PROJECT_DIR$/lianxin/head.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lianxin/admin/hezuohuoban_list.php" afterPath="$PROJECT_DIR$/lianxin/admin/hezuohuoban_list.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lianxin/admin/hxgy_add.php" afterPath="$PROJECT_DIR$/lianxin/admin/hxgy_add.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lianxin/admin/hxry_add.php" afterPath="$PROJECT_DIR$/lianxin/admin/hxry_add.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lianxin/js/index.html" afterPath="$PROJECT_DIR$/lianxin/js/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lianxin/index.php" afterPath="$PROJECT_DIR$/lianxin/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lianxin/admin/menu.php" afterPath="$PROJECT_DIR$/lianxin/admin/menu.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lianxin/news.php" afterPath="$PROJECT_DIR$/lianxin/news.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lianxin/news_view.php" afterPath="$PROJECT_DIR$/lianxin/news_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lianxin/product_list.php" afterPath="$PROJECT_DIR$/lianxin/product_list.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lianxin/css/style.css" afterPath="$PROJECT_DIR$/lianxin/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lianxin/admin/tuandui_add.php" afterPath="$PROJECT_DIR$/lianxin/admin/tuandui_add.php" />
     </list>
     <ignored path="websites.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -106,10 +84,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product_view.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="product_view.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lianxin/product_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.54175824">
+            <state vertical-scroll-proportion="-18.961538">
               <caret line="29" column="3" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
               <folding>
                 <marker date="1457958491000" expanded="true" signature="158:186" placeholder="select * fro..news..." />
@@ -121,22 +99,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="management.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lianxin/management.html">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lianxin/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="72.84615">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ab_organization.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lianxin/ab_organization.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.692308">
-              <caret line="182" column="35" selection-start-line="182" selection-start-column="35" selection-end-line="182" selection-end-column="35" />
-              <folding />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="2" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+              <folding>
+                <marker date="1457961753000" expanded="true" signature="1358:1421" placeholder="select * fro..pic..." />
+                <marker date="1457961753000" expanded="true" signature="2066:2121" placeholder="SELECT * FRO..news..." />
+                <marker date="1457961753000" expanded="true" signature="6395:6450" placeholder="SELECT * FRO..news..." />
+                <marker date="1457961753000" expanded="true" signature="7483:7539" placeholder="SELECT * FRO..news..." />
+                <marker date="1457961753000" expanded="true" signature="9171:9236" placeholder="select * fro..pic..." />
+                <marker date="1457961753000" expanded="true" signature="9998:10054" placeholder="SELECT * FRO..news..." />
+                <marker date="1457961753000" expanded="true" signature="11644:11700" placeholder="SELECT * FRO..news..." />
+                <marker date="1457961753000" expanded="true" signature="13551:13614" placeholder="select * fro..pic..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -193,7 +170,6 @@
         <option value="$PROJECT_DIR$/lianxin/news_market.php" />
         <option value="$PROJECT_DIR$/lianxin/news_view.php" />
         <option value="$PROJECT_DIR$/lianxin/ab_team.php" />
-        <option value="$PROJECT_DIR$/lianxin/index.php" />
         <option value="$PROJECT_DIR$/lianxin/head.php" />
         <option value="$PROJECT_DIR$/lianxin/product.php" />
         <option value="$PROJECT_DIR$/lianxin/service.php" />
@@ -201,6 +177,7 @@
         <option value="$PROJECT_DIR$/lianxin/ab_honor.php" />
         <option value="$PROJECT_DIR$/lianxin/css/style.css" />
         <option value="$PROJECT_DIR$/lianxin/product_view.php" />
+        <option value="$PROJECT_DIR$/lianxin/index.php" />
       </list>
     </option>
   </component>
@@ -385,8 +362,8 @@
         <state vertical-scroll-proportion="-15.038462">
           <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
           <folding>
-            <marker date="1457921732000" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-            <marker date="1457921732000" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1457961541000" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1457961541000" expanded="true" signature="-1:-1" placeholder="delete from ..." />
           </folding>
         </state>
       </provider>
@@ -569,14 +546,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lianxin/news.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.653847">
-          <caret line="169" column="0" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lianxin/news_view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.16026345">
@@ -615,14 +584,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lianxin/news_view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42919868">
-          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lianxin/head.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.3622392">
@@ -632,31 +593,6 @@
             <marker date="1457952972000" expanded="true" signature="-1:-1" placeholder="select * fro..." />
             <marker date="1457952972000" expanded="true" signature="-1:-1" placeholder="select * fro..." />
             <marker date="1457952972000" expanded="true" signature="-1:-1" placeholder="select * fro..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lianxin/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3272933">
-          <caret line="198" column="24" selection-start-line="198" selection-start-column="24" selection-end-line="198" selection-end-column="24" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1457952619000" expanded="true" signature="-1:-1" placeholder="select * fro..pic..." />
-            <marker date="1457952619000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..news..." />
-            <marker date="1457952619000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..news..." />
-            <marker date="1457952619000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..news..." />
-            <marker date="1457952619000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..news..." />
-            <marker date="1457952619000" expanded="true" signature="-1:-1" placeholder="select * fro..pic..." />
-            <marker date="1457952619000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..news..." />
-            <marker date="1457952619000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..news..." />
-            <marker date="1457952619000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..news..." />
-            <marker date="1457952619000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..news..." />
-            <marker date="1457952619000" expanded="true" signature="-1:-1" placeholder="select * fro..pic..." />
-            <marker date="1457952619000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1457952619000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -718,22 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lianxin/management.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="72.84615">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lianxin/ab_organization.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.692308">
-          <caret line="182" column="35" selection-start-line="182" selection-start-column="35" selection-end-line="182" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lianxin/service.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.1923075">
@@ -787,13 +707,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lianxin/product_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54175824">
+        <state vertical-scroll-proportion="-18.961538">
           <caret line="29" column="3" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
           <folding>
             <marker date="1457958491000" expanded="true" signature="158:186" placeholder="select * fro..news..." />
             <marker date="1457958491000" expanded="true" signature="268:378" placeholder="select * fro..news..." />
             <marker date="1457958491000" expanded="true" signature="618:729" placeholder="select * fro..news..." />
             <marker date="1457958491000" expanded="true" signature="970:1021" placeholder="SELECT * FRO..news_category..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lianxin/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="2" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+          <folding>
+            <marker date="1457961753000" expanded="true" signature="1358:1421" placeholder="select * fro..pic..." />
+            <marker date="1457961753000" expanded="true" signature="2066:2121" placeholder="SELECT * FRO..news..." />
+            <marker date="1457961753000" expanded="true" signature="6395:6450" placeholder="SELECT * FRO..news..." />
+            <marker date="1457961753000" expanded="true" signature="7483:7539" placeholder="SELECT * FRO..news..." />
+            <marker date="1457961753000" expanded="true" signature="9171:9236" placeholder="select * fro..pic..." />
+            <marker date="1457961753000" expanded="true" signature="9998:10054" placeholder="SELECT * FRO..news..." />
+            <marker date="1457961753000" expanded="true" signature="11644:11700" placeholder="SELECT * FRO..news..." />
+            <marker date="1457961753000" expanded="true" signature="13551:13614" placeholder="select * fro..pic..." />
           </folding>
         </state>
       </provider>
