@@ -2,10 +2,12 @@
 $sql     = "select * from news where cat_id=10 order by sort_order asc,id asc";
 $contact = $mysql->get_one($sql);
 
-$sql = "select * from `news_category` where parent_id = 5 order by sort_order asc,cat_id desc";
+$sql = "select * from `news_category` where parent_id = 5 order by sort_order asc,cat_id asc";
 $hegui_categories = $mysql->get_all($sql);
-$sql = "select * from `news_category` where parent_id = 11 order by sort_order asc,cat_id desc";
+$sql = "select * from `news_category` where parent_id = 11 order by sort_order asc,cat_id asc";
 $chanpin_categories = $mysql->get_all($sql);
+$sql     = "select * from `news_category` where parent_id = 12 order by sort_order asc,cat_id asc";
+$service = $mysql->get_all($sql);
  ?>
 <!--头部-->
 <div class="navi">
@@ -33,7 +35,7 @@ $chanpin_categories = $mysql->get_all($sql);
                 </a>
             </li>
             <li>
-                <a href="#" class="items <?php if($top==1){?>items_on<?php }?>">
+                <a href="about.php" class="items <?php if($top==1){?>items_on<?php }?>">
                 	<div class="qing it_jie">
                         <div class="qing it1">关于联信</div>
                         <div class="qing it2">关于联信</div>
@@ -80,7 +82,7 @@ $chanpin_categories = $mysql->get_all($sql);
               	</div>
           	</li>
             <li>
-                <a href="service.html" class="items <?php if($top==4){?>items_on<?php }?>">
+                <a href="service.php" class="items <?php if($top==4){?>items_on<?php }?>">
                 	<div class="qing it_jie">
                         <div class="qing it1">合作服务</div>
                         <div class="qing it2">合作服务</div>
@@ -88,9 +90,11 @@ $chanpin_categories = $mysql->get_all($sql);
                     <div class="qing itt"><span class="qing"></span></div>
                 </a>
                 <div class="navi_content">
-                    <a href="#">项目合作</a>
-                    <a href="#">合作流程</a>
-                    <a href="#">退出机制</a>
+                    <?php foreach($service as $val) {
+
+                        ?>
+                        <a href="service.php?cat_id=<?php echo $val['cat_id'];?>"><?php echo $val['cat_name'];?></a>
+                    <?php }?>
               	</div>
           	</li>
             <li>

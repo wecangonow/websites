@@ -16,7 +16,7 @@ if(!$prev_info)
 }
 else
 {
-    $prev_info=array('title'=>$prev_info['title'],'url'=>'news_view.php?id='.$prev_info['id']);
+    $prev_info=array('title'=>$prev_info['title'],'url'=>'xiangmu_view.php?id='.$prev_info['id']);
 }
 
 $sql="select * from news where cat_id=".$news_view["cat_id"]." and id<".$news_view["id"]." order by id desc limit 0,1";
@@ -27,7 +27,7 @@ if(!$next_info)
 }
 else
 {
-    $next_info=array('title'=>$next_info['title'],'url'=>'news_view.php?id='.$next_info['id']);
+    $next_info=array('title'=>$next_info['title'],'url'=>'xiangmu_view.php?id='.$next_info['id']);
 }
 
 $sql = "SELECT * FROM news_category where 1=1 and cat_id=2";
@@ -60,7 +60,7 @@ $cat_info = $mysql->get_one($sql);
 <body>
 <?php
 require('head.php');
-$sql = "select * from `news_category` where parent_id = 2 order by sort_order asc,cat_id asc";
+$sql = "select * from `news_category` where parent_id = 12 order by sort_order asc,cat_id asc";
 $chanpin_categories = $mysql->get_all($sql);
 ?>
 <!--标题-->
@@ -77,7 +77,7 @@ $chanpin_categories = $mysql->get_all($sql);
                         <td align="center" valign="top">
                             <?php foreach ($chanpin_categories as $category) {
                                 ?>
-                                <a href="news.php?cat_id=<?php echo $category['cat_id'];?>" class="lf <?php if($category['cat_id']==$news_view['cat_id']){?>tinn<?php }?>">
+                                <a href="service.php?cat_id=<?php echo $category['cat_id'];?>" class="lf <?php if($category['cat_id']==$news_view['cat_id']){?>tinn<?php }?>">
                                     <div class="qing tn1"><?php echo $category['cat_name'];?></div>
                                     <div class="qing tn2"><img src="images/t1.png" width="21" height="21" /></div>
                                     <div class="qing tn3"><img src="images/t2.png" width="71" height="25" /></div>
@@ -100,7 +100,7 @@ $chanpin_categories = $mysql->get_all($sql);
                 <table class="wen_title" width="900" border="0" cellspacing="0" cellpadding="0">
                     <tr>
                         <td width="300" align="left" valign="middle">来源： <?php echo $news_view['laiyuan']; ?></td>
-                        <td width="300" align="center" valign="middle">关键词： <a href="news_view.php?id=<?php echo $news_view['id']; ?>"><?php echo $news_view['tags']; ?></td>
+                        <td width="300" align="center" valign="middle">关键词： <a href="xiangmu_view.php?id=<?php echo $news_view['id']; ?>"><?php echo $news_view['tags']; ?></td>
                         <td width="300" align="right" valign="middle">发布时间： <?php echo date("Y-m-d",strtotime($news_view["add_time"])); ?></td>
                     </tr>
                 </table>
@@ -120,11 +120,7 @@ $chanpin_categories = $mysql->get_all($sql);
                 </table>
             </div>
             <div class="qing return">
-                <?php if($news_view['cat_id'] == 24 || $news_view['cat_id'] == 25){?>
-                <a href="news_market.php?cat_id=<?php echo $news_view['cat_id']; ?>" class="lf"><span class="qing re1">返回列表</span><span class="qing re2">返回列表</span></a>
-                <?php }else {?>
-                <a href="news.php?cat_id=<?php echo $news_view['cat_id']; ?>" class="lf"><span class="qing re1">返回列表</span><span class="qing re2">返回列表</span></a>
-                <?php }?>
+                <a href="service.php?cat_id=<?php echo $news_view['cat_id']; ?>" class="lf"><span class="qing re1">返回列表</span><span class="qing re2">返回列表</span></a>
             </div>
         </div>
     </div>

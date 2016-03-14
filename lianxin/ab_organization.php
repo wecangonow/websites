@@ -50,7 +50,7 @@ require('head.php');
                                 <div class="qing tn3"><img src="images/t2.png" width="71" height="25" /></div>
                                 <div class="qing tn4"></div>
                             </a>
-                            <a href="ab_organization.php" class="lf">
+                            <a href="ab_organization.php" class="lf tinn">
                                 <div class="qing tn1">组织架构</div>
                                 <div class="qing tn2"><img src="images/t1.png" width="21" height="21" /></div>
                                 <div class="qing tn3"><img src="images/t2.png" width="71" height="25" /></div>
@@ -76,8 +76,13 @@ require('head.php');
     </div>
 </div>
 <!--内容-->
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
 <?php
+$sql = "select * from news where id=4";
+$content = $mysql->get_one($sql);
+
+echo $content['content'];
+
 require('foot.php');
 ?>
 </body>

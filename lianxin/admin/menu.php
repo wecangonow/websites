@@ -157,11 +157,11 @@ body {
     </ul>
   </li>
   
-  <li class="explode"><a href="javascript:;" target="main-frame">新闻动态</a>
+  <li class="explode"><a href="javascript:;" target="main-frame">行业资讯</a>
     <ul>
-      <li class="menu-item"><a href="pic_view.php?id=4" target="main-frame">PCBanner图</a></li>
 	  <!--
       <li class="menu-item"><a href="pic_view.php?id=22" target="main-frame">手机Banner图</a></li>
+      <li class="menu-item"><a href="pic_view.php?id=4" target="main-frame">PCBanner图</a></li>
 	  -->
       <li class="menu-item"><a href="news_category.php?parent_id=2" target="main-frame">分类管理</a></li>
       <li class="menu-item"><a href="dongtai_list.php?parent_id=2" target="main-frame">信息列表</a></li>
@@ -201,17 +201,6 @@ body {
       <li class="menu-item"><a href="guandian_add.php?cat_id=5" target="main-frame">添加信息</a></li>
     </ul>
   </li>
-  <li class="explode"><a href="javascript:;" target="main-frame">公司优势</a>
-    <ul>
-      <li class="menu-item"><a href="pic_view.php?id=6" target="main-frame">PCBanner图</a></li>
-      <li class="menu-item"><a href="pic_view.php?id=24" target="main-frame">手机Banner图</a></li>
-      <li class="menu-item"><a href="youshi_info.php?id=9" target="main-frame">公司优势</a></li>
-      <li class="menu-item"><a href="tuandui_list.php?cat_id=6" target="main-frame">专家团队列表</a></li>
-      <li class="menu-item"><a href="tuandui_add.php?cat_id=6" target="main-frame">添加专家团队</a></li>
-      <li class="menu-item"><a href="jigou_list.php?cat_id=7" target="main-frame">服务机构列表</a></li>
-      <li class="menu-item"><a href="jigou_add.php?cat_id=7" target="main-frame">添加服务机构</a></li>
-    </ul>
-  </li>
   <li class="explode"><a href="javascript:;" target="main-frame">投资策略</a>
     <ul>
       <li class="menu-item"><a href="pic_view.php?id=7" target="main-frame">PCBanner图</a></li>
@@ -221,6 +210,11 @@ body {
     </ul>
   </li>
   -->
+  <li class="explode"><a href="javascript:;" target="main-frame">联信优势</a>
+    <ul>
+      <li class="menu-item"><a href="youshi_list.php?cat_id=14" target="main-frame">联信优势</a></li>
+    </ul>
+  </li>
   <li class="explode"><a href="javascript:;" target="main-frame">招贤纳士</a>
     <ul>
       <li class="menu-item"><a href="pic_view.php?id=8" target="main-frame">PCBanner图</a></li>
@@ -242,24 +236,24 @@ body {
   -->
     </ul>
   </li>
-  <!--
-  <li class="explode"><a href="javascript:;" target="main-frame">华兴公益</a>
+  <li class="explode"><a href="javascript:;" target="main-frame">合作服务</a>
     <ul>
+      <!--
       <li class="menu-item"><a href="pic_view.php?id=15" target="main-frame">PCBanner图</a></li>
       <li class="menu-item"><a href="pic_view.php?id=29" target="main-frame">手机Banner图</a></li>
-      <li class="menu-item"><a href="hxgy_list.php?cat_id=12" target="main-frame">信息列表</a></li>
-      <li class="menu-item"><a href="hxgy_add.php?cat_id=12" target="main-frame">添加信息</a></li>
+      -->
+      <li class="menu-item"><a href="news_category.php?parent_id=12" target="main-frame">分类管理</a></li>
+      <li class="menu-item"><a href="service_list.php?parent_id=12" target="main-frame">信息列表</a></li>
+      <li class="menu-item"><a href="service_add.php?parent_id=12" target="main-frame">添加信息</a></li>
     </ul>
   </li>
-  -->
   <li class="explode"><a href="javascript:;" target="main-frame">资质荣誉</a>
     <ul>
   <!--
       <li class="menu-item"><a href="pic_view.php?id=16" target="main-frame">PCBanner图</a></li>
       <li class="menu-item"><a href="pic_view.php?id=30" target="main-frame">手机Banner图</a></li>
 	  -->
-      <li class="menu-item"><a href="hxry_list.php?cat_id=13" target="main-frame">信息列表</a></li>
-      <li class="menu-item"><a href="hxry_add.php?cat_id=13" target="main-frame">添加信息</a></li>
+      <li class="menu-item"><a href="rongyuzizhi.php?cat_id=13" target="main-frame">信息列表</a></li>
     </ul>
   </li>
   <!--

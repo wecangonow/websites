@@ -121,17 +121,36 @@ require('head.php');
         	<div class="main_visual4">
                 <div class="main_image4">
                     <ul>
+                        <?php
+                            $maxnum = 7;  //每页显示记录条数
+                            $sql = "SELECT * FROM news where 1=1 and cat_id=6";
+                            $sql = $sql." order by sort_order asc,id desc";
+                            $totalRows1 =$mysql->num_rows($mysql->query($sql));//数据集数据总条数
+                            $totalpages = ceil($totalRows1/$maxnum);//计算可分页总数，ceil()为上舍函数
+                            $row = $mysql->get_all($sql);
+                            $counter = 0;
+                            for($i = 0; $i < $totalpages; $i++) {
+                        ?>
                         <li>
                         	<div class="qing team_shao">
-                                <div class="lf">
-                                	<a href="#" class="qing team_img">
-                                    	<div class="qing te1"><img src="images/team1.jpg" width="151" height="151" /></div>
-                                    	<div class="qing te2"><img src="images/teamq.png" width="151" height="151" /></div>
-                                    </a>
-                                    <a href="#" class="qing team_ti">卞洪登</a>
-                                </div>
+                                        <?php  for($j=0; $j < $maxnum; $j++) { ?>
+                                            <div class="lf">
+                                                <a href="#" class="qing team_img">
+                                                    <div class="qing te1"><img src="<?php echo $row[$counter]['picture'];?>" width="151" height="151" /></div>
+                                                    <div class="qing te2"><img src="images/teamq.png" width="151" height="151" /></div>
+                                                </a>
+                                                <a href="#" class="qing team_ti"><?php echo $row[$counter]['title'];?></a>
+                                            </div>
+                                            <?php
+                                            $counter++;
+                                            if($counter >= $totalRows1){
+                                                break;
+                                            }
+                                        }
+                                        ?>
                             </div>
                         </li>
+                        <?php }?>
                     </ul>
                     <a href="javascript:;" id="btn_prev4"></a>
                     <a href="javascript:;" id="btn_next4"></a>
@@ -139,9 +158,11 @@ require('head.php');
                 <table class="flicking_con4" border="0" cellspacing="0" cellpadding="0" style=" text-align:center">
                     <tr>
                         <td align="center" valign="top">
+                            <?php
+                            for($i = 0; $i < $totalpages; $i++) {?>
                             <a href="#"></a>
-                            <a href="#"></a>
-                            <a href="#"></a>
+                            <?php }?>
+
                         </td>
                     </tr>
                 </table>
@@ -158,134 +179,45 @@ require('head.php');
     	<div class="main_visual5">
          	<div class="main_image5">
               	<ul>
+                    <?php
+                    //$this_page_url="ab_team.php";
+                    $maxnum = 5;  //每页显示记录条数
+                    $sql = "SELECT * FROM pic where 1=1 and cat_id=13";
+
+                    $sql = $sql." order by sort_order asc,id desc";
+                    $totalRows1 =$mysql->num_rows($mysql->query($sql));//数据集数据总条数
+                    $totalpages = ceil($totalRows1/$maxnum);//计算可分页总数，ceil()为上舍函数
+                    $row = $mysql->get_all($sql);
+                    ?>
+                    <?php
+                    $counter = 0;
+                    for($i = 0; $i < $totalpages; $i++) {?>
+                    ?>
                  	<li>
                         <div class="qing hon_jie">
-                        	<div class="lf">
-                            	<div class="qing hon_img">
-                                    <div class="qing hon1"><span class="qing"><img src="images/hon_img.jpg" width="171" height="236" /></span></div>
-                                    <div class="qing hon2">
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                            <tr>
-                                                <td align="center" valign="middle">信息安全风险评估服务资质证书（一级）</td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php  for($j=0; $j < $maxnum; $j++) { ?>
                             <div class="lf">
                             	<div class="qing hon_img">
-                                    <div class="qing hon1"><span class="qing"><img src="images/hon_img.jpg" width="171" height="236" /></span></div>
+                                    <div class="qing hon1"><span class="qing"><img src="<?php echo $row[$counter]['picture'];?>" width="171" height="236" /></span></div>
                                     <div class="qing hon2">
                                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                             <tr>
-                                                <td align="center" valign="middle">信息安全风险评估服务资质证书（一级）</td>
+                                                <td align="center" valign="middle"><?php echo $row[$counter]['title'];?></td>
                                             </tr>
                                         </table>
                                     </div>
                                 </div>
                             </div>
-                            <div class="lf">
-                            	<div class="qing hon_img">
-                                    <div class="qing hon1"><span class="qing"><img src="images/hon_img.jpg" width="171" height="236" /></span></div>
-                                    <div class="qing hon2">
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                            <tr>
-                                                <td align="center" valign="middle">信息安全风险评估服务资质证书（一级）</td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </div>
+                                <?php
+                                $counter++;
+                                if($counter >= $totalRows1){
+                                    break;
+                                }
+                                }
+                                ?>
                             </div>
-                            <div class="lf">
-                            	<div class="qing hon_img">
-                                    <div class="qing hon1"><span class="qing"><img src="images/hon_img.jpg" width="171" height="236" /></span></div>
-                                    <div class="qing hon2">
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                            <tr>
-                                                <td align="center" valign="middle">信息安全风险评估服务资质证书（一级）</td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lf">
-                            	<div class="qing hon_img">
-                                    <div class="qing hon1"><span class="qing"><img src="images/hon_img.jpg" width="171" height="236" /></span></div>
-                                    <div class="qing hon2">
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                            <tr>
-                                                <td align="center" valign="middle">信息安全风险评估服务资质证书（一级）</td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                   	</li>
-                    <li>
-                        <div class="qing hon_jie">
-                        	<div class="lf">
-                            	<div class="qing hon_img">
-                                    <div class="qing hon1"><span class="qing"><img src="images/hon_img.jpg" width="171" height="236" /></span></div>
-                                    <div class="qing hon2">
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                            <tr>
-                                                <td align="center" valign="middle">信息安全风险评估服务资质证书（一级）</td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lf">
-                            	<div class="qing hon_img">
-                                    <div class="qing hon1"><span class="qing"><img src="images/hon_img.jpg" width="171" height="236" /></span></div>
-                                    <div class="qing hon2">
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                            <tr>
-                                                <td align="center" valign="middle">信息安全风险评估服务资质证书（一级）</td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lf">
-                            	<div class="qing hon_img">
-                                    <div class="qing hon1"><span class="qing"><img src="images/hon_img.jpg" width="171" height="236" /></span></div>
-                                    <div class="qing hon2">
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                            <tr>
-                                                <td align="center" valign="middle">信息安全风险评估服务资质证书（一级）</td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lf">
-                            	<div class="qing hon_img">
-                                    <div class="qing hon1"><span class="qing"><img src="images/hon_img.jpg" width="171" height="236" /></span></div>
-                                    <div class="qing hon2">
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                            <tr>
-                                                <td align="center" valign="middle">信息安全风险评估服务资质证书（一级）</td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lf">
-                            	<div class="qing hon_img">
-                                    <div class="qing hon1"><span class="qing"><img src="images/hon_img.jpg" width="171" height="236" /></span></div>
-                                    <div class="qing hon2">
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                            <tr>
-                                                <td align="center" valign="middle">信息安全风险评估服务资质证书（一级）</td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                  	</li>
+                    <?php }?>
             	</ul>
               	<a href="javascript:;" id="btn_prev5"></a>
               	<a href="javascript:;" id="btn_next5"></a>

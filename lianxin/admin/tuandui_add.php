@@ -42,11 +42,11 @@ if($_REQUEST["action"]=="add")
           </tr>
           <tr>
             <td width="17%" class="label">来源</td>
-            <td width="83%"><input type="text" name="laiyuan" id="laiyuan" class="input_text_3" value="华兴控股" /></td>
+            <td width="83%"><input type="text" name="laiyuan" id="laiyuan" class="input_text_3" value="" /></td>
           </tr>
           <tr>
             <td width="17%" class="label">关键词</td>
-            <td width="83%"><input type="text" name="tags" id="tags" class="input_text_3" value="华兴控股" /></td>
+            <td width="83%"><input type="text" name="tags" id="tags" class="input_text_3" value="" /></td>
           </tr>
           <tr>
             <td width="17%" class="label">排序</td>

@@ -97,7 +97,7 @@ $cat_info = $mysql->get_one($sql);
          	<a href="#" class="qing ab_jian">
                 <?php echo $row_list["note"];?>
                 ..</a>
-            <div class="qing pin_more"><a href="news_view.php?id=<?php echo $row_list["id"];?>&cat_id=<?php echo $cat_id;?>" class="qing">查看详细</a></div>
+            <div class="qing pin_more"><a href="product_view.php?id=<?php echo $row_list["id"];?>" class="qing">查看详细</a></div>
         </div>
         <div class="qing pint"><div class="qing pt1"></div><div class="qing pt2"></div></div>
     </li>

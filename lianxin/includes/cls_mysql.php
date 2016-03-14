@@ -5,14 +5,11 @@ Class cls_mysql {
 	var $handle;
 	var $is_log;
 	var $time;
-	//var $hostname="qdm20940510.my3w.com";//服务器地址
-	//var $username="qdm20940510";//数据库用户名
-	//var $password="JKFS05kd0";//数据库密码
-	//var $database="qdm20940510_db";//数据库名称
-	var $hostname="localhost";//服务器地址
-	var $username="root";//数据库用户名
-	var $password="308217";//数据库密码
-	var $database="lianxinjijin";//数据库名称
+	var $hostname="qdm20940510.my3w.com";//服务器地址
+	var $username="qdm20940510";//数据库用户名
+	var $password="JKFS05kd0";//数据库密码
+	var $database="qdm20940510_db";//数据库名称
+	//var $database="lianxinjijin";//数据库名称
 	var $pconnect=0;//开启持久连接
 	var $charset="utf8";//数据库编码
 	var $log= 0;//开启日志

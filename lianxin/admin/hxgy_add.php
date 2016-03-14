@@ -44,6 +44,7 @@ if($_REQUEST["action"]=="add")
             <td width="17%" class="label">排序</td>
             <td width="83%"><input type="text" name="sort_order" id="sort_order" class="input_text_3" value="50" /></td>
           </tr>
+            <!--
           <tr>
             <td width="17%" class="label">更新时间</td>
             <td width="83%"><input type="text" name="add_time" id="add_time" class="input_text_2" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" value="<?php echo date('Y-m-d H:i:s',time());?>" /></td>
@@ -63,6 +64,7 @@ if($_REQUEST["action"]=="add")
 
             </td>
           </tr>
+          -->
         </table>
         <div class="button-div">
           <input type="submit" value="保存" class="button" />

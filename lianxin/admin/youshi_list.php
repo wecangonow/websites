@@ -10,7 +10,7 @@ if($_REQUEST["action"]=="add")
     $sort_order=!empty($_POST['sort_order']) ? $_POST['sort_order'] : 50;
     $dataArray = array("cat_id"=>$cat_id,"title"=>$title,"picture"=>$picture,"link_url"=>$link_url,"sort_order"=>$sort_order);
 	$mysql->insert("pic",$dataArray);
-	echo '<script>alert("操作成功");location.href="hezuohuoban_list.php?cat_id='.$cat_id.'";</script>';
+	echo '<script>alert("操作成功");location.href="youshi_list.php?cat_id='.$cat_id.'";</script>';
 	exit;
 }
 
@@ -24,7 +24,7 @@ if($_REQUEST["action"]=="edit")
 	$condition="id=".$id;
     $dataArray = array("title"=>$title,"picture"=>$picture,"link_url"=>$link_url,"sort_order"=>$sort_order);
 	$mysql->update("pic",$dataArray,$condition);
-	echo '<script>alert("操作成功");location.href="hezuohuoban_list.php?cat_id='.$cat_id.'";</script>';
+	echo '<script>alert("操作成功");location.href="youshi_list.php?cat_id='.$cat_id.'";</script>';
 	exit;
 }
 
@@ -33,7 +33,7 @@ if ($_REQUEST['action'] == 'delete')
 	$id=$_REQUEST['id'];
 	$condition="id=".$id;
 	$mysql->delete("pic",$condition);
-	echo '<script>alert("操作成功");location.href="hezuohuoban_list.php?cat_id='.$cat_id.'";</script>';
+	echo '<script>alert("操作成功");location.href="youshi_list.php?cat_id='.$cat_id.'";</script>';
 	exit;
 }
 ?>
@@ -45,7 +45,6 @@ if ($_REQUEST['action'] == 'delete')
 <table width="1103" cellpadding="3" cellspacing="1">
   <tr>
     <th width="100">标题</th>
-    <th width="302">链接</th>
     <th width="260">图片</th>
     <th width="50">排序</th>
     <th width="100">操作</th>
@@ -56,10 +55,9 @@ $row=$mysql->get_all($sql);
 foreach($row as $result)
 {
 ?>
-  <form method="post" action="hezuohuoban_list.php?action=edit&id=<?php echo $result['id']; ?>&cat_id=<?php echo $result['cat_id']; ?>" name="listForm_<?php echo $result['id']; ?>">
+  <form method="post" action="youshi_list.php?action=edit&id=<?php echo $result['id']; ?>&cat_id=<?php echo $result['cat_id']; ?>" name="listForm_<?php echo $result['id']; ?>">
   <tr>
-    <td align="center" class="first-cell" style=""><input type='text' name='title' class="input_text_2" value='<?php echo $result['title']; ?>' /></td>
-    <td align="center"><input type='text' name='link_url' class="input_text_2" value='<?php echo $result['link_url']; ?>' /></td>
+    <td align="center" class="first-cell" style=""><input type='text' name='title' class="input_text" value='<?php echo $result['title']; ?>' /></td>
       <td align="center"><input type='text' id="picture<?php echo $result['id']; ?>" name='picture' class="input_text_2" value='<?php echo $result['picture']; ?>' />
           &nbsp;
           <input name="upfile" type="button" class="button" onClick="javascript:opw('includes/pic_upload_form.php?text_id=picture<?php echo $result['id']; ?>&saveTo=../../upload/images/&showPath=upload/images/','picture',500,275)" value="上传图片"> (208*75)
@@ -67,7 +65,7 @@ foreach($row as $result)
     <td align="center"><input type='text' name='sort_order' class="input_text_3" value='<?php echo $result['sort_order']; ?>' /></td>
     <td align="center">
       <input name="submit" type="submit" value="更新" />
-      <a href="hezuohuoban_list.php?action=delete&id=<?php echo $result['id']; ?>&cat_id=<?php echo $result['cat_id']; ?>" title="删除" onClick="return confirm('您确定进行删除操作吗？')"><img src="images/icon_trash.gif" width="16" height="16" border="0" /></a>
+      <a href="youshi_list.php?action=delete&id=<?php echo $result['id']; ?>&cat_id=<?php echo $result['cat_id']; ?>" title="删除" onClick="return confirm('您确定进行删除操作吗？')"><img src="images/icon_trash.gif" width="16" height="16" border="0" /></a>
     </td>
   </tr>
   </form>
@@ -81,15 +79,13 @@ foreach($row as $result)
 <table width="1103" cellpadding="3" cellspacing="1" style="margin-top:20px;">
   <tr>
     <th width="141">标题</th>
-    <th width="298">链接</th>
     <th width="298">图片</th>
     <th width="92">排序</th>
     <th width="141">操作</th>
   <tr>
-  <form method="post" action="hezuohuoban_list.php?action=add&cat_id=<?php echo $cat_id; ?>" name="listForm" onsubmit="return confirmSubmit(this)">
+  <form method="post" action="youshi_list.php?action=add&cat_id=<?php echo $cat_id; ?>" name="listForm" onsubmit="return confirmSubmit(this)">
   <tr>
-    <td align="center" class="center" style=""><input type='text' name='title' class="input_text_2" value='' /></td>
-        <td align="center"><input type='text' name='link_url' class="input_text_2" value='' /></td>
+    <td align="center" class="center" style=""><input type='text' name='title' class="input_text" value='' /></td>
       <td align="center"><input type='text' id="picture1" name='picture' class="input_text_2" value='' />
           &nbsp;
           <input name="upfile" type="button" class="button" onClick="javascript:opw('includes/pic_upload_form.php?text_id=picture1&saveTo=../../upload/images/&showPath=upload/images/','picture',500,275)" value="上传图片"> (208*75)

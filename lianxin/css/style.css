@@ -1194,7 +1194,8 @@ a.ab_jian:hover{ color:#ab9257; }
 	-o-transition:all 0.4s linear;
 }
 .hon_jie .lf:hover .hon2{ opacity:1; }
-.hon2 td{ height:196px; font-size:14px; color:#FFF; line-height:26px; }
+.hon2 td { height:196px; font-size:14px; color:#FFF; line-height:26px; }
+.hon2 td a{  font-size:14px; color:#FFF;}
 
 #btn_prev5,#btn_next5{z-index:20;position:absolute;display:block;width:74px!important;height:258px!important;top:0;display:block;}
 #btn_prev5{ background:url(../images/btn4.jpg) left top no-repeat; left:0; }

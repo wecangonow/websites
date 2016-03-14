@@ -55,19 +55,24 @@ require('head.php');
 <div class="qing xi_jie">
 	<div class="qing center">
     	<!--新闻焦点-->
+		<?php
+		$sql      = "SELECT * FROM news where 1=1 and is_show=1 and cat_id=3";
+		$sql      = $sql." order by sort_order asc,id desc limit 6 ";
+		$jiaodian = $mysql->get_all($sql);
+		?>
     	<div class="qing xin">
         	<div class="qing xin_title">
             	<div class="lf xin_zi"><span class="qing x1">新闻焦点</span><span class="qing x2">新闻焦点</span></div>
-             	<a href="news.html" class="rf xin_more"><span class="qing"><img src="images/xin_more.png" width="28" height="28" /></span></a>
+             	<a href="news.php?cat_id=3" class="rf xin_more"><span class="qing"><img src="images/xin_more.png" width="28" height="28" /></span></a>
            	</div>
           	<div class="qing wen">
                	<div class="lf wen_img">
                   	<div class="main_visual2">
                        	<div class="main_image2">
                           	<ul>
-                              	<li><a href="news_view.html"><img src="images/wen_img.jpg" width="197" height="133" /></a></li>
-                             	<li><a href="news_view.html"><img src="images/wen_img.jpg" width="197" height="133" /></a></li>
-                             	<li><a href="news_view.html"><img src="images/wen_img.jpg" width="197" height="133" /></a></li>
+                              	<li><a href="news_view.php?id=<?php echo $jiaodian[0]['id'];?>"><img src="<?php echo $jiaodian[0]['picture'];?>" width="197" height="133" /></a></li>
+                             	<li><a href="news_view.php?id=<?php echo $jiaodian[1]['id'];?>"><img src="<?php echo $jiaodian[1]['picture'];?>" width="197" height="133" /></a></li>
+                             	<li><a href="news_view.php?id=<?php echo $jiaodian[2]['id'];?>"><img src="<?php echo $jiaodian[2]['picture'];?>" width="197" height="133" /></a></li>
                           	</ul>
                       	</div>
                   	</div>
@@ -76,9 +81,13 @@ require('head.php');
                    	<div class="main_visual2">
                      	<div class="main_image2">
                          	<ul>
-                              	<li><a href="news_view.html">邀参加“第二十届中国资本市场论坛”</a><span class="qing">2016-01-05</span></li>
-                             	<li><a href="news_view.html">22邀参加“第二十届中国资本市场论坛”</a><span class="qing">2016-01-12</span></li>
-                              	<li><a href="news_view.html">33邀参加“第二十届中国资本市场论坛”</a><span class="qing">2016-02-16</span></li>
+                              	<li><a href="news_view.php?id=<?php echo $jiaodian[0]['id'];?>"><?php echo $jiaodian[0]['title'];?></a><span class="qing">
+										<?php echo date("Y-m-d",strtotime($jiaodian[0]['add_time']));?></span></li>
+                             	<li><a href="news_view.php?id=<?php echo $jiaodian[1]['id'];?>"><?php echo $jiaodian[1]['title'];?></a><span class="qing">
+										<?php echo date("Y-m-d",strtotime($jiaodian[1]['add_time']));?></span></li>
+                              	<li><a href="news_view.php?id=<?php echo $jiaodian[2]['id'];?>"><?php echo $jiaodian[2]['title'];?></a><span class="qing">
+										<?php echo date("Y-m-d",strtotime($jiaodian[2]['add_time']));?>
+									</span></li>
                            	</ul>
                           	<a href="javascript:;" id="btn_prev2"></a>
                          	<a href="javascript:;" id="btn_next2"></a>
@@ -96,84 +105,98 @@ require('head.php');
               	</div>
            	</div>
           	<div class="qing xin_shao">
-               	<a href="news_view.html" class="qing xin_bt">9月固定收益类基金投资：稳健配置抵御短期风险</a>
-              	<a href="news_view.html" class="qing xin_jian">稳健配置抵御短期风险，灵活轮动期待长期债牛——开放型债券基金投资建议7月公开数据表明，当月国内经济增速...</a>
-              	<div class="qing xin_date">2016-01-05</div>
+               	<a href="news_view.php?id=<?php echo $jiaodian[4]['id'];?>" class="qing xin_bt">
+					<?php echo $jiaodian[4]['title'];?>
+				</a>
+              	<a href="news_view.php?id=<?php echo $jiaodian[4]['id'];?>" class="qing xin_jian">
+					<?php echo $jiaodian[4]['note'];?>
+				</a>
+              	<div class="qing xin_date">
+					2016-01-05
+				</div>
                	<div class="qing xint"></div>
            	</div>
            	<ul class="qing wen_shao">
+				<?php if(isset($jiaodian[5])){?>
                	<li class="qing">
-                  	<a href="news_view.html" class="lf">第二批境外央行类机构进入中国银行间外汇市场</a>
-                  	<span class="lf">2016-01-05</span>
+                  	<a href="news_view.php?id=<?php echo $jiaodian[5]['id'];?>" class="lf">
+						<?php echo $jiaodian[5]['title'];?>
+					</a>
+                  	<span class="lf">
+						<?php echo date("Y-m-d",strtotime($jiaodian[5]['add_time']));?>
+					</span>
                 </li>
+				<?php }?>
+				<?php if(isset($jiaodian[6])){?>
                	<li class="qing">
-                   	<a href="news_view.html" class="lf">央行以质押方式发放再贷款49.73亿元</a>
-                	<span class="lf">2016-01-05</span>
+                   	<a href="news_view.php?id=<?php echo $jiaodian[6]['id'];?>" class="lf">
+						<?php echo $jiaodian[6]['title'];?>
+					</a>
+                	<span class="lf">
+						<?php echo date("Y-m-d",strtotime($jiaodian[6]['add_time']));?>
+					</span>
               	</li>
+				<?php }?>
            	</ul>
         </div>
         <!--联信动态-->
+		<?php
+		$sql     = "SELECT * FROM news where 1=1 and is_show=1 and cat_id=4";
+		$sql     = $sql." order by sort_order asc,id desc limit 4 ";
+		$dongtai = $mysql->get_all($sql);
+		?>
         <div class="qing lian">
         	<div class="qing xin_title">
             	<div class="lf xin_zi"><span class="qing x1">联信动态</span><span class="qing x2">联信动态</span></div>
-            	<a href="news.html" class="rf xin_more"><span class="qing"><img src="images/xin_more.png" width="28" height="28" /></span></a>
+            	<a href="news.php?cat_id=4" class="rf xin_more"><span class="qing"><img src="images/xin_more.png" width="28" height="28" /></span></a>
            	</div>
             <div class="qing lit"><span class="lf"></span></div>
             <ul class="qing lian_jie">
+				<?php foreach($dongtai as  $val){?>
             	<li>
-                	<a href="news_view.html" class="qing xin_bt">9月固定收益类基金投资：稳健配置抵御短期风险</a>
-                    <div class="qing xin_date">2016-01-05</div>
+                	<a href="news_view.php?id=<?php echo $val['id'];?>" class="qing xin_bt">
+						<?php echo $val['title'];?>
+					</a>
+                    <div class="qing xin_date">
+
+						<?php echo date("Y-m-d",strtotime($val['add_time']));?>
+					</div>
                     <div class="qing xint"></div>
                 </li>
-                <li>
-                	<a href="news_view.html" class="qing xin_bt">大盘蓄势向上 哪些基金率先反弹？</a>
-                    <div class="qing xin_date">2016-01-05</div>
-                    <div class="qing xint"></div>
-                </li>
-                <li>
-                	<a href="news_view.html" class="qing xin_bt">中国拟引入熔断机制！深度解密熔断机制！</a>
-                    <div class="qing xin_date">2016-01-05</div>
-                    <div class="qing xint"></div>
-                </li>
-                <li>
-                	<a href="news_view.html" class="qing xin_bt">市场风险偏好趋稳 资金转向固定收益投资</a>
-                    <div class="qing xin_date">2016-01-05</div>
-                    <div class="qing xint"></div>
-                </li>
+				<?php }?>
             </ul>
         </div>
         <!--项目信息-->
+		<?php
+		$sql     = "SELECT * FROM news where 1=1 and is_show=1 and cat_id=26";
+		$sql     = $sql." order by sort_order asc,id desc limit 3 ";
+		$xiangmus = $mysql->get_all($sql);
+		?>
         <div class="qing xm">
         	<div class="qing xin_title">
             	<div class="lf xin_zi"><span class="qing x1">项目信息</span><span class="qing x2">项目信息</span></div>
-            	<a href="service.html" class="rf xin_more"><span class="qing"><img src="images/xin_more.png" width="28" height="28" /></span></a>
+            	<a href="service.php" class="rf xin_more"><span class="qing"><img src="images/xin_more.png" width="28" height="28" /></span></a>
            	</div>
             <div class="qing lit"><span class="lf"></span></div>
             <ul>
+				<?php foreach($xiangmus as $xiangmu){?>
             	<li>
-                	<div class="lf xm_date"><span>06</span>2016-01</div>
+                	<div class="lf xm_date"><span>
+							<?php echo date("d",strtotime($xiangmu['add_time']));?>
+						</span>
+						<?php echo date("Y-m",strtotime($xiangmu['add_time']));?>
+					</div>
                     <div class="rf xm_jie">
-                    	<a href="#" class="qing xin_bt">9月固定收益类基金投资：稳健配置</a>
-              			<a href="#" class="qing xin_jian">稳健配置抵御短期风险，灵活轮动期待长期债牛——开放型债券基金投资建议...</a>
+                    	<a href="xiangmu_view.php?id=<?php echo $xiangmu['id']; ?>" class="qing xin_bt">
+							<?php echo $xiangmu['title'];?>
+						</a>
+              			<a href="xiangmu_view.php?id=<?php echo $xiangmu['id']; ?>" class="qing xin_jian">
+							<?php echo $xiangmu['note'];?>
+						</a>
                     </div>
                     <div class="qing xint"></div>
                 </li>
-                <li>
-                	<div class="lf xm_date"><span>03</span>2016-01</div>
-                    <div class="rf xm_jie">
-                    	<a href="#" class="qing xin_bt">9月固定收益类基金投资：稳健配置</a>
-              			<a href="#" class="qing xin_jian">稳健配置抵御短期风险，灵活轮动期待长期债牛——开放型债券基金投资建议...</a>
-                    </div>
-                    <div class="qing xint"></div>
-                </li>
-                <li>
-                	<div class="lf xm_date"><span>01</span>2016-01</div>
-                    <div class="rf xm_jie">
-                    	<a href="#" class="qing xin_bt">9月固定收益类基金投资：稳健配置</a>
-              			<a href="#" class="qing xin_jian">稳健配置抵御短期风险，灵活轮动期待长期债牛——开放型债券基金投资建议...</a>
-                    </div>
-                    <div class="qing xint"></div>
-                </li>
+				<?php }?>
             </ul>
         </div>
     </div>
@@ -185,115 +208,107 @@ require('head.php');
     	<div class="qing you_title"><span class="qing yt1">联信优势</span><span class="qing yt2">联信优势</span></div>
         <div class="qing yout"><span class="qing"></span></div>
         <ul class="qing center you_shao">
+			<?php
+				 $sql = "select * from pic where cat_id=14 order by sort_order asc, id asc" ;
+				$advantages = $mysql->get_all($sql);
+			foreach($advantages as $val){
+
+			?>
         	<li>
             	<div class="qing you_num">
                 	<div class="qing you1"><img src="images/youq.png" width="66" height="66" /></div>
                     <div class="qing you2">
-                    	<div class="qing yn1"><img src="images/yn1.png" width="66" height="66" /></div>
-                        <div class="qing yn2"><img src="images/yn1.png" width="66" height="66" /></div>
+                    	<div class="qing yn1"><img src="<?php echo $val['picture'];?>" width="66" height="66" /></div>
+                        <div class="qing yn2"><img src="<?php echo $val['picture'];?>" width="66" height="66" /></div>
                     </div>
                 </div>
-                <div class="qing you_bt">是管理基金规模较大的基金管理公司之一</div>
+                <div class="qing you_bt"><?php echo $val['title'];?></div>
             </li>
-            <li>
-            	<div class="qing you_num">
-                	<div class="qing you1"><img src="images/youq.png" width="66" height="66" /></div>
-                    <div class="qing you2">
-                    	<div class="qing yn1"><img src="images/yn2.png" width="66" height="66" /></div>
-                        <div class="qing yn2"><img src="images/yn2.png" width="66" height="66" /></div>
-                    </div>
-                </div>
-                <div class="qing you_bt">以雄厚的综合实力持续保持了行业的领先地位</div>
-            </li>
-            <li>
-            	<div class="qing you_num">
-                	<div class="qing you1"><img src="images/youq.png" width="66" height="66" /></div>
-                    <div class="qing you2">
-                    	<div class="qing yn1"><img src="images/yn3.png" width="66" height="66" /></div>
-                        <div class="qing yn2"><img src="images/yn3.png" width="66" height="66" /></div>
-                    </div>
-                </div>
-                <div class="qing you_bt">为民间资本搭建股权投资平台并获得丰厚回报</div>
-            </li>
-            <li>
-            	<div class="qing you_num">
-                	<div class="qing you1"><img src="images/youq.png" width="66" height="66" /></div>
-                    <div class="qing you2">
-                    	<div class="qing yn1"><img src="images/yn4.png" width="66" height="66" /></div>
-                        <div class="qing yn2"><img src="images/yn4.png" width="66" height="66" /></div>
-                    </div>
-                </div>
-                <div class="qing you_bt">有多年成功的企业上市融资运作和管理经验</div>
-            </li>
+			<?php } ?>
         </ul>
     </div>
 </div>
 <div class="qing hang">
 	<!--行业资讯-->
+
+	<?php
+	$sql   = "SELECT * FROM news where 1=1 and is_show=1 and cat_id=23";
+	$sql   = $sql." order by sort_order asc,id desc limit 5 ";
+	$zixun = $mysql->get_all($sql);
+	?>
 	<div class="qing zi">
     	<div class="zi_jie">
         	<div class="qing xin_title">
             	<div class="lf xin_zi"><span class="qing x1">行业资讯</span><span class="qing x2">行业资讯</span></div>
-            	<a href="news.html" class="rf xin_more"><span class="qing"><img src="images/xin_more.png" width="28" height="28" /></span></a>
+            	<a href="news.php?cat_id=23" class="rf xin_more"><span class="qing"><img src="images/xin_more.png" width="28" height="28" /></span></a>
            	</div>
             <div class="qing zi_shao">
-            	<div class="lf zi_date"><span class="qing">16</span>2016-01</div>
+            	<div class="lf zi_date"><span class="qing">
+						<?php echo date("d",strtotime($zixun[0]['add_time']));?>
+					</span>
+					<?php echo date("Y-m",strtotime($zixun[0]['add_time']));?>
+				</div>
                 <div class="rf" style=" width:461px; ">
-                	<a href="news_view.html" class="qing zi_bt">好买基金: 习大大6.5%打底，市场恢复性反弹</a>
-                    <a href="news_view.html" class="qing zi_jian">11月4日沪深两市双双收涨，截至2:45，上证综指上涨4.03%创业板指上涨6.04%，小盘股强于大盘股盘面上，28个申万一级行业悉数上涨，非银金融...</a>
+                	<a href="news_view.php?id=<?php echo $zixun[0]['id']; ?>" class="qing zi_bt">
+						<?php echo $zixun[0]['title'];?>
+					</a>
+                    <a href="news_view.php?id=<?php echo $zixun[0]['id']; ?>" class="qing zi_jian">
+						<?php echo $zixun[0]['note'];?>
+					</a>
                 </div>
             </div>
             <ul class="qing wen_shao">
-               	<li class="qing">
-                  	<a href="news_view.html" class="lf">第二批境外央行类机构进入中国银行间外汇市场</a>
-                  	<span class="lf">2016-01-05</span>
-                </li>
-               	<li class="qing">
-                   	<a href="news_view.html" class="lf">央行以质押方式发放再贷款49.73亿元方式发放方式发放</a>
-                	<span class="lf">2016-01-05</span>
-              	</li>
+				<?php for($i=1; $i<count($zixun);$i++){?>
                 <li class="qing">
-                   	<a href="news_view.html" class="lf">第二批境外央行类机构进入中国银行间外汇市场</a>
-                	<span class="lf">2016-01-05</span>
+                   	<a href="news_view.php?id=<?php echo $zixun[$i]['id']; ?>" class="lf">
+						<?php echo $zixun[$i]['title'];?>
+					</a>
+                	<span class="lf">
+						<?php echo date("Y-m-d",strtotime($zixun[$i]['add_time']));?>
+					</span>
               	</li>
-                <li class="qing">
-                   	<a href="news_view.html" class="lf">央行以质押方式发放再贷款49.73亿元</a>
-                	<span class="lf">2016-01-05</span>
-              	</li>
+				<?php }?>
            	</ul>
         </div>
     </div>
     <!--市场分析-->
+	<?php
+	$sql   = "SELECT * FROM news where 1=1 and is_show=1 and cat_id=25";
+	$sql   = $sql." order by sort_order asc,id desc limit 5 ";
+	$zixun = $mysql->get_all($sql);
+	?>
 	<div class="qing shi">
     	<div class="zi_jie">
         	<div class="qing xin_title">
             	<div class="lf xin_zi"><span class="qing x1">市场分析</span><span class="qing x2">市场分析</span></div>
-            	<a href="news_market.html" class="rf xin_more"><span class="qing"><img src="images/xin_more.png" width="28" height="28" /></span></a>
+            	<a href="news_market.php?cat_id=25" class="rf xin_more"><span class="qing"><img src="images/xin_more.png" width="28" height="28" /></span></a>
            	</div>
             <div class="qing zi_shao">
-            	<div class="lf zi_date"><span class="qing">16</span>2016-01</div>
+            	<div class="lf zi_date"><span class="qing">
+						<?php echo date("d",strtotime($zixun[0]['add_time']));?>
+					</span>
+					<?php echo date("Y-m",strtotime($zixun[0]['add_time']));?>
+				</div>
                 <div class="rf" style=" width:461px; ">
-                	<a href="news_view.html" class="qing zi_bt">好买基金: 习大大6.5%打底，市场恢复性反弹</a>
-                    <a href="news_view.html" class="qing zi_jian">11月4日沪深两市双双收涨，截至2:45，上证综指上涨4.03%创业板指上涨6.04%，小盘股强于大盘股盘面上，28个申万一级行业悉数上涨，非银金融...</a>
+                	<a href="news_view.php?id=<?php echo $zixun[$i]['id']; ?>" class="qing zi_bt">
+						<?php echo $zixun[0]['title'];?>
+					</a>
+                    <a href="news_view.php?id=<?php echo $zixun[$i]['id']; ?>" class="qing zi_jian">
+						<?php echo $zixun[0]['note'];?>
+					</a>
                 </div>
             </div>
             <ul class="qing wen_shao">
-               	<li class="qing">
-                  	<a href="news_view.html" class="lf">第二批境外央行类机构进入中国银行间外汇市场</a>
-                  	<span class="lf">2016-01-05</span>
-                </li>
-               	<li class="qing">
-                   	<a href="news_view.html" class="lf">央行以质押方式发放再贷款49.73亿元方式发放方式发放</a>
-                	<span class="lf">2016-01-05</span>
-              	</li>
-                <li class="qing">
-                   	<a href="news_view.html" class="lf">第二批境外央行类机构进入中国银行间外汇市场</a>
-                	<span class="lf">2016-01-05</span>
-              	</li>
-                <li class="qing">
-                   	<a href="news_view.html" class="lf">央行以质押方式发放再贷款49.73亿元</a>
-                	<span class="lf">2016-01-05</span>
-              	</li>
+				<?php for($i=1; $i<count($zixun);$i++){?>
+					<li class="qing">
+						<a href="news_view.php?id=<?php echo $zixun[$i]['id']; ?>" class="lf">
+							<?php echo $zixun[$i]['title'];?>
+						</a>
+                	<span class="lf">
+						<?php echo date("Y-m-d",strtotime($zixun[$i]['add_time']));?>
+					</span>
+					</li>
+				<?php }?>
            	</ul>
         </div>
     </div>
@@ -309,20 +324,28 @@ require('head.php');
     <?php
         $sql    ="select * from pic where cat_id=4 order by sort_order asc,id asc";
         $huoban = $mysql->get_all($sql);
+		$totalRows1 =$mysql->num_rows($mysql->query($sql));//数据集数据总条数
+	    $totalpages = ceil($totalRows1/6);//计算可分页总数，ceil()为上舍函数
     ?>
     <div class="qing center">
     	<div class="main_visual3">
             <div class="main_image3">
                 <ul>
+					<?php
+					$counter = 0;
+					for($i = 0; $i < $totalpages; $i++) {?>
                     <li>
-                        <?php  foreach($huoban as $info) { ?>
-                    	<a href="<?php echo $info['link_url'];?>" target="_blank"><img src="<?php echo $info['picture'];?>" width="208" height="75" /></a>
-                        <?php } ?>
+                        <?php  for($j=0; $j < 6; $j++) { ?>
+                    	<a href="<?php echo $huoban[$counter]['link_url'];?>" target="_blank"><img src="<?php echo $huoban[$counter]['picture'];?>" width="208" height="75" /></a>
+                        <?php
+							$counter++;
+							if($counter >= $totalRows1){
+								break;
+							}
+						}
+						?>
                     </li>
-                    <li>
-                        <a href="#" target="_blank"><img src="images/hz6.jpg" width="208" height="75" /></a>
-                        <a href="#" target="_blank"><img src="images/hz1.jpg" width="208" height="75" /></a>
-                    </li>
+					<?php }?>
                 </ul>
                 <a href="javascript:;" id="btn_prev3"></a>
                 <a href="javascript:;" id="btn_next3"></a>
