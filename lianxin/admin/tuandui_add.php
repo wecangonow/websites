@@ -41,14 +41,6 @@ if($_REQUEST["action"]=="add")
             <td><input type="text" name="picture" id="picture" class="input_text" value="" />&nbsp;<input name="upfile" type="button" class="button" onClick="javascript:opw('includes/pic_upload_form.php?text_id=picture&saveTo=../../upload/images/&showPath=upload/images/','picture',500,250)" value="上传图片"> (83*83)</td>
           </tr>
           <tr>
-            <td width="17%" class="label">来源</td>
-            <td width="83%"><input type="text" name="laiyuan" id="laiyuan" class="input_text_3" value="" /></td>
-          </tr>
-          <tr>
-            <td width="17%" class="label">关键词</td>
-            <td width="83%"><input type="text" name="tags" id="tags" class="input_text_3" value="" /></td>
-          </tr>
-          <tr>
             <td width="17%" class="label">排序</td>
             <td width="83%"><input type="text" name="sort_order" id="sort_order" class="input_text_3" value="50" /></td>
           </tr>

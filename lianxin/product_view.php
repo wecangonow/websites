@@ -105,7 +105,15 @@ require('head.php');
                     </tr>
                 </table>
             </div>
-            <div class="qing" style="padding-top:40px;"><img src="<?php echo $news_view['picture']; ?>" width="1037" height="532" /></div>
+            <div class="qing" style="padding-top:40px;">
+
+                <?php if($news_view['picture'] != "") {?>
+                <img src="<?php echo $news_view['picture']; ?>" width="1037" height="532" />
+
+                <?php }else {?>
+                    <img src="images/none_pic.jpg" width="314" height="192" />
+                <?php } ?>
+            </div>
             <div class="qing news_wen">
                 <?php echo $news_view['content']; ?>
             </div>

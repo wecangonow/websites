@@ -55,10 +55,12 @@ if($_REQUEST["action"]=="add")
             <td width="17%" class="label">标题</td>
             <td width="83%"><input type="text" name="title" id="title" class="input_text" value="" /></td>
           </tr>
+            <!--
           <tr>
             <td class="label">上传图片</td>
             <td><input type="text" name="picture" id="picture" class="input_text" value="" />&nbsp;<input name="upfile" type="button" class="button" onClick="javascript:opw('includes/pic_upload_form.php?text_id=picture&saveTo=../../upload/images/&showPath=upload/images/','picture',500,250)" value="上传图片"> (283*173)</td>
           </tr>
+          -->
 
           <tr>
             <td width="17%" class="label">来源</td>

@@ -105,7 +105,9 @@ $chanpin_categories = $mysql->get_all($sql);
                     </tr>
                 </table>
             </div>
-            <div class="qing" style="padding-top:40px;"><img src="<?php echo $news_view['picture']; ?>" width="1037" height="532" /></div>
+            <div class="qing" style="padding-top:40px;">
+                <img src="<?php echo $news_view['picture']; ?>" width="1037" height="532" />
+            </div>
             <div class="qing news_wen">
                 <?php echo $news_view['content']; ?>
             </div>

@@ -24,7 +24,6 @@ $top=4;
     $sql = "SELECT * FROM news_category where 1=1 and cat_id=12";
     $cat_info = $mysql->get_one($sql);
     ?>
->
 <!--标题-->
 <div class="qing mtop">
     <div class="qing title">

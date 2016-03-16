@@ -136,7 +136,15 @@ require('head.php');
                     </a>
                     <div class="qing pin_more"><a href="news_view.php?id=<?php echo $row_list['id'];?>" class="qing">查看详细</a></div>
                 </div>
-                <a href="news_view.html" class="rf news_img"><span class="qing"><img src="images/news.jpg" width="314" height="192" /></span></a>
+                <a href="news_view.php?id=<?php echo $row_list['id'];?>" class="rf news_img">
+                    <span class="qing">
+                        <?php if($row_list['picture'] != "") {?>
+                        <img src="<?php echo $row_list['picture'];?>" width="314" height="192" />
+                        <?php }else {?>
+                            <img src="images/none_pic.jpg" width="314" height="192" />
+                        <?php } ?>
+                    </span>
+                </a>
             </div>
             <div class="qing newsk"><span class="qing"></span></div>
         </div>
