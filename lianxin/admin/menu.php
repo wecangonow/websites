@@ -129,11 +129,13 @@ body {
       <li class="menu-item"><a href="links_pic.php?cat_id=2" target="main-frame">友情链接</a></li>
     </ul>
   </li>
+	  <!--
   <li class="explode"><a href="javascript:;" target="main-frame">首页栏目</a>
     <ul>
       <li class="menu-item"><a href="index_info.php?id=22" target="main-frame">公司优势</a></li>
     </ul>
   </li>
+	  -->
     <!--
     <li class="explode"><a href="javascript:;" target="main-frame">投资项目</a>
       <ul>
