@@ -91,13 +91,20 @@ $cat_info = $mysql->get_one($sql);
     {
    ?>
 	<li class="qing">
-    	<a href="#" class="lf pin_img"><span class="qing"><img src="<?php echo $row_list["picture"];?>" width="220" height="134" /></span></a>
+    	<a href="product_view.php?id=<?php echo $row_list['id'];?>" class="lf pin_img"><span class="qing">
+
+                        <?php if($row_list['picture'] != "") {?>
+                <img src="<?php echo $row_list["picture"];?>" width="220" height="134" />
+                        <?php }else {?>
+                            <img src="images/none_pic.jpg" width="314" height="192" />
+                        <?php } ?>
+            </span></a>
         <div class="lf pin_jie">
-        	<a href="#" class="qing fu_bt"><?php echo $row_list["title"];?></a>
-         	<a href="#" class="qing ab_jian">
+        	<a href="product_view.php?id=<?php echo $row_list['id'];?>" class="qing fu_bt"><?php echo $row_list["title"];?></a>
+         	<a href="product_view.php?id=<?php echo $row_list['id'];?>" class="qing ab_jian">
                 <?php echo $row_list["note"];?>
                 ..</a>
-            <div class="qing pin_more"><a href="product_view.php?id=<?php echo $row_list["id"];?>" class="qing">查看详细</a></div>
+            <div class="qing pin_more"><a href="product_view.php?id=<?php echo $row_list['id'];?>" class="qing">查看详细</a></div>
         </div>
         <div class="qing pint"><div class="qing pt1"></div><div class="qing pt2"></div></div>
     </li>

@@ -77,7 +77,7 @@ require('head.php');
                         <td align="center" valign="top">
                             <?php foreach ($chanpin_categories as $category) {
                                 ?>
-                                <a href="<?php echo $url;?>?cat_id=<?php echo $category['cat_id'];?>" class="lf <?php if($category['cat_id']==$news_view['cat_id']){?>tinn<?php }?>">
+                                <a href="product_list.php?cat_id=<?php echo $category['cat_id'];?>" class="lf <?php if($category['cat_id']==$news_view['cat_id']){?>tinn<?php }?>">
                                     <div class="qing tn1"><?php echo $category['cat_name'];?></div>
                                     <div class="qing tn2"><img src="images/t1.png" width="21" height="21" /></div>
                                     <div class="qing tn3"><img src="images/t2.png" width="71" height="25" /></div>

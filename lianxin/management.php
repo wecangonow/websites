@@ -62,7 +62,7 @@ $cat_info = $mysql->get_one($sql);
 	<div class="qing guan">
     	<div class="qing g_jie">
         	<div class="qing g_bt">
-                <?php echo $content["title"];?>
+                <?php echo $cat_info["cat_name"];?>
                 <span class="qing">
                 <?php echo $cat_info["english_name"];?>
                 </span>

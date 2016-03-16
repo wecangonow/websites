@@ -66,7 +66,7 @@ $service = $mysql->get_all($sql);
               	</div>
           	</li>
             <li>
-                <a href="#" class="items <?php if($top==3){?>items_on<?php }?>">
+                <a href="management.php" class="items <?php if($top==3){?>items_on<?php }?>">
                 	<div class="qing it_jie">
                         <div class="qing it1">合规管理</div>
                         <div class="qing it2">合规管理</div>
