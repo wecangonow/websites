@@ -100,8 +100,19 @@ $top=4;
 <?php } else {
     $sql = "select * from news where cat_id=$cat_id";
     $info = $mysql->get_one($sql);
-    echo $info['content'];
     ?>
+<!--内容-->
+<div class="qing center" style="padding-top:43px; padding-bottom:60px;">
+    <div class="qing guan">
+        <div class="qing g_jie">
+            <div class="qing g_jian"> <?php echo $info["content"];?> </div>
+        </div>
+        <div class="qing g1"></div>
+        <div class="qing g2"></div>
+        <div class="qing g3"></div>
+        <div class="qing g4"></div>
+    </div>
+</div>
 <?php }?>
 <!--底部-->
 <?php

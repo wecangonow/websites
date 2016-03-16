@@ -76,13 +76,25 @@ require('head.php');
     </div>
 </div>
 <!--内容-->
-
 <?php
 $sql = "select * from news where id=4";
 $content = $mysql->get_one($sql);
 
-echo $content['content'];
+?>
+<div class="qing center" style="padding-top:43px; padding-bottom:60px;">
+    <div class="qing guan">
+        <div class="qing g_jie">
+            <div class="qing g_jian"> <?php echo $content["content"];?> </div>
+        </div>
+        <div class="qing g1"></div>
+        <div class="qing g2"></div>
+        <div class="qing g3"></div>
+        <div class="qing g4"></div>
+    </div>
+</div>
 
+
+<?php
 require('foot.php');
 ?>
 </body>
