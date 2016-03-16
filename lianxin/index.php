@@ -52,8 +52,8 @@ require('head.php');
 	<div class="qing center">
     	<!--新闻焦点-->
 		<?php
-		$sql      = "SELECT * FROM news where 1=1 and is_show=1 and cat_id=3";
-		$sql      = $sql." order by sort_order asc,id desc limit 6 ";
+		$sql      = "SELECT * FROM news where 1=1 and is_show=1 and cat_id=3 ";
+		$sql      = $sql." order by sort_order asc,id desc limit 8 ";
 		$jiaodian = $mysql->get_all($sql);
 		?>
     	<div class="qing xin">
@@ -66,9 +66,12 @@ require('head.php');
                   	<div class="main_visual2">
                        	<div class="main_image2">
                           	<ul>
-                              	<li><a href="news_view.php?id=<?php echo $jiaodian[0]['id'];?>"><img src="<?php echo $jiaodian[0]['picture'];?>" width="197" height="133" /></a></li>
-                             	<li><a href="news_view.php?id=<?php echo $jiaodian[1]['id'];?>"><img src="<?php echo $jiaodian[1]['picture'];?>" width="197" height="133" /></a></li>
-                             	<li><a href="news_view.php?id=<?php echo $jiaodian[2]['id'];?>"><img src="<?php echo $jiaodian[2]['picture'];?>" width="197" height="133" /></a></li>
+								<?php if(count($jiaodian) > 0){
+										for($i=0;$i<count($jiaodian) && $i<5;$i++) {
+									?>
+                              	<li><a href="news_view.php?id=<?php echo $jiaodian[$i]['id'];?>"><img src="<?php echo  $jiaodian[$i]['picture'] ?  $jiaodian[$i]['picture'] : '';?>" width="197" height="133" /></a></li>
+								<?php }?>
+								<?php }?>
                           	</ul>
                       	</div>
                   	</div>
@@ -77,13 +80,13 @@ require('head.php');
                    	<div class="main_visual2">
                      	<div class="main_image2">
                          	<ul>
-                              	<li><a href="news_view.php?id=<?php echo $jiaodian[0]['id'];?>"><?php echo $jiaodian[0]['title'];?></a><span class="qing">
-										<?php echo date("Y-m-d",strtotime($jiaodian[0]['add_time']));?></span></li>
-                             	<li><a href="news_view.php?id=<?php echo $jiaodian[1]['id'];?>"><?php echo $jiaodian[1]['title'];?></a><span class="qing">
-										<?php echo date("Y-m-d",strtotime($jiaodian[1]['add_time']));?></span></li>
-                              	<li><a href="news_view.php?id=<?php echo $jiaodian[2]['id'];?>"><?php echo $jiaodian[2]['title'];?></a><span class="qing">
-										<?php echo date("Y-m-d",strtotime($jiaodian[2]['add_time']));?>
-									</span></li>
+								<?php if(count($jiaodian) > 0){
+									for($i=0;$i<count($jiaodian) && $i<5;$i++) {
+									?>
+									<li><a href="news_view.php?id=<?php echo $jiaodian[$i]['id'];?>"><?php echo $v['title'];?></a><span class="qing">
+										<?php echo $jiaodian[$i]['add_time'] ? date("Y-m-d",strtotime($jiaodian[$i]['add_time'])) : "";?></span></li>
+								<?php }?>
+								<?php }?>
                            	</ul>
                           	<a href="javascript:;" id="btn_prev2"></a>
                          	<a href="javascript:;" id="btn_next2"></a>
@@ -91,9 +94,12 @@ require('head.php');
                       	<table class="flicking_con2" border="0" cellspacing="0" cellpadding="0" style=" text-align:center">
                          	<tr>
                               	<td align="center" valign="top">
+									<?php if(count($jiaodian) > 0){
+										for($i=0;$i<count($jiaodian) && $i<6;$i++) {
+									?>
                                   	<a href="#"></a>
-                                   	<a href="#"></a>
-                                  	<a href="#"></a>
+									<?php }?>
+									<?php }?>
                               	</td>
                           	</tr>
                        	</table>
@@ -101,35 +107,39 @@ require('head.php');
               	</div>
            	</div>
           	<div class="qing xin_shao">
-               	<a href="news_view.php?id=<?php echo $jiaodian[4]['id'];?>" class="qing xin_bt">
-					<?php echo $jiaodian[4]['title'];?>
+				<?php if(isset($jiaodian[5])){?>
+               	<a href="news_view.php?id=<?php echo $jiaodian[5]['id'];?>" class="qing xin_bt">
+					<?php echo $jiaodian[5]['title'];?>
 				</a>
-              	<a href="news_view.php?id=<?php echo $jiaodian[4]['id'];?>" class="qing xin_jian">
-					<?php echo $jiaodian[4]['note'];?>
+              	<a href="news_view.php?id=<?php echo $jiaodian[5]['id'];?>" class="qing xin_jian">
+					<?php echo $jiaodian[5]['note'];?>
 				</a>
               	<div class="qing xin_date">
-					2016-01-05
+					<?php if($jiaodian[5]['add_time'] != ""){?>
+					<?php echo date("Y-m-d", strtotime($jiaodian[5]['add_time']));?>
+					<?php } ?>
 				</div>
+				<?php } ?>
                	<div class="qing xint"></div>
            	</div>
            	<ul class="qing wen_shao">
-				<?php if(isset($jiaodian[5])){?>
+				<?php if(isset($jiaodian[6])){?>
                	<li class="qing">
-                  	<a href="news_view.php?id=<?php echo $jiaodian[5]['id'];?>" class="lf">
-						<?php echo $jiaodian[5]['title'];?>
+                  	<a href="news_view.php?id=<?php echo $jiaodian[6]['id'];?>" class="lf">
+						<?php echo $jiaodian[6]['title'];?>
 					</a>
                   	<span class="lf">
-						<?php echo date("Y-m-d",strtotime($jiaodian[5]['add_time']));?>
+						<?php echo date("Y-m-d",strtotime($jiaodian[6]['add_time']));?>
 					</span>
                 </li>
 				<?php }?>
-				<?php if(isset($jiaodian[6])){?>
+				<?php if(isset($jiaodian[7])){?>
                	<li class="qing">
-                   	<a href="news_view.php?id=<?php echo $jiaodian[6]['id'];?>" class="lf">
-						<?php echo $jiaodian[6]['title'];?>
+                   	<a href="news_view.php?id=<?php echo $jiaodian[7]['id'];?>" class="lf">
+						<?php echo $jiaodian[7]['title'];?>
 					</a>
                 	<span class="lf">
-						<?php echo date("Y-m-d",strtotime($jiaodian[6]['add_time']));?>
+						<?php echo date("Y-m-d",strtotime($jiaodian[7]['add_time']));?>
 					</span>
               	</li>
 				<?php }?>
@@ -148,6 +158,7 @@ require('head.php');
            	</div>
             <div class="qing lit"><span class="lf"></span></div>
             <ul class="qing lian_jie">
+				<?php if(count($dongtai) > 0){?>
 				<?php foreach($dongtai as  $val){?>
             	<li>
                 	<a href="news_view.php?id=<?php echo $val['id'];?>" class="qing xin_bt">
@@ -159,6 +170,7 @@ require('head.php');
 					</div>
                     <div class="qing xint"></div>
                 </li>
+				<?php }?>
 				<?php }?>
             </ul>
         </div>
@@ -175,6 +187,7 @@ require('head.php');
            	</div>
             <div class="qing lit"><span class="lf"></span></div>
             <ul>
+				<?php if(count($xiangmus) > 0){?>
 				<?php foreach($xiangmus as $xiangmu){?>
             	<li>
                 	<div class="lf xm_date"><span>
@@ -192,6 +205,7 @@ require('head.php');
                     </div>
                     <div class="qing xint"></div>
                 </li>
+				<?php }?>
 				<?php }?>
             </ul>
         </div>
@@ -240,9 +254,14 @@ require('head.php');
            	</div>
             <div class="qing zi_shao">
             	<div class="lf zi_date"><span class="qing">
+				<?php if(count($zixun) > 0) {?>
 						<?php echo date("d",strtotime($zixun[0]['add_time']));?>
+
+				<?php }?>
 					</span>
+					<?php if(count($zixun) > 0) {?>
 					<?php echo date("Y-m",strtotime($zixun[0]['add_time']));?>
+					<?php }?>
 				</div>
                 <div class="rf" style=" width:461px; ">
                 	<a href="news_view.php?id=<?php echo $zixun[0]['id']; ?>" class="qing zi_bt">
@@ -264,6 +283,7 @@ require('head.php');
 					</span>
               	</li>
 				<?php }?>
+
            	</ul>
         </div>
     </div>
@@ -281,9 +301,13 @@ require('head.php');
            	</div>
             <div class="qing zi_shao">
             	<div class="lf zi_date"><span class="qing">
+					<?php if(count($zixun) > 0) {?>
 						<?php echo date("d",strtotime($zixun[0]['add_time']));?>
+					<?php }?>
 					</span>
+					<?php if(count($zixun) > 0) {?>
 					<?php echo date("Y-m",strtotime($zixun[0]['add_time']));?>
+					<?php }?>
 				</div>
                 <div class="rf" style=" width:461px; ">
                 	<a href="news_view.php?id=<?php echo $zixun[$i]['id']; ?>" class="qing zi_bt">
