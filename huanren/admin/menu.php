@@ -125,8 +125,8 @@ body {
       <li class="menu-item"><a href="flash.php?cat_id=1" target="main-frame">PC首页焦点</a></li>
 	  <!--
       <li class="menu-item"><a href="flash.php?cat_id=3" target="main-frame">手机首页焦点</a></li>
-	  -->
       <li class="menu-item"><a href="links_pic.php?cat_id=2" target="main-frame">友情链接</a></li>
+	  -->
     </ul>
   </li>
 	  <!--
@@ -136,6 +136,14 @@ body {
     </ul>
   </li>
 	  -->
+  <li class="explode"><a href="javascript:;" target="main-frame">相关链接</a>
+    <ul>
+      <li class="menu-item"><a href="news_category.php?parent_id=5" target="main-frame">分类管理</a></li>
+      <li class="menu-item"><a href="lianjie_list.php?parent_id=5" target="main-frame">信息列表</a></li>
+      <li class="menu-item"><a href="lianjie_add.php?parent_id=5" target="main-frame">添加信息</a></li>
+      <li class="menu-item"><a href="links_pic.php?parent_id=5" target="main-frame">友情链接</a></li>
+    </ul>
+  </li>
   <li class="explode"><a href="javascript:;" target="main-frame">关于联信</a>
     <ul>
   <!--
@@ -160,17 +168,6 @@ body {
       <li class="menu-item"><a href="dongtai_add.php?parent_id=2" target="main-frame">添加信息</a></li>
     </ul>
   </li>
-    <li class="explode"><a href="javascript:;" target="main-frame">合规管理</a>
-        <ul>
-            <!--
-            <li class="menu-item"><a href="pic_view.php?id=4" target="main-frame">PCBanner图</a></li>
-            <li class="menu-item"><a href="pic_view.php?id=22" target="main-frame">手机Banner图</a></li>
-            -->
-            <li class="menu-item"><a href="news_category.php?parent_id=5" target="main-frame">分类管理</a></li>
-            <li class="menu-item"><a href="hegui_list.php?parent_id=5" target="main-frame">信息列表</a></li>
-            <li class="menu-item"><a href="hegui_add.php?parent_id=5" target="main-frame">添加信息</a></li>
-        </ul>
-    </li>
     <li class="explode"><a href="javascript:;" target="main-frame">联信产品</a>
         <ul>
             <!--
@@ -202,19 +199,10 @@ body {
   <li class="explode"><a href="javascript:;" target="main-frame">联系我们</a>
     <ul>
       <li class="menu-item"><a href="contact_list.php?cat_id=10" target="main-frame">信息列表</a></li>
-  <!--
-      <li class="menu-item"><a href="pic_view.php?id=9" target="main-frame">PCBanner图</a></li>
-      <li class="menu-item"><a href="pic_view.php?id=27" target="main-frame">手机Banner图</a></li>
-      <li class="menu-item"><a href="contact_add.php?cat_id=10" target="main-frame">添加信息</a></li>
-  -->
     </ul>
   </li>
   <li class="explode"><a href="javascript:;" target="main-frame">合作服务</a>
     <ul>
-      <!--
-      <li class="menu-item"><a href="pic_view.php?id=15" target="main-frame">PCBanner图</a></li>
-      <li class="menu-item"><a href="pic_view.php?id=29" target="main-frame">手机Banner图</a></li>
-      -->
       <li class="menu-item"><a href="index_info.php?id=22" target="main-frame">项目简介</a></li>
       <li class="menu-item"><a href="news_category.php?parent_id=12" target="main-frame">分类管理</a></li>
       <li class="menu-item"><a href="service_list.php?parent_id=12" target="main-frame">信息列表</a></li>
@@ -223,22 +211,9 @@ body {
   </li>
   <li class="explode"><a href="javascript:;" target="main-frame">资质荣誉</a>
     <ul>
-  <!--
-      <li class="menu-item"><a href="pic_view.php?id=16" target="main-frame">PCBanner图</a></li>
-      <li class="menu-item"><a href="pic_view.php?id=30" target="main-frame">手机Banner图</a></li>
-	  -->
       <li class="menu-item"><a href="rongyuzizhi.php?cat_id=13" target="main-frame">信息列表</a></li>
     </ul>
   </li>
-  <!--
-  <li class="explode"><a href="javascript:;" target="main-frame">公司月刊</a>
-    <ul>
-      <li class="menu-item"><a href="pic_view.php?id=31" target="main-frame">PCBanner图</a></li>
-      <li class="menu-item"><a href="yuekan_list.php?cat_id=14" target="main-frame">信息列表</a></li>
-      <li class="menu-item"><a href="yuekan_add.php?cat_id=14" target="main-frame">添加信息</a></li>
-    </ul>
-  </li>
-  -->
   <li class="explode"><a href="javascript:;" target="main-frame">合作伙伴</a>
     <ul>
       <li class="menu-item"><a href="hezuohuoban_list.php?cat_id=4" target="main-frame">信息列表</a></li>

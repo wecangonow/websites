@@ -62,7 +62,9 @@
         <ul class="lf fo_add">
             <li class="qing">
                 <div class="lf fo_img"><img src="images/fo1.png" width="27" height="27" /></div>
-                <div class="lf fo_di">电话：010-52907809</div>
+                <div class="lf fo_di">电话：
+                    <?php echo $sys_config['sys_tel'];?>
+                </div>
             </li>
             <li class="qing">
                 <div class="lf fo_img"><img src="images/fo2.png" width="27" height="27" /></div>
@@ -70,11 +72,15 @@
             </li>
             <li class="qing">
                 <div class="lf fo_img"><img src="images/fo3.png" width="27" height="27" /></div>
-                <div class="lf fo_di">邮箱：info@wcvma.com</div>
+                <div class="lf fo_di">邮箱：
+                    <?php echo $sys_config['sys_email'];?>
+                </div>
             </li>
             <li class="qing">
                 <div class="lf fo_img"><img src="images/fo4.png" width="27" height="27" /></div>
-                <div class="lf fo_di">地址：北京市海淀区亮甲店130号</div>
+                <div class="lf fo_di">地址：
+                    <?php echo $sys_config['sys_address'];?>
+                </div>
             </li>
         </ul>
         <div class="lf fo_nav">
@@ -92,7 +98,7 @@
         </div>
         <div class="rf fo_ma">
             <div class="qing ma_img">
-                <div class="qing ma_tu"><img src="images/fo_ma.jpg" width="102" height="102" /></div>
+                <div class="qing ma_tu"><img src="<?php echo $sys_config['sys_weixin'];?>" width="102" height="102" /></div>
                 <div class="qing ma_bt">扫描关注官方微信</div>
             </div>
         </div>
@@ -100,7 +106,9 @@
 </div>
 <div class="qing copyright">
     <div class="qing center">
-        <div class="lf" style="width:980px;">Copyright 2008-2016 The World Federation of Chinese Model．，Ltd All Rights Reserved 世界华人楷模联合会  京ICP备09019275号</div>
+        <div class="lf" style="width:980px;">
+            <?php echo $sys_config['sys_copyright'];?>
+        </div>
         <a href="http://bolehu.net" target="_blank" class="rf">技术支持：博乐虎</a>
     </div>
 </div>

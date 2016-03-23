@@ -45,7 +45,6 @@ if ($_REQUEST['action'] == 'delete')
 <table width="1103" cellpadding="3" cellspacing="1">
   <tr>
     <th width="419">分类名称</th>
-    <th width="419">英文名称</th>
     <th width="511">排序</th>
     <th width="101">操作</th>
   <tr>
@@ -58,7 +57,6 @@ foreach($row as $result)
   <form method="post" action="news_category.php?action=edit&cat_id=<?php echo $result['cat_id']; ?>&parent_id=<?php echo $result['parent_id']; ?>" name="listForm_<?php echo $result['cat_id']; ?>">
   <tr>
     <td align="center" class="first-cell" style=""><input type='text' name='cat_name' class="input_text" value='<?php echo $result['cat_name']; ?>' /></td>
-    <td align="center"><input type='text' name='en_name' class="input_text_2" value='<?php echo $result['english_name']; ?>' /></td>
     <td align="center"><input type='text' name='sort_order' class="input_text_3" value='<?php echo $result['sort_order']; ?>' /></td>
     <td align="center">
       <input name="submit" type="submit" value="更新" />
@@ -76,14 +74,12 @@ foreach($row as $result)
 <table width="1103" cellpadding="3" cellspacing="1" style="margin-top:20px;">
   <tr>
     <th width="438">分类名称</th>
-    <th width="438">英文名称</th>
     <th width="540">排序</th>
     <th width="101">操作</th>
   <tr>
   <form method="post" action="news_category.php?action=add&parent_id=<?php echo $parent_id; ?>" name="listForm" onsubmit="return confirmSubmit(this)">
   <tr>
     <td align="center" class="center" style=""><input type='text' name='cat_name' class="input_text" value='' /></td>
-    <td align="center"><input type='text' name='en_name' class="input_text_2" value='' /></td>
     <td align="center"><input type='text' name='sort_order' class="input_text_3" value='50' /></td>
     <td align="center">
       <input name="submit" type="submit" value="新增" />
