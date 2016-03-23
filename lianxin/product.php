@@ -72,8 +72,8 @@ $contents = $mysql->get_all($sql);
             foreach ($contents as $content) {
             ?>
         	<li class="lf">
-            	<a href="news_view.php?id=<?php echo $content["id"];?>&cat_id=<?php echo $category["cat_id"];?>" class="qing fu_bt"><?php echo $content["title"];?></a>
-              	<a href="#" class="qing ab_jian">
+            	<a href="news_view.php?id=<?php echo $content['id'];?>&cat_id=<?php echo $category['cat_id'];?>" class="qing fu_bt"><?php echo $content["title"];?></a>
+              	<a href="news_view.php?id=<?php echo $content['id'];?>&cat_id=<?php echo $category['cat_id'];?>" class="qing ab_jian">
                     <?php echo $content['note'];?>
                 </a>
                 <div class="qing xint"></div>

@@ -56,12 +56,19 @@ $top=4;
 <?php if($cat_id == 26){
     $sql = "select * from news where cat_id=26";
     $infos = $mysql->get_all($sql);
+    $sql="select * from news where id=22";
+    $result = $mysql->get_one($sql);
 
     ?>
 <div class="qing center service">
-	<div class="qing ser_bt">全面风险管理、风险管理前移、风险管理量化  联信更专业</div>
+	<div class="qing ser_bt">
+        <?php echo $result['title'];?>
+    </div>
     <div class="qing sert"></div>
-    <div class="qing ab_jian ser_jian">联信基金深谙资本市场的运营规则、法律法规，专注投资高成长、高回报的企业，为民间资本搭建股权投资平台，实现新三板上市等多层次的资本市场退出渠道，并获得丰厚回报有多年成功的企业上市、融资运作和管理经验，形成了先进完善的项目遴选、基金管理和风控管理体系，确保基金的资金安全、正常运作以及稳健增值</div>
+    <div class="qing ab_jian ser_jian">
+        <?php echo $result['note'];?>
+    </div>
+
 </div>
 <div class="qing center fuwu">
 	<ul class="qing">
@@ -72,12 +79,12 @@ $top=4;
                 	<div class="qing fd1"><span class="qing">
                             <?php echo date("d",strtotime($info['add_time']));?>
                         </span>
-                        <?php echo date("Y-d",strtotime($info['add_time']));?>
+                        <?php echo date("Y-m",strtotime($info['add_time']));?>
                     </div>
                     <div class="qing fd2"><span class="qing">
                             <?php echo date("d",strtotime($info['add_time']));?>
                         </span>
-                        <?php echo date("Y-d",strtotime($info['add_time']));?>
+                        <?php echo date("Y-m",strtotime($info['add_time']));?>
                     </div>
                 </div>
                 <div class="rf fu_shao">

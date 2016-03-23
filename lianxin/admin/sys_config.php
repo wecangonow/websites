@@ -10,7 +10,20 @@ if(!isset($_REQUEST["action"]))
 elseif($_REQUEST["action"]=="edit")
 {
   $condition="id=1";
-  $dataArray = array("sys_name"=>$_REQUEST['sys_name'],"sys_title"=>$_REQUEST['sys_title'],"sys_keywords"=>$_REQUEST['sys_keywords'],"sys_description"=>$_REQUEST['sys_description'],"sys_address"=>$_REQUEST['sys_address'],"sys_tel"=>$_REQUEST['sys_tel'],"sys_fax"=>$_REQUEST['sys_fax'],"sys_email"=>$_REQUEST['sys_email'],"sys_weixin"=>$_REQUEST['sys_weixin'],"sys_weibo"=>$_REQUEST['sys_weibo'],"sys_mobile"=>$_REQUEST['sys_mobile']);
+  $dataArray = array(
+      "sys_name"=>$_REQUEST['sys_name'],
+      "sys_title"=>$_REQUEST['sys_title'],
+      "sys_keywords"=>$_REQUEST['sys_keywords'],
+      "sys_description"=>$_REQUEST['sys_description'],
+      "sys_address"=>$_REQUEST['sys_address'],
+      "sys_tel"=>$_REQUEST['sys_tel'],
+      "sys_copyright"=>$_REQUEST['sys_copyright'],
+      "sys_fax"=>$_REQUEST['sys_fax'],
+      "sys_email"=>$_REQUEST['sys_email'],  //存放icp
+      "sys_weixin"=>$_REQUEST['sys_weixin'],
+      "sys_weibo"=>$_REQUEST['sys_weibo'],
+      "sys_mobile"=>$_REQUEST['sys_mobile']  //
+  );
   $mysql->update("sys_config",$dataArray,$condition);
   echo '<script>alert("操作成功");location.href="sys_config.php";</script>';
   exit;
@@ -53,6 +66,14 @@ elseif($_REQUEST["action"]=="edit")
           <input name="sys_keywords" id="sys_keywords" type="text" class="input_text" value="<?php echo $row['sys_keywords']; ?>" />
         </td>
       </tr>
+        <tr>
+            <td class="label" valign="top">
+                网站版权:
+            </td>
+            <td>
+                <input name="sys_copyright" id="sys_copyright" type="text" class="input_text" value="<?php echo $row['sys_copyright']; ?>" />
+            </td>
+        </tr>
       <tr>
         <td class="label" valign="top">
          网站描述:

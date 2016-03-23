@@ -9,12 +9,14 @@
         	<div class="qing links_bt">友情链接</div>
             <ul class="qing links_nav">
                 <?php
-                $sql="select * from pic where cat_id=2 order by sort_order asc,id asc limit 0,7";
+                $sql="select * from pic where cat_id=2 order by sort_order asc,id asc";
                 $index_links = $mysql->get_all($sql);
                 foreach($index_links as $index_links_list)
                 {
                 ?>
-            	<li><a href="<?php echo $index_links_list['link_url'];?>" target="_blank"><?php echo $index_links_list['title'];?></a></li>
+            	<li>
+                    <a href="<?php echo $index_links_list['link_url'];?>" target="_blank"><?php echo $index_links_list['title'];?></a>
+                </li>
                 <?php
                 }
                 ?>
@@ -32,7 +34,9 @@
 </div>
 <div class="qing copyright">
 	<div class="qing center">
-    	<div class="lf" style="width:860px;">北京联信基金管理有限公司  版权所有  Copyright@2015 京ICP备：15028611号  <a href="http://bolehu.net" target="_blank">博乐虎</a>提供<a href="http://bolehu.net" target="_blank">网站建设</a></div>
+    	<div class="lf" style="width:860px;">
+            <?php echo $sys_config['sys_copyright'];?>
+        </div>
         <div class="rf" style="width:370px;">
         	<table class="yx" border="0" cellspacing="0" cellpadding="0">
               	<tr>

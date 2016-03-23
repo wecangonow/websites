@@ -131,7 +131,7 @@ foreach($row as $result)
   <tr>
     <td align="center"><input type="checkbox" name="selectdel[]" value="<?php echo $result['id']; ?>" /></td>
     <td align="center"><?php echo $result['id']; ?></td>
-    <td class="first-cell" style=""><a href="service_edit.php?id=<?php echo $result['id']; ?>&L_parent_id=<?php echo $parent_id; ?>&L_cat_id=<?php echo $cat_id; ?>&L_keywords=<?php echo $keywords; ?>&L_page=<?php echo $page; ?>"><?php echo $result['title']; ?></a></td>
+    <td class="first-cell" style=""><a href="service_edit.php?id=<?php echo $result['id']; ?>&L_parent_id=<?php echo $parent_id; ?>&L_cat_id=<?php echo $result['cat_id']; ?>&L_keywords=<?php echo $keywords; ?>&L_page=<?php echo $page; ?>"><?php echo $result['title']; ?></a></td>
     <td align="center"><?php echo $result['cat_name']; ?></td>
     <td align="center"><img src="images/<?php if($result['is_show']) {?>yes<?php } else {?>no<?php }?>.gif" /></td>
     <td align="center"><?php echo $result['sort_order']; ?></td>

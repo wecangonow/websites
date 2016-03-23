@@ -115,7 +115,12 @@ require('head.php');
             <div class="qing ab_bt"><span class="qing ab1">精英团队</span><span class="qing ab2">精英团队</span></div>
             <div class="qing abt"><div class="qing abt1"></div><div class="qing abt2"></div></div>
         </div>
-       	<div class="qing team_bt">联信基金共有员工376人，其中博士56人、硕士172人、学士78人；从事产品设计和投资研究的人员中，有5名博士后。研究员和基金经理超过97%拥有硕士及以上学位。公司共有43名员工为海外归国人员，其中毕业<br />于麻省理工学院 、耶鲁大学 、芝加哥大学、密歇根大学、牛津大学、剑桥大学等海外名校的员工多人。公司另聘来自美国和香港的投资研究顾问。
+       	<div class="qing team_bt">
+            <?php
+            $sql = "SELECT * FROM news where 1=1 and id=204";
+            $row = $mysql->get_one($sql);
+            echo $row["content"];
+            ?>
         </div>
         <div class="qing center">
         	<div class="main_visual4">
@@ -135,7 +140,7 @@ require('head.php');
                         	<div class="qing team_shao">
                                         <?php  for($j=0; $j < $maxnum; $j++) { ?>
                                             <div class="lf">
-                                                <a href="#" class="qing team_img">
+                                                <a href="people.php?id=<?php echo $row[$counter]['id'];?>&cat_id=6" class="qing team_img">
                                                     <div class="qing te1"><img src="<?php echo $row[$counter]['picture'];?>" width="151" height="151" /></div>
                                                     <div class="qing te2"><img src="images/teamq.png" width="151" height="151" /></div>
                                                 </a>
@@ -198,11 +203,21 @@ require('head.php');
                             <?php  for($j=0; $j < $maxnum; $j++) { ?>
                             <div class="lf">
                             	<div class="qing hon_img">
-                                    <div class="qing hon1"><span class="qing"><img src="<?php echo $row[$counter]['picture'];?>" width="171" height="236" /></span></div>
+                                    <div class="qing hon1">
+                                        <span class="qing">
+                                        <a href="<?php echo $row[$counter]['picture'];?>">
+                                            <img src="<?php echo $row[$counter]['picture'];?>" width="171" height="236" />
+                                        </a>
+                                        </span>
+                                    </div>
                                     <div class="qing hon2">
                                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                             <tr>
-                                                <td align="center" valign="middle"><?php echo $row[$counter]['title'];?></td>
+                                                <td align="center" valign="middle">
+                                                    <a href="<?php echo $row[$counter]['picture'];?>" target="_blank">
+                                                    <?php echo $row[$counter]['title'];?>
+                                                </a>
+                                                </td>
                                             </tr>
                                         </table>
                                     </div>

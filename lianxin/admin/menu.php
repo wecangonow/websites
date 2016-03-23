@@ -136,16 +136,6 @@ body {
     </ul>
   </li>
 	  -->
-    <!--
-    <li class="explode"><a href="javascript:;" target="main-frame">投资项目</a>
-      <ul>
-        <li class="menu-item"><a href="pic_view.php?id=12" target="main-frame">PCBanner图</a></li>
-        <li class="menu-item"><a href="pic_view.php?id=28" target="main-frame">手机Banner图</a></li>
-        <li class="menu-item"><a href="guandian_list.php?cat_id=11" target="main-frame">信息列表</a></li>
-        <li class="menu-item"><a href="guandian_add.php?cat_id=11" target="main-frame">添加信息</a></li>
-      </ul>
-    </li>
-    -->
   <li class="explode"><a href="javascript:;" target="main-frame">关于联信</a>
     <ul>
   <!--
@@ -193,25 +183,6 @@ body {
         </ul>
     </li>
 
-  <!--
-  <li class="explode"><a href="javascript:;" target="main-frame">总裁观点</a>
-    <ul>
-      <li class="menu-item"><a href="pic_view.php?id=5" target="main-frame">PCBanner图</a></li>
-      <li class="menu-item"><a href="pic_view.php?id=23" target="main-frame">手机Banner图</a></li>
-      <li class="menu-item"><a href="zongcai_info.php?id=7" target="main-frame">总裁介绍</a></li>
-      <li class="menu-item"><a href="guandian_list.php?cat_id=5" target="main-frame">信息列表</a></li>
-      <li class="menu-item"><a href="guandian_add.php?cat_id=5" target="main-frame">添加信息</a></li>
-    </ul>
-  </li>
-  <li class="explode"><a href="javascript:;" target="main-frame">投资策略</a>
-    <ul>
-      <li class="menu-item"><a href="pic_view.php?id=7" target="main-frame">PCBanner图</a></li>
-      <li class="menu-item"><a href="pic_view.php?id=25" target="main-frame">手机Banner图</a></li>
-      <li class="menu-item"><a href="celue_list.php?cat_id=8" target="main-frame">信息列表</a></li>
-      <li class="menu-item"><a href="celue_add.php?cat_id=8" target="main-frame">添加信息</a></li>
-    </ul>
-  </li>
-  -->
   <li class="explode"><a href="javascript:;" target="main-frame">联信优势</a>
     <ul>
       <li class="menu-item"><a href="youshi_list.php?cat_id=14" target="main-frame">联信优势</a></li>
@@ -244,6 +215,7 @@ body {
       <li class="menu-item"><a href="pic_view.php?id=15" target="main-frame">PCBanner图</a></li>
       <li class="menu-item"><a href="pic_view.php?id=29" target="main-frame">手机Banner图</a></li>
       -->
+      <li class="menu-item"><a href="index_info.php?id=22" target="main-frame">项目简介</a></li>
       <li class="menu-item"><a href="news_category.php?parent_id=12" target="main-frame">分类管理</a></li>
       <li class="menu-item"><a href="service_list.php?parent_id=12" target="main-frame">信息列表</a></li>
       <li class="menu-item"><a href="service_add.php?parent_id=12" target="main-frame">添加信息</a></li>

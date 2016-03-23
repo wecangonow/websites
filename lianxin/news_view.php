@@ -107,12 +107,6 @@ $chanpin_categories = $mysql->get_all($sql);
             </div>
             <div class="qing" style="padding-top:40px;">
 
-                <?php if($news_list['picture'] != "") {?>
-                <img src="<?php echo $news_view['picture']; ?>" width="1037" height="532" />
-
-                <?php }else {?>
-
-                <?php } ?>
             </div>
             <div class="qing news_wen">
                 <?php echo $news_view['content']; ?>

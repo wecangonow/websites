@@ -70,6 +70,7 @@ $result = $mysql->get_one($sql);
             <td><input type="text" name="picture" id="picture" class="input_text" value="<?php //echo $result['picture']; ?>" />&nbsp;<input name="upfile" type="button" class="button" onClick="javascript:opw('includes/pic_upload_form.php?text_id=picture&saveTo=../../upload/images/&showPath=upload/images/','picture',500,250)" value="上传图片"> (283*173)</td>
           </tr>
           -->
+            <?php if($L_cat_id == 26){?>
           <tr>
             <td width="17%" class="label">来源</td>
             <td width="83%"><input type="text" name="laiyuan" id="laiyuan" class="input_text_3" value="<?php echo $result['laiyuan']; ?>" /></td>
@@ -91,6 +92,7 @@ $result = $mysql->get_one($sql);
             <td><textarea name="note" id="note" class="input_textarea"><?php echo Textarea_In($result['note']); ?></textarea></td>
           </tr>
           <tr>
+              <?php  } ?>
             <td class="label">详情</td>
             <td>
               <script id="content" name="content" type="text/plain"><?php echo $result['content']; ?></script>
