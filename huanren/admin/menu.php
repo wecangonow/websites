@@ -129,115 +129,108 @@ body {
       <li class="menu-item"><a href="links_pic.php?cat_id=2" target="main-frame">友情链接</a></li>
     </ul>
   </li>
+	  <!--
   <li class="explode"><a href="javascript:;" target="main-frame">首页栏目</a>
     <ul>
-      <li class="menu-item"><a href="index_info.php?id=21" target="main-frame">关于我们</a></li>
       <li class="menu-item"><a href="index_info.php?id=22" target="main-frame">公司优势</a></li>
-      <li class="menu-item"><a href="index_info.php?id=23" target="main-frame">投资策略</a></li>
     </ul>
   </li>
-  <!--
-  <li class="explode"><a href="javascript:;" target="main-frame">投资项目</a>
-    <ul>
-      <li class="menu-item"><a href="pic_view.php?id=12" target="main-frame">PCBanner图</a></li>
-      <li class="menu-item"><a href="pic_view.php?id=28" target="main-frame">手机Banner图</a></li>
-      <li class="menu-item"><a href="guandian_list.php?cat_id=11" target="main-frame">信息列表</a></li>
-      <li class="menu-item"><a href="guandian_add.php?cat_id=11" target="main-frame">添加信息</a></li>
-    </ul>
-  </li>
-  -->
+	  -->
   <li class="explode"><a href="javascript:;" target="main-frame">关于联信</a>
     <ul>
-      <li class="menu-item"><a href="pic_view.php?id=3" target="main-frame">PCBanner图</a></li>
   <!--
       <li class="menu-item"><a href="pic_view.php?id=21" target="main-frame">手机Banner图</a></li>
+      <li class="menu-item"><a href="pic_view.php?id=3" target="main-frame">PCBanner图</a></li>
 	  -->
       <li class="menu-item"><a href="about_list.php?cat_id=1" target="main-frame">信息列表</a></li>
       <li class="menu-item"><a href="about_add.php?cat_id=1" target="main-frame">添加信息</a></li>
+      <li class="menu-item"><a href="tuandui_list.php?cat_id=6" target="main-frame">精英团队列表</a></li>
+      <li class="menu-item"><a href="tuandui_add.php?cat_id=6" target="main-frame">添加精英团队</a></li>
     </ul>
   </li>
   
-  <li class="explode"><a href="javascript:;" target="main-frame">新闻动态</a>
+  <li class="explode"><a href="javascript:;" target="main-frame">行业资讯</a>
     <ul>
-      <li class="menu-item"><a href="pic_view.php?id=4" target="main-frame">PCBanner图</a></li>
 	  <!--
       <li class="menu-item"><a href="pic_view.php?id=22" target="main-frame">手机Banner图</a></li>
+      <li class="menu-item"><a href="pic_view.php?id=4" target="main-frame">PCBanner图</a></li>
 	  -->
       <li class="menu-item"><a href="news_category.php?parent_id=2" target="main-frame">分类管理</a></li>
       <li class="menu-item"><a href="dongtai_list.php?parent_id=2" target="main-frame">信息列表</a></li>
       <li class="menu-item"><a href="dongtai_add.php?parent_id=2" target="main-frame">添加信息</a></li>
     </ul>
   </li>
+    <li class="explode"><a href="javascript:;" target="main-frame">合规管理</a>
+        <ul>
+            <!--
+            <li class="menu-item"><a href="pic_view.php?id=4" target="main-frame">PCBanner图</a></li>
+            <li class="menu-item"><a href="pic_view.php?id=22" target="main-frame">手机Banner图</a></li>
+            -->
+            <li class="menu-item"><a href="news_category.php?parent_id=5" target="main-frame">分类管理</a></li>
+            <li class="menu-item"><a href="hegui_list.php?parent_id=5" target="main-frame">信息列表</a></li>
+            <li class="menu-item"><a href="hegui_add.php?parent_id=5" target="main-frame">添加信息</a></li>
+        </ul>
+    </li>
+    <li class="explode"><a href="javascript:;" target="main-frame">联信产品</a>
+        <ul>
+            <!--
+            <li class="menu-item"><a href="pic_view.php?id=4" target="main-frame">PCBanner图</a></li>
+            <li class="menu-item"><a href="pic_view.php?id=22" target="main-frame">手机Banner图</a></li>
+            -->
+            <li class="menu-item"><a href="news_category.php?parent_id=11" target="main-frame">分类管理</a></li>
+            <li class="menu-item"><a href="product_list.php?parent_id=11" target="main-frame">信息列表</a></li>
+            <li class="menu-item"><a href="product_add.php?parent_id=11" target="main-frame">添加信息</a></li>
+        </ul>
+    </li>
 
-  <!--
-  <li class="explode"><a href="javascript:;" target="main-frame">总裁观点</a>
+  <li class="explode"><a href="javascript:;" target="main-frame">联信优势</a>
     <ul>
-      <li class="menu-item"><a href="pic_view.php?id=5" target="main-frame">PCBanner图</a></li>
-      <li class="menu-item"><a href="pic_view.php?id=23" target="main-frame">手机Banner图</a></li>
-      <li class="menu-item"><a href="zongcai_info.php?id=7" target="main-frame">总裁介绍</a></li>
-      <li class="menu-item"><a href="guandian_list.php?cat_id=5" target="main-frame">信息列表</a></li>
-      <li class="menu-item"><a href="guandian_add.php?cat_id=5" target="main-frame">添加信息</a></li>
+      <li class="menu-item"><a href="youshi_list.php?cat_id=14" target="main-frame">联信优势</a></li>
     </ul>
   </li>
-  -->
-  <li class="explode"><a href="javascript:;" target="main-frame">公司优势</a>
-    <ul>
-      <li class="menu-item"><a href="pic_view.php?id=6" target="main-frame">PCBanner图</a></li>
-      <li class="menu-item"><a href="pic_view.php?id=24" target="main-frame">手机Banner图</a></li>
-      <li class="menu-item"><a href="youshi_info.php?id=9" target="main-frame">公司优势</a></li>
-      <li class="menu-item"><a href="tuandui_list.php?cat_id=6" target="main-frame">专家团队列表</a></li>
-      <li class="menu-item"><a href="tuandui_add.php?cat_id=6" target="main-frame">添加专家团队</a></li>
-      <li class="menu-item"><a href="jigou_list.php?cat_id=7" target="main-frame">服务机构列表</a></li>
-      <li class="menu-item"><a href="jigou_add.php?cat_id=7" target="main-frame">添加服务机构</a></li>
-    </ul>
-  </li>
-  <!--
-  <li class="explode"><a href="javascript:;" target="main-frame">投资策略</a>
-    <ul>
-      <li class="menu-item"><a href="pic_view.php?id=7" target="main-frame">PCBanner图</a></li>
-      <li class="menu-item"><a href="pic_view.php?id=25" target="main-frame">手机Banner图</a></li>
-      <li class="menu-item"><a href="celue_list.php?cat_id=8" target="main-frame">信息列表</a></li>
-      <li class="menu-item"><a href="celue_add.php?cat_id=8" target="main-frame">添加信息</a></li>
-    </ul>
-  </li>
-  -->
   <li class="explode"><a href="javascript:;" target="main-frame">招贤纳士</a>
     <ul>
       <li class="menu-item"><a href="pic_view.php?id=8" target="main-frame">PCBanner图</a></li>
   <!--
       <li class="menu-item"><a href="pic_view.php?id=26" target="main-frame">手机Banner图</a></li>
   -->
-      <li class="menu-item"><a href="job_list.php?cat_id=9" target="main-frame">信息列表</a></li>
-      <li class="menu-item"><a href="job_add.php?cat_id=9" target="main-frame">添加信息</a></li>
+      <li class="menu-item"><a href="job_list.php?cat_id=9" target="main-frame">职位列表</a></li>
+      <li class="menu-item"><a href="job_add.php?cat_id=9" target="main-frame">添加职位</a></li>
+        <li class="menu-item"><a href="request_list.php" target="main-frame">申请列表</a></li>
     </ul>
   </li>
   <li class="explode"><a href="javascript:;" target="main-frame">联系我们</a>
     <ul>
-      <li class="menu-item"><a href="pic_view.php?id=9" target="main-frame">PCBanner图</a></li>
       <li class="menu-item"><a href="contact_list.php?cat_id=10" target="main-frame">信息列表</a></li>
   <!--
+      <li class="menu-item"><a href="pic_view.php?id=9" target="main-frame">PCBanner图</a></li>
       <li class="menu-item"><a href="pic_view.php?id=27" target="main-frame">手机Banner图</a></li>
       <li class="menu-item"><a href="contact_add.php?cat_id=10" target="main-frame">添加信息</a></li>
   -->
     </ul>
   </li>
-  <!--
-  <li class="explode"><a href="javascript:;" target="main-frame">华兴公益</a>
+  <li class="explode"><a href="javascript:;" target="main-frame">合作服务</a>
     <ul>
+      <!--
       <li class="menu-item"><a href="pic_view.php?id=15" target="main-frame">PCBanner图</a></li>
       <li class="menu-item"><a href="pic_view.php?id=29" target="main-frame">手机Banner图</a></li>
-      <li class="menu-item"><a href="hxgy_list.php?cat_id=12" target="main-frame">信息列表</a></li>
-      <li class="menu-item"><a href="hxgy_add.php?cat_id=12" target="main-frame">添加信息</a></li>
+      -->
+      <li class="menu-item"><a href="index_info.php?id=22" target="main-frame">项目简介</a></li>
+      <li class="menu-item"><a href="news_category.php?parent_id=12" target="main-frame">分类管理</a></li>
+      <li class="menu-item"><a href="service_list.php?parent_id=12" target="main-frame">信息列表</a></li>
+      <li class="menu-item"><a href="service_add.php?parent_id=12" target="main-frame">添加信息</a></li>
     </ul>
   </li>
-  <li class="explode"><a href="javascript:;" target="main-frame">华兴荣誉</a>
+  <li class="explode"><a href="javascript:;" target="main-frame">资质荣誉</a>
     <ul>
+  <!--
       <li class="menu-item"><a href="pic_view.php?id=16" target="main-frame">PCBanner图</a></li>
       <li class="menu-item"><a href="pic_view.php?id=30" target="main-frame">手机Banner图</a></li>
-      <li class="menu-item"><a href="hxry_list.php?cat_id=13" target="main-frame">信息列表</a></li>
-      <li class="menu-item"><a href="hxry_add.php?cat_id=13" target="main-frame">添加信息</a></li>
+	  -->
+      <li class="menu-item"><a href="rongyuzizhi.php?cat_id=13" target="main-frame">信息列表</a></li>
     </ul>
   </li>
+  <!--
   <li class="explode"><a href="javascript:;" target="main-frame">公司月刊</a>
     <ul>
       <li class="menu-item"><a href="pic_view.php?id=31" target="main-frame">PCBanner图</a></li>
@@ -246,9 +239,9 @@ body {
     </ul>
   </li>
   -->
-  <li class="explode"><a href="javascript:;" target="main-frame">成员企业</a>
+  <li class="explode"><a href="javascript:;" target="main-frame">合作伙伴</a>
     <ul>
-      <li class="menu-item"><a href="chengyuanqiye_list.php?cat_id=4" target="main-frame">信息列表</a></li>
+      <li class="menu-item"><a href="hezuohuoban_list.php?cat_id=4" target="main-frame">信息列表</a></li>
     </ul>
   </li>
 

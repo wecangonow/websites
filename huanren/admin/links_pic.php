@@ -44,7 +44,9 @@ if ($_REQUEST['action'] == 'delete')
 <table width="1103" cellpadding="3" cellspacing="1">
   <tr>
     <th width="217">标题</th>
+      <!--
     <th width="369">图片</th>
+    -->
     <th width="201">链接</th>
     <th width="189">排序</th>
     <th width="89">操作</th>
@@ -58,7 +60,9 @@ foreach($row as $result)
   <form method="post" action="links_pic.php?action=edit&id=<?php echo $result['id']; ?>&cat_id=<?php echo $result['cat_id']; ?>" name="listForm_<?php echo $result['id']; ?>">
   <tr>
     <td align="center" class="first-cell" style=""><input type='text' name='title' class="input_text_2" value='<?php echo $result['title']; ?>' /></td>
+      <!--
     <td align="center"><input type='text' name='picture' id="picture_<?php echo $result['id']; ?>" class="input_text_2" value='<?php echo $result['picture']; ?>' />&nbsp;<input name="upfile" type="button" class="button" onClick="javascript:opw('includes/pic_upload_form.php?text_id=picture_<?php echo $result['id']; ?>&saveTo=../../upload/images/&showPath=upload/images/','picture',500,250)" value="上传图片"> (167*66)</td>
+    -->
     <td align="center"><input type='text' name='link_url' class="input_text_2" value='<?php echo $result['link_url']; ?>' /></td>
     <td align="center"><input type='text' name='sort_order' class="input_text_3" value='<?php echo $result['sort_order']; ?>' /></td>
     <td align="center">
@@ -77,7 +81,9 @@ foreach($row as $result)
 <table width="1103" cellpadding="3" cellspacing="1" style="margin-top:20px;">
   <tr>
     <th width="217">标题</th>
+    <!--
     <th width="372">图片</th>
+    -->
     <th width="198">链接</th>
     <th width="189">排序</th>
     <th width="89">操作</th>
@@ -85,17 +91,19 @@ foreach($row as $result)
   <form method="post" action="links_pic.php?action=add&cat_id=<?php echo $cat_id; ?>" name="listForm" onsubmit="return confirmSubmit(this)">
   <tr>
     <td align="center" class="center" style=""><input type='text' name='title' class="input_text_2" value='' /></td>
-    <td align="center"><input type='text' name='picture' id="picture_0" class="input_text_2" value='' />&nbsp;<input name="upfile" type="button" class="button" onClick="javascript:opw('includes/pic_upload_form.php?text_id=picture_0&saveTo=../../upload/images/&showPath=upload/images/','picture',500,250)" value="上传图片"> (167*66)</td>
-    <td align="center"><input type='text' name='link_url' class="input_text_2" value='' /></td>
-    <td align="center"><input type='text' name='sort_order' class="input_text_3" value='50' /></td>
-    <td align="center">
-      <input name="submit" type="submit" value="新增" />
-    </td>
-  </tr>
-  </form>
-</table>
-</div>
+      <!--
+      <td align="center"><input type='text' name='picture' id="picture_0" class="input_text_2" value='' />&nbsp;<input name="upfile" type="button" class="button" onClick="javascript:opw('includes/pic_upload_form.php?text_id=picture_0&saveTo=../../upload/images/&showPath=upload/images/','picture',500,250)" value="上传图片"> (167*66)</td>
+      -->
+      <td align="center"><input type='text' name='link_url' class="input_text_2" value='' /></td>
+      <td align="center"><input type='text' name='sort_order' class="input_text_3" value='50' /></td>
+      <td align="center">
+        <input name="submit" type="submit" value="新增" />
+      </td>
+    </tr>
+    </form>
+  </table>
+  </div>
 
-<?php
+  <?php
 require_once("pagefooter.php");
 ?>

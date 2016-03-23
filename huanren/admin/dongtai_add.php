@@ -10,11 +10,15 @@ if($_REQUEST["action"]=="add")
 	$file_url = !empty($_POST['file_url']) ? $_POST['file_url'] : '';
 	$laiyuan = !empty($_POST['laiyuan']) ? $_POST['laiyuan'] : '';
 	$tags = !empty($_POST['tags']) ? $_POST['tags'] : '';
+    $is_list = !empty($_POST['is_list']) ? $_POST['is_list'] : '';
 	$note = !empty($_POST['note']) ? Textarea_Out($_POST['note']) : '';
     $add_time = !empty($_POST['add_time']) ? $_POST['add_time'] : date('Y-m-d H:i:s',time());
     $content = !empty($_POST['content']) ? $_POST['content'] : '';
     $sort_order=!empty($_POST['sort_order']) ? $_POST['sort_order'] : 50;
-    $dataArray = array("parent_id"=>$parent_id,"cat_id"=>$cat_id,"title"=>$title,"cat_id"=>$cat_id,"picture"=>$picture,"file_url"=>$file_url,"laiyuan"=>$laiyuan,"tags"=>$tags,"sort_order"=>$sort_order,"note"=>$note,"content"=>$content,"add_time"=>$add_time);
+    $dataArray = array("parent_id"=>$parent_id,"cat_id"=>$cat_id,
+                       "title"=>$title,
+                       "is_list"=>$is_list,
+                       "cat_id"=>$cat_id,"picture"=>$picture,"file_url"=>$file_url,"laiyuan"=>$laiyuan,"tags"=>$tags,"sort_order"=>$sort_order,"note"=>$note,"content"=>$content,"add_time"=>$add_time);
 	$mysql->insert("news",$dataArray);
 	echo '<script>alert("操作成功");location.href="dongtai_add.php?parent_id='.$parent_id.'";</script>';
 	exit;
@@ -59,13 +63,23 @@ if($_REQUEST["action"]=="add")
             <td class="label">上传图片</td>
             <td><input type="text" name="picture" id="picture" class="input_text" value="" />&nbsp;<input name="upfile" type="button" class="button" onClick="javascript:opw('includes/pic_upload_form.php?text_id=picture&saveTo=../../upload/images/&showPath=upload/images/','picture',500,250)" value="上传图片"> (283*173)</td>
           </tr>
+
+            <tr>
+                <td width="17%" class="label">是否置顶</td>
+                <td width="83%">
+                    <input type="radio" id="yes" name="is_list"  value="1" />
+                    <label for="yes">是</label>
+                    <input type="radio" id="no" name="is_list"  value="0" />
+                    <label for="no">否</label>
+                </td>
+            </tr>
           <tr>
             <td width="17%" class="label">来源</td>
-            <td width="83%"><input type="text" name="laiyuan" id="laiyuan" class="input_text_3" value="华兴控股" /></td>
+            <td width="83%"><input type="text" name="laiyuan" id="laiyuan" class="input_text_3" value="联信基金" /></td>
           </tr>
           <tr>
             <td width="17%" class="label">关键词</td>
-            <td width="83%"><input type="text" name="tags" id="tags" class="input_text_3" value="华兴控股" /></td>
+            <td width="83%"><input type="text" name="tags" id="tags" class="input_text_3" value="联信基金" /></td>
           </tr>
           <tr>
             <td width="17%" class="label">排序</td>
@@ -84,7 +98,7 @@ if($_REQUEST["action"]=="add")
             <td>
               <script id="content" name="content" type="text/plain"></script>
 <script type="text/javascript">  
-    var editor = new UE.ui.Editor({initialFrameHeight:400,initialFrameWidth:800 });  
+    var editor = new UE.ui.Editor({initialFrameHeight:400,initialFrameWidth:800, maximumWords:30000   });
         editor.render("content");  
 </script> 
 

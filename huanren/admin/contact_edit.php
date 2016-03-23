@@ -12,12 +12,12 @@ if($_REQUEST["action"]=="edit")
 	$address = !empty($_POST['address']) ? $_POST['address'] : '';
 	$tel = !empty($_POST['tel']) ? $_POST['tel'] : '';
 	$mobile = !empty($_POST['mobile']) ? $_POST['mobile'] : '';
-	$fax = !empty($_POST['fax']) ? $_POST['fax'] : '';
+	$email = !empty($_POST['email']) ? $_POST['email'] : '';
 	$postal = !empty($_POST['postal']) ? $_POST['postal'] : '';
     $add_time = !empty($_POST['add_time']) ? $_POST['add_time'] : date('Y-m-d H:i:s',time());
     $sort_order=!empty($_POST['sort_order']) ? $_POST['sort_order'] : 50;
     $condition="id=".$id;
-    $dataArray = array("title"=>$title,"picture"=>$picture,"address"=>$address,"tel"=>$tel,"mobile"=>$mobile,"fax"=>$fax,"postal"=>$postal,"sort_order"=>$sort_order,"add_time"=>$add_time);
+    $dataArray = array("title"=>$title,"picture"=>$picture,"address"=>$address,"tel"=>$tel,"mobile"=>$mobile,"email"=>$email,"postal"=>$postal,"sort_order"=>$sort_order,"add_time"=>$add_time);
 	$mysql->update("news",$dataArray,$condition);
 	echo '<script>alert("操作成功");location.href="contact_list.php?cat_id='.$L_cat_id.'&keywords='.$L_keywords.'&page='.$L_page.'";</script>';
 	exit;
@@ -46,7 +46,10 @@ $result = $mysql->get_one($sql);
           </tr>
           <tr>
             <td class="label">上传图片</td>
-            <td><input type="text" name="picture" id="picture" class="input_text" value="<?php echo $result['picture']; ?>" />&nbsp;<input name="upfile" type="button" class="button" onClick="javascript:opw('includes/pic_upload_form.php?text_id=picture&saveTo=../../upload/images/&showPath=upload/images/','picture',500,250)" value="上传图片"> (552*285)</td>
+            <td><input type="text" name="picture" id="picture" class="input_text" value="<?php echo $result['picture']; ?>" />
+                &nbsp;
+                <input name="upfile" type="button" class="button" onClick="javascript:opw('includes/pic_upload_form.php?text_id=picture&saveTo=../../upload/images/&showPath=upload/images/','picture',500,250)" value="上传图片"> (552*285)
+            </td>
           </tr>
           <tr>
             <td width="17%" class="label">地址</td>
@@ -61,8 +64,8 @@ $result = $mysql->get_one($sql);
             <td width="83%"><input type="text" name="postal" id="postal" class="input_text" value="<?php echo $result['postal']; ?>" /></td>
           </tr>
           <tr>
-            <td width="17%" class="label">传真</td>
-            <td width="83%"><input type="text" name="fax" id="fax" class="input_text" value="<?php echo $result['fax']; ?>" /></td>
+            <td width="17%" class="label">邮箱</td>
+            <td width="83%"><input type="text" name="email" id="email" class="input_text" value="<?php echo $result['email']; ?>" /></td>
           </tr>
           <tr>
             <td width="17%" class="label">排序</td>

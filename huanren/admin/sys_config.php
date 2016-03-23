@@ -10,7 +10,20 @@ if(!isset($_REQUEST["action"]))
 elseif($_REQUEST["action"]=="edit")
 {
   $condition="id=1";
-  $dataArray = array("sys_name"=>$_REQUEST['sys_name'],"sys_title"=>$_REQUEST['sys_title'],"sys_keywords"=>$_REQUEST['sys_keywords'],"sys_description"=>$_REQUEST['sys_description'],"sys_address"=>$_REQUEST['sys_address'],"sys_tel"=>$_REQUEST['sys_tel'],"sys_fax"=>$_REQUEST['sys_fax'],"sys_email"=>$_REQUEST['sys_email'],"sys_weixin"=>$_REQUEST['sys_weixin'],"sys_weibo"=>$_REQUEST['sys_weibo'],"sys_mobile"=>$_REQUEST['sys_mobile']);
+  $dataArray = array(
+      "sys_name"=>$_REQUEST['sys_name'],
+      "sys_title"=>$_REQUEST['sys_title'],
+      "sys_keywords"=>$_REQUEST['sys_keywords'],
+      "sys_description"=>$_REQUEST['sys_description'],
+      "sys_address"=>$_REQUEST['sys_address'],
+      "sys_tel"=>$_REQUEST['sys_tel'],
+      "sys_copyright"=>$_REQUEST['sys_copyright'],
+      "sys_fax"=>$_REQUEST['sys_fax'],
+      "sys_email"=>$_REQUEST['sys_email'],  //存放icp
+      "sys_weixin"=>$_REQUEST['sys_weixin'],
+      "sys_weibo"=>$_REQUEST['sys_weibo'],
+      "sys_mobile"=>$_REQUEST['sys_mobile']  //
+  );
   $mysql->update("sys_config",$dataArray,$condition);
   echo '<script>alert("操作成功");location.href="sys_config.php";</script>';
   exit;
@@ -53,14 +66,38 @@ elseif($_REQUEST["action"]=="edit")
           <input name="sys_keywords" id="sys_keywords" type="text" class="input_text" value="<?php echo $row['sys_keywords']; ?>" />
         </td>
       </tr>
-      <tr>
-        <td class="label" valign="top">
-         网站描述:
-        </td>
-        <td>
-          <textarea name="sys_description" id="sys_description" class="input_textarea"><?php echo $row['sys_description']; ?></textarea>
-        </td>
-      </tr>
+        <tr>
+            <td class="label" valign="top">
+                网站版权:
+            </td>
+            <td>
+                <input name="sys_copyright" id="sys_copyright" type="text" class="input_text" value="<?php echo $row['sys_copyright']; ?>" />
+            </td>
+        </tr>
+        <tr>
+            <td class="label" valign="top">
+                联系电话:
+            </td>
+            <td>
+                <input name="sys_tel" id="sys_tel" type="text" class="input_text" value="<?php echo $row['sys_tel']; ?>" />
+            </td>
+        </tr>
+        <tr>
+            <td class="label" valign="top">
+                企业邮箱:
+            </td>
+            <td>
+                <input name="sys_email" id="sys_email" type="text" class="input_text" value="<?php echo $row['sys_email']; ?>" />
+            </td>
+        </tr>
+        <tr>
+            <td class="label" valign="top">
+                公司地址:
+            </td>
+            <td>
+                <input name="sys_address" id="sys_address" type="text" class="input_text" value="<?php echo $row['sys_address']; ?>" />
+            </td>
+        </tr>
       <tr>
         <td class="label" valign="top">
          官方微信:
@@ -69,14 +106,15 @@ elseif($_REQUEST["action"]=="edit")
           <input type="text" name="sys_weixin" id="sys_weixin" class="input_text" value="<?php echo $row['sys_weixin']; ?>" />&nbsp;<input name="upfile" type="button" class="button" onClick="javascript:opw('includes/pic_upload_form.php?text_id=sys_weixin&saveTo=../../upload/images/&showPath=upload/images/','sys_weixin',500,250)" value="上传图片"> (70*70)
         </td>
       </tr>
-      <tr>
-        <td class="label" valign="top">
-         官方微博:
-        </td>
-        <td>
-          <input type="text" name="sys_weibo" id="sys_weibo" class="input_text" value="<?php echo $row['sys_weibo']; ?>" />&nbsp;<input name="upfile" type="button" class="button" onClick="javascript:opw('includes/pic_upload_form.php?text_id=sys_weibo&saveTo=../../upload/images/&showPath=upload/images/','sys_weibo',500,250)" value="上传图片"> (70*70)
-        </td>
-      </tr>
+        <tr>
+            <td class="label" valign="top">
+                网站描述:
+            </td>
+            <td>
+                <textarea name="sys_description" id="sys_description" class="input_textarea"><?php echo $row['sys_description']; ?></textarea>
+            </td>
+        </tr>
+<!--
       <tr>
         <td class="label" valign="top">
          手机网站:
@@ -85,6 +123,7 @@ elseif($_REQUEST["action"]=="edit")
           <input type="text" name="sys_mobile" id="sys_mobile" class="input_text" value="<?php echo $row['sys_mobile']; ?>" />&nbsp;<input name="upfile" type="button" class="button" onClick="javascript:opw('includes/pic_upload_form.php?text_id=sys_mobile&saveTo=../../upload/images/&showPath=upload/images/','sys_mobile',500,250)" value="上传图片"> (70*70)
         </td>
       </tr>
+-->
     </table>
 
     <div class="button-div">

@@ -111,7 +111,9 @@ foreach($row as $result)
     <td align="center"><?php echo $result['add_time']; ?></td>
     <td align="center">
       <a href="contact_edit.php?id=<?php echo $result['id']; ?>&L_cat_id=<?php echo $cat_id; ?>&L_keywords=<?php echo $keywords; ?>&L_page=<?php echo $page; ?>" title=""><img src="images/icon_edit.gif" width="16" height="16" border="0" /></a>
+	  <!--
       <a href="contact_list.php?action=delete&id=<?php echo $result['id']; ?>&L_cat_id=<?php echo $cat_id; ?>&L_keywords=<?php echo $keywords; ?>&L_page=<?php echo $page; ?>" title="" onClick="return confirm('您确定进行删除操作吗？')"><img src="images/icon_trash.gif" width="16" height="16" border="0" /></a>
+	  -->
     </td>
   </tr>
 <?php
@@ -125,6 +127,7 @@ $gotoPageFirst = "contact_list.php?cat_id=".$cat_id."&keywords=".$keywords."&pag
 <!-- end goods list -->
 
 <!-- 分页 -->
+<!--
 <table id="page-table" cellspacing="0">
   <tr>
     <td align="right" nowrap="true">
@@ -142,6 +145,7 @@ $gotoPageFirst = "contact_list.php?cat_id=".$cat_id."&keywords=".$keywords."&pag
   </select>
   <input type="submit" value="提交" id="btnSubmit" name="btnSubmit" class="button" disabled="disabled" />
 </div>
+-->
 </form>
 <script language="javascript">
 <!--

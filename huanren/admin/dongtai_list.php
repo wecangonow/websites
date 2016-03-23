@@ -39,6 +39,18 @@ elseif ($_REQUEST['action'] == 'batch')
 		$dataArray = array("is_show"=>0);
 		$mysql->update("news",$dataArray,$condition);
 	}
+    elseif($_REQUEST["types"]=='is_list')
+    {
+        $condition="id in ($selectdel)";
+        $dataArray = array("is_list"=>1);
+        $mysql->update("news",$dataArray,$condition);
+    }
+    elseif($_REQUEST["types"]=='not_is_list')
+    {
+        $condition="id in ($selectdel)";
+        $dataArray = array("is_list"=>0);
+        $mysql->update("news",$dataArray,$condition);
+    }
 	echo '<script>alert("操作成功");location.href="dongtai_list.php?parent_id='.$L_parent_id.'&cat_id='.$L_cat_id.'&keywords='.$L_keywords.'&page='.$L_page.'";</script>';
 	exit;
 }
@@ -79,6 +91,7 @@ elseif ($_REQUEST['action'] == 'batch')
     <th width="426">标题</th>
     <th width="149">分类</th>
     <th width="69">是否推荐</th>
+      <th width="69">是否置顶</th>
     <th width="81">排序</th>
     <th width="172">更新时间</th>
     <th width="50">操作</th>
@@ -134,6 +147,7 @@ foreach($row as $result)
     <td class="first-cell" style=""><a href="dongtai_edit.php?id=<?php echo $result['id']; ?>&L_parent_id=<?php echo $parent_id; ?>&L_cat_id=<?php echo $cat_id; ?>&L_keywords=<?php echo $keywords; ?>&L_page=<?php echo $page; ?>"><?php echo $result['title']; ?></a></td>
     <td align="center"><?php echo $result['cat_name']; ?></td>
     <td align="center"><img src="images/<?php if($result['is_show']) {?>yes<?php } else {?>no<?php }?>.gif" /></td>
+    <td align="center"><img src="images/<?php if($result['is_list']) {?>yes<?php } else {?>no<?php }?>.gif" /></td>
     <td align="center"><?php echo $result['sort_order']; ?></td>
     <td align="center"><?php echo $result['add_time']; ?></td>
     <td align="center">
@@ -167,6 +181,8 @@ $gotoPageFirst = "dongtai_list.php?parent_id=".$parent_id."&cat_id=".$cat_id."&k
     <option value="">请选择...</option>
     <option value="is_show">设置推荐</option>
     <option value="not_is_show">取消推荐</option>
+      <option value="is_list">设置置顶</option>
+      <option value="not_is_list">取消置顶</option>
     <option value="remove">移除</option>
   </select>
   <input type="submit" value="提交" id="btnSubmit" name="btnSubmit" class="button" disabled="disabled" />

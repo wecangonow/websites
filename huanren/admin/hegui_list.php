@@ -12,7 +12,7 @@ if ($_REQUEST['action'] == 'delete')
 	$L_page = empty($_REQUEST['L_page'])? '': trim($_REQUEST['L_page']);
 	$condition="id=".$id;
 	$mysql->delete("news",$condition);
-	echo '<script>alert("操作成功");location.href="product_list.php?parent_id='.$L_parent_id.'&cat_id='.$L_cat_id.'&keywords='.$L_keywords.'&page='.$L_page.'";</script>';
+	echo '<script>alert("操作成功");location.href="hegui_list.php?parent_id='.$L_parent_id.'&cat_id='.$L_cat_id.'&keywords='.$L_keywords.'&page='.$L_page.'";</script>';
 	exit;
 }
 elseif ($_REQUEST['action'] == 'batch')
@@ -39,12 +39,12 @@ elseif ($_REQUEST['action'] == 'batch')
 		$dataArray = array("is_show"=>0);
 		$mysql->update("news",$dataArray,$condition);
 	}
-	echo '<script>alert("操作成功");location.href="product_list.php?parent_id='.$L_parent_id.'&cat_id='.$L_cat_id.'&keywords='.$L_keywords.'&page='.$L_page.'";</script>';
+	echo '<script>alert("操作成功");location.href="hegui_list.php?parent_id='.$L_parent_id.'&cat_id='.$L_cat_id.'&keywords='.$L_keywords.'&page='.$L_page.'";</script>';
 	exit;
 }
 ?>
 <div class="form-div">
-  <form action="product_list.php" name="searchForm">
+  <form action="hegui_list.php" name="searchForm">
     <img src="images/icon_search.gif" width="26" height="22" border="0" alt="SEARCH" />
     <input type="hidden" name="parent_id" value="<?php echo $parent_id; ?>" />
     <!-- 分类 --> 
@@ -69,7 +69,7 @@ elseif ($_REQUEST['action'] == 'batch')
 </div>
 
 <!-- 文章列表 -->
-<form method="post" action="product_list.php?L_parent_id=<?php echo $parent_id; ?>&L_cat_id=<?php echo $cat_id; ?>&L_keywords=<?php echo $keywords; ?>&L_page=<?php echo $page; ?>" name="listForm" onsubmit="return confirmSubmit(this)">
+<form method="post" action="hegui_list.php?L_parent_id=<?php echo $parent_id; ?>&L_cat_id=<?php echo $cat_id; ?>&L_keywords=<?php echo $keywords; ?>&L_page=<?php echo $page; ?>" name="listForm" onsubmit="return confirmSubmit(this)">
   <!-- start goods list -->
   <div class="list-div" id="listDiv">
 <table width="1103" cellpadding="3" cellspacing="1">
@@ -78,7 +78,9 @@ elseif ($_REQUEST['action'] == 'batch')
     <th width="61">ID</th>
     <th width="426">标题</th>
     <th width="149">分类</th>
+      <!--
     <th width="69">是否推荐</th>
+    -->
     <th width="81">排序</th>
     <th width="172">更新时间</th>
     <th width="50">操作</th>
@@ -131,22 +133,24 @@ foreach($row as $result)
   <tr>
     <td align="center"><input type="checkbox" name="selectdel[]" value="<?php echo $result['id']; ?>" /></td>
     <td align="center"><?php echo $result['id']; ?></td>
-    <td class="first-cell" style=""><a href="product_edit.php?id=<?php echo $result['id']; ?>&L_parent_id=<?php echo $parent_id; ?>&L_cat_id=<?php echo $cat_id; ?>&L_keywords=<?php echo $keywords; ?>&L_page=<?php echo $page; ?>"><?php echo $result['title']; ?></a></td>
+    <td class="first-cell" style=""><a href="hegui_edit.php?id=<?php echo $result['id']; ?>&L_parent_id=<?php echo $parent_id; ?>&L_cat_id=<?php echo $cat_id; ?>&L_keywords=<?php echo $keywords; ?>&L_page=<?php echo $page; ?>"><?php echo $result['title']; ?></a></td>
     <td align="center"><?php echo $result['cat_name']; ?></td>
+        <!--
     <td align="center"><img src="images/<?php if($result['is_show']) {?>yes<?php } else {?>no<?php }?>.gif" /></td>
+    -->
     <td align="center"><?php echo $result['sort_order']; ?></td>
     <td align="center"><?php echo $result['add_time']; ?></td>
     <td align="center">
-      <a href="product_edit.php?id=<?php echo $result['id']; ?>&L_parent_id=<?php echo $parent_id; ?>&L_cat_id=<?php echo $cat_id; ?>&L_keywords=<?php echo $keywords; ?>&L_page=<?php echo $page; ?>" title=""><img src="images/icon_edit.gif" width="16" height="16" border="0" /></a>
-      <a href="product_list.php?action=delete&id=<?php echo $result['id']; ?>&L_parent_id=<?php echo $parent_id; ?>&L_cat_id=<?php echo $cat_id; ?>&L_keywords=<?php echo $keywords; ?>&L_page=<?php echo $page; ?>" title="" onClick="return confirm('您确定进行删除操作吗？')"><img src="images/icon_trash.gif" width="16" height="16" border="0" /></a>
+      <a href="hegui_edit.php?id=<?php echo $result['id']; ?>&L_parent_id=<?php echo $parent_id; ?>&L_cat_id=<?php echo $cat_id; ?>&L_keywords=<?php echo $keywords; ?>&L_page=<?php echo $page; ?>" title=""><img src="images/icon_edit.gif" width="16" height="16" border="0" /></a>
+      <a href="hegui_list.php?action=delete&id=<?php echo $result['id']; ?>&L_parent_id=<?php echo $parent_id; ?>&L_cat_id=<?php echo $cat_id; ?>&L_keywords=<?php echo $keywords; ?>&L_page=<?php echo $page; ?>" title="" onClick="return confirm('您确定进行删除操作吗？')"><img src="images/icon_trash.gif" width="16" height="16" border="0" /></a>
     </td>
   </tr>
 <?php
 }
-$gotoPageFirst = "product_list.php?parent_id=".$parent_id."&cat_id=".$cat_id."&keywords=".$keywords."&page=1";
-$gotoPagePrev = "product_list.php?parent_id=".$parent_id."&cat_id=".$cat_id."&keywords=".$keywords."&page=".($page-1);
-$gotoPageNext = "product_list.php?parent_id=".$parent_id."&cat_id=".$cat_id."&keywords=".$keywords."&page=".($page-1);
-$gotoPageFirst = "product_list.php?parent_id=".$parent_id."&cat_id=".$cat_id."&keywords=".$keywords."&page=".$totalpages;
+$gotoPageFirst = "hegui_list.php?parent_id=".$parent_id."&cat_id=".$cat_id."&keywords=".$keywords."&page=1";
+$gotoPagePrev = "hegui_list.php?parent_id=".$parent_id."&cat_id=".$cat_id."&keywords=".$keywords."&page=".($page-1);
+$gotoPageNext = "hegui_list.php?parent_id=".$parent_id."&cat_id=".$cat_id."&keywords=".$keywords."&page=".($page-1);
+$gotoPageFirst = "hegui_list.php?parent_id=".$parent_id."&cat_id=".$cat_id."&keywords=".$keywords."&page=".$totalpages;
 ?>
 </table>
 <!-- end goods list -->
@@ -161,6 +165,7 @@ $gotoPageFirst = "product_list.php?parent_id=".$parent_id."&cat_id=".$cat_id."&k
 </table>
 </div>
 
+    <!--
 <div>
   <input type="hidden" name="action" value="batch" />
   <select id="types" name="types" onchange="changeAction()">
@@ -171,12 +176,13 @@ $gotoPageFirst = "product_list.php?parent_id=".$parent_id."&cat_id=".$cat_id."&k
   </select>
   <input type="submit" value="提交" id="btnSubmit" name="btnSubmit" class="button" disabled="disabled" />
 </div>
+-->
 </form>
 <script language="javascript">
 <!--
 function gotopages()
 {
-	window.location.href='product_list.php?parent_id=<?php echo $parent_id; ?>&cat_id=<?php echo $cat_id; ?>&keywords='+$("#keywords").val()+'&page='+$("#gotoPage").val();
+	window.location.href='hegui_list.php?parent_id=<?php echo $parent_id; ?>&cat_id=<?php echo $cat_id; ?>&keywords='+$("#keywords").val()+'&page='+$("#gotoPage").val();
 }
 function changeAction()
 {

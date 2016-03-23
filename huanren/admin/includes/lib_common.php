@@ -110,7 +110,7 @@ function is_login()
  *
  *************************************************************/
 function Textarea_Out($note_str){
-	if(!empty(trim($note_str)))
+	if(!is_null(trim($note_str)))
 	{
 		$note_html = str_replace("\n","<br>",trim($note_str));
 	}
@@ -123,7 +123,7 @@ function Textarea_Out($note_str){
  *
  *************************************************************/
 function Textarea_In($note_str){
-	if(!empty(trim($note_str)))
+	if(!is_null(trim($note_str)))
 	{
 		$note_html = str_replace("<br>","\n",trim($note_str));
 	}
