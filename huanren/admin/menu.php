@@ -123,9 +123,9 @@ body {
     <ul>
       <li class="menu-item"><a href="sys_config.php" target="main-frame">网站配置</a></li>
       <li class="menu-item"><a href="flash.php?cat_id=1" target="main-frame">PC首页焦点</a></li>
+      <li class="menu-item"><a href="links_pic.php?cat_id=2" target="main-frame">友情链接</a></li>
 	  <!--
       <li class="menu-item"><a href="flash.php?cat_id=3" target="main-frame">手机首页焦点</a></li>
-      <li class="menu-item"><a href="links_pic.php?cat_id=2" target="main-frame">友情链接</a></li>
 	  -->
     </ul>
   </li>
@@ -141,23 +141,22 @@ body {
       <li class="menu-item"><a href="news_category.php?parent_id=5" target="main-frame">分类管理</a></li>
       <li class="menu-item"><a href="lianjie_list.php?parent_id=5" target="main-frame">信息列表</a></li>
       <li class="menu-item"><a href="lianjie_add.php?parent_id=5" target="main-frame">添加信息</a></li>
-      <li class="menu-item"><a href="links_pic.php?parent_id=5" target="main-frame">友情链接</a></li>
     </ul>
   </li>
-  <li class="explode"><a href="javascript:;" target="main-frame">关于联信</a>
+  <li class="explode"><a href="javascript:;" target="main-frame">关于我们</a>
     <ul>
   <!--
       <li class="menu-item"><a href="pic_view.php?id=21" target="main-frame">手机Banner图</a></li>
       <li class="menu-item"><a href="pic_view.php?id=3" target="main-frame">PCBanner图</a></li>
+      <li class="menu-item"><a href="tuandui_list.php?cat_id=6" target="main-frame">精英团队列表</a></li>
+      <li class="menu-item"><a href="tuandui_add.php?cat_id=6" target="main-frame">添加精英团队</a></li>
 	  -->
       <li class="menu-item"><a href="about_list.php?cat_id=1" target="main-frame">信息列表</a></li>
       <li class="menu-item"><a href="about_add.php?cat_id=1" target="main-frame">添加信息</a></li>
-      <li class="menu-item"><a href="tuandui_list.php?cat_id=6" target="main-frame">精英团队列表</a></li>
-      <li class="menu-item"><a href="tuandui_add.php?cat_id=6" target="main-frame">添加精英团队</a></li>
     </ul>
   </li>
   
-  <li class="explode"><a href="javascript:;" target="main-frame">行业资讯</a>
+  <li class="explode"><a href="javascript:;" target="main-frame">华人新闻</a>
     <ul>
 	  <!--
       <li class="menu-item"><a href="pic_view.php?id=22" target="main-frame">手机Banner图</a></li>

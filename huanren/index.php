@@ -25,13 +25,24 @@ $top=1;
 <body>
 <?php require("head.php");?>
 <!-- banner -->
+<?php
+$sql = "SELECT * FROM pic where cat_id=1 order by sort_order asc,id asc";
+$row=$mysql->get_all($sql);
+?>
 <div class="qing mtop">
 	<div class="main_visual">
         <div class="main_image">
             <ul>
-                <li><a href="#" style="background:url(images/banner.jpg) center top no-repeat;"></a></li>
-                <li><a href="#" style="background:url(images/banner.jpg) center top no-repeat;"></a></li>
-                <li><a href="#" style="background:url(images/banner.jpg) center top no-repeat;"></a></li>
+                <?php
+                if(count($row) > 0){
+
+                    foreach($row as $result)
+                    {
+                    ?>
+                <li><a href="<?php echo $result['link_url'];?>" style="background:url(<?php echo $result['picture'];?>) center top no-repeat;"></a></li>
+                <?php }
+                }
+                ?>
             </ul>
             <a href="javascript:;" id="btn_prev"></a>
             <a href="javascript:;" id="btn_next"></a>
@@ -39,9 +50,16 @@ $top=1;
         <table class="flicking_con" border="0" cellspacing="0" cellpadding="0" style=" text-align:center">
         	<tr>
             	<td align="center" valign="top">
-                	<a href="#"></a>
-                	<a href="#"></a>
-                	<a href="#"></a>
+                    <?php
+                    if(count($row) > 0){
+
+                        foreach($row as $result)
+                        {
+                            ?>
+                            <a href="#"></a>
+                        <?php }
+                    }
+                    ?>
             	</td>
         	</tr>
     	</table>

@@ -1,59 +1,35 @@
 <!-- 底部 -->
+<?php
+$sql        = "SELECT * FROM news_category where parent_id=5 order by sort_order asc,cat_id asc";
+$categories = $mysql->get_all($sql);
+?>
 <div class="navi">
     <div class="qing center">
         <div class="lf jie_bt">相关链接：</div>
         <ul>
-            <li>
-                <a class="items">中央及部委网站</a>
-                <div class="navi_content">
-                    <a href="#">中央及部委网站1</a>
-                    <a href="#">中央及部委网站2</a>
-                    <a href="#">中央及部委网站3</a>
-                </div>
-            </li>
-            <li>
-                <a class="items">省市区政府网站</a>
-                <div class="navi_content">
-                    <a href="#">省市区政府网站1</a>
-                    <a href="#">省市区政府网站2</a>
-                    <a href="#">省市区政府网站3</a>
-                    <a href="#">省市区政府网站4</a>
-                </div>
-            </li>
-            <li>
-                <a class="items">各地方外办网站</a>
-                <div class="navi_content">
-                    <a href="#">各地方外办网站1</a>
-                    <a href="#">各地方外办网站2</a>
-                    <a href="#">各地方外办网站3</a>
-                </div>
-            </li>
-            <li>
-                <a class="items">新闻媒体网站</a>
-                <div class="navi_content">
-                    <a href="#">新闻媒体网站1</a>
-                    <a href="#">新闻媒体网站2</a>
-                    <a href="#">新闻媒体网站3</a>
-                    <a href="#">新闻媒体网站4</a>
-                </div>
-            </li>
-            <li>
-                <a class="items">团体机构网站</a>
-                <div class="navi_content">
-                    <a href="#">团体机构网站1</a>
-                    <a href="#">团体机构网站2</a>
-                    <a href="#">团体机构网站3</a>
-                </div>
-            </li>
-            <li>
-                <a class="items">港澳相关网站</a>
-                <div class="navi_content">
-                    <a href="#">港澳相关网站1</a>
-                    <a href="#">港澳相关网站2</a>
-                    <a href="#">港澳相关网站3</a>
-                    <a href="#">港澳相关网站4</a>
-                </div>
-            </li>
+            <?php
+            if(count($categories) > 0){
+                foreach($categories as $category){
+
+                    ?>
+                    <li>
+                        <a class="items"><?php echo $category['cat_name'];?></a>
+                        <div class="navi_content">
+                            <?php
+                            $sql        = "SELECT * FROM news where cat_id= ". $category['cat_id'] . " order by sort_order asc,cat_id asc";
+                            $sites      = $mysql->get_all($sql);
+                            if(count($sites) > 0){
+                            foreach($sites as $site){
+                            ?>
+                            <a href="<?php echo $site['link_url'];?>" target="_blank"><?php echo $site['title'];?></a>
+                                <?php
+                            }
+                            }?>
+                        </div>
+                    </li>
+            <?php
+                }
+            }?>
         </ul>
     </div>
 </div>

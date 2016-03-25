@@ -2,6 +2,8 @@
 require(dirname(__FILE__) . '/includes/home_config.php');
 require(dirname(__FILE__) . '/includes/lib_common.php');
 $top=4;
+$parent_id=2;
+$cat_id = !empty($_REQUEST['cat_id']) ? $_REQUEST['cat_id'] : 0;
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -43,7 +45,7 @@ $top=4;
                 <div class="qing hui5"></div>
             </div>
             <div class="rf ti_jie">
-            	<span>当前位置： </span><a href="index.html">首页</a><span class="song"> > </span><span>华人新闻</span>
+            	<span>当前位置： </span><a href="index.php">首页</a><span class="song"> > </span><span>华人新闻</span>
             </div>
         </div>
     </div>
@@ -53,109 +55,115 @@ $top=4;
 	<table class="tinav" border="0" cellspacing="0" cellpadding="0">
       	<tr>
         	<td align="center" valign="top">
-            	<a href="#" class="tnn"><div class="qing tn1">华人新闻</div><div class="qing tn2">华人新闻</div></a>
-                <a href="#"><div class="qing tn1">高层动态</div><div class="qing tn2">高层动态</div></a>
-                <a href="#"><div class="qing tn1">商会动态</div><div class="qing tn2">商会动态</div></a>
+                <?php
+                $sql="select * from news_category where parent_id=2 order by sort_order asc,cat_id asc";
+                $row = $mysql->get_all($sql);
+                $cat_id = !empty($_REQUEST['cat_id']) ? $_REQUEST['cat_id'] : $row[0]['cat_id'];
+                foreach($row as $list)
+                {
+                ?>
+            	<a href="news.php?cat_id=<?php echo $list['cat_id'];?>" <?php if($list['cat_id'] == $cat_id){?>class="tnn"<?php }?>>
+                    <div class="qing tn1">
+                        <?php echo $list['cat_name'];?>
+                    </div>
+                    <div class="qing tn2">
+                        <?php echo $list['cat_name'];?>
+                    </div>
+                </a>
+                <?php
+                }
+                ?>
             </td>
       	</tr>
     </table>
 </div>
 <div class="qing center news">
 	<ul class="qing">
+        <?php
+        $this_page_url="news.php";
+        $maxnum = 4;  //每页显示记录条数
+        $sql = "SELECT * FROM news where 1=1 and parent_id=2";
+        if($cat_id !=0 )
+        {
+            $sql = $sql . ' and cat_id='.$cat_id;
+        }
+        $sql = $sql." order by sort_order asc,id desc";
+        $totalRows1 =$mysql->num_rows($mysql->query($sql));//数据集数据总条数
+        $totalpages = ceil($totalRows1/$maxnum);//计算可分页总数，ceil()为上舍函数
+        if($totalpages<1)
+        {
+            $totalpages=1;
+        }
+        if(!isset($_GET['page']) || !intval($_GET['page']) || $_GET['page'] < 1)
+        {
+            $page = 1;
+        }
+        elseif($_GET['page'] > $totalpages)
+        {
+            $page = $totalpages;
+        }
+        else
+        {
+            $page = intval($_GET['page']);
+        }
+        if($page<=0)
+        {
+            $page=1;
+        }
+        $startnum = ($page - 1)*$maxnum; //从数据集第$startnum条开始取，注意数据集是从0开始的
+        $sql=$sql." limit $startnum,$maxnum";
+        $row=$mysql->get_all($sql);
+        $i=1;
+        foreach($row as $row_list)
+        {
+        ?>
     	<li class="lf">
        	  	<div class="qing news_jie">
            		<div class="qing n_date">
                 	<div class="lf">2016.02</div>
                     <span class="rf">16</span>
               	</div>
-              	<a href="news_view.html" class="qing news_img"><span class="qing"><img src="images/gao_img.jpg" width="244" height="175" /></span></a>
-                <a href="news_view.html" class="qing ab_bt news_bt">李克强就加强艾滋病防治工作作出重要批示</a>
-                <a href="news_view.html" class="qing ab_jian news_jian">今年12月1日是第二十八个世界艾滋病日。中共中央政治局常委、国务院总理李克强近日...</a>
+              	<a href="news_view.php" class="qing news_img">
+                    <span class="qing">
+                        <img src="<?php echo $row_list['picture'];?>" width="244" height="175" />
+                    </span>
+                </a>
+                <a href="news_view.php" class="qing ab_bt news_bt">
+                    <?php echo $row_list['note'];?>
+                </a>
+                <a href="news_view.php" class="qing ab_jian news_jian">
+                    <?php echo $row_list['content'];?>
+                </a>
             </div>
         </li>
-        <li class="lf">
-       	  	<div class="qing news_jie">
-           		<div class="qing n_date">
-                	<div class="lf">2016.02</div>
-                    <span class="rf">16</span>
-              	</div>
-              	<a href="news_view.html" class="qing news_img"><span class="qing"><img src="images/gao_img.jpg" width="244" height="175" /></span></a>
-                <a href="news_view.html" class="qing ab_bt news_bt">李克强就加强艾滋病防治工作作出重要批示</a>
-                <a href="news_view.html" class="qing ab_jian news_jian">今年12月1日是第二十八个世界艾滋病日。中共中央政治局常委、国务院总理李克强近日...</a>
-            </div>
-        </li>
-        <li class="lf">
-       	  	<div class="qing news_jie">
-           		<div class="qing n_date">
-                	<div class="lf">2016.02</div>
-                    <span class="rf">16</span>
-              	</div>
-              	<a href="news_view.html" class="qing news_img"><span class="qing"><img src="images/gao_img.jpg" width="244" height="175" /></span></a>
-                <a href="news_view.html" class="qing ab_bt news_bt">李克强就加强艾滋病防治工作作出重要批示</a>
-                <a href="news_view.html" class="qing ab_jian news_jian">今年12月1日是第二十八个世界艾滋病日。中共中央政治局常委、国务院总理李克强近日...</a>
-            </div>
-        </li>
-        <li class="lf">
-       	  	<div class="qing news_jie">
-           		<div class="qing n_date">
-                	<div class="lf">2016.02</div>
-                    <span class="rf">16</span>
-              	</div>
-              	<a href="news_view.html" class="qing news_img"><span class="qing"><img src="images/gao_img.jpg" width="244" height="175" /></span></a>
-                <a href="news_view.html" class="qing ab_bt news_bt">李克强就加强艾滋病防治工作作出重要批示</a>
-                <a href="news_view.html" class="qing ab_jian news_jian">今年12月1日是第二十八个世界艾滋病日。中共中央政治局常委、国务院总理李克强近日...</a>
-            </div>
-        </li>
-        <li class="lf">
-       	  	<div class="qing news_jie">
-           		<div class="qing n_date">
-                	<div class="lf">2016.02</div>
-                    <span class="rf">16</span>
-              	</div>
-              	<a href="news_view.html" class="qing news_img"><span class="qing"><img src="images/gao_img.jpg" width="244" height="175" /></span></a>
-                <a href="news_view.html" class="qing ab_bt news_bt">李克强就加强艾滋病防治工作作出重要批示</a>
-                <a href="news_view.html" class="qing ab_jian news_jian">今年12月1日是第二十八个世界艾滋病日。中共中央政治局常委、国务院总理李克强近日...</a>
-            </div>
-        </li>
-        <li class="lf">
-       	  	<div class="qing news_jie">
-           		<div class="qing n_date">
-                	<div class="lf">2016.02</div>
-                    <span class="rf">16</span>
-              	</div>
-              	<a href="news_view.html" class="qing news_img"><span class="qing"><img src="images/gao_img.jpg" width="244" height="175" /></span></a>
-                <a href="news_view.html" class="qing ab_bt news_bt">李克强就加强艾滋病防治工作作出重要批示</a>
-                <a href="news_view.html" class="qing ab_jian news_jian">今年12月1日是第二十八个世界艾滋病日。中共中央政治局常委、国务院总理李克强近日...</a>
-            </div>
-        </li>
-        <li class="lf">
-       	  	<div class="qing news_jie">
-           		<div class="qing n_date">
-                	<div class="lf">2016.02</div>
-                    <span class="rf">16</span>
-              	</div>
-              	<a href="news_view.html" class="qing news_img"><span class="qing"><img src="images/gao_img.jpg" width="244" height="175" /></span></a>
-                <a href="news_view.html" class="qing ab_bt news_bt">李克强就加强艾滋病防治工作作出重要批示</a>
-                <a href="news_view.html" class="qing ab_jian news_jian">今年12月1日是第二十八个世界艾滋病日。中共中央政治局常委、国务院总理李克强近日...</a>
-            </div>
-        </li>
-        <li class="lf">
-       	  	<div class="qing news_jie">
-           		<div class="qing n_date">
-                	<div class="lf">2016.02</div>
-                    <span class="rf">16</span>
-              	</div>
-              	<a href="news_view.html" class="qing news_img"><span class="qing"><img src="images/gao_img.jpg" width="244" height="175" /></span></a>
-                <a href="news_view.html" class="qing ab_bt news_bt">李克强就加强艾滋病防治工作作出重要批示</a>
-                <a href="news_view.html" class="qing ab_jian news_jian">今年12月1日是第二十八个世界艾滋病日。中共中央政治局常委、国务院总理李克强近日...</a>
-            </div>
-        </li>
+            <?php
+            $i=$i+1;
+        }
+        ?>
     </ul>
     <div class="qing yema">
         <table border="0" cellspacing="0" cellpadding="0" style="margin-left:auto; margin-right:auto;">
             <tr>
                 <td align="center" valign="top">
-                    <a href="#"><span class="song"><</span></a><a href="#" class="yenn">1</a><a href="#">2</a><a href="#">3</a><a href="#"><span class="song">></span></a>
+                    <?php if($page != 1){?>
+                    <a href="<?php echo $this_page_url.'?page='.($page-1).'&cat_id='.$cat_id;?>">
+                        <span class="song"><</span>
+                    </a>
+                    <?php }?>
+                    <?php
+                    for($p=1;$p<=$totalpages;$p++)
+                    {
+                        ?>
+                        <a href="<?php echo $this_page_url.'?page='.$p.'&cat_id='.$cat_id;?>"<?php if($p==$page) {?> class="yenn"<?php }?>><?php echo $p;?></a>
+                        <?php
+                    }
+                    ?>
+
+                    <?php if($page <= $totalpages-1){?>
+                    <a href="<?php echo $this_page_url.'?page='.($page+1).'&cat_id='.$cat_id;?>">
+                        <span class="song">></span>
+                    </a>
+                    <?php }?>
                 </td>
             </tr>
         </table>

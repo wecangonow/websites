@@ -12,7 +12,18 @@ if($_REQUEST["action"]=="add")
     $add_time = !empty($_POST['add_time']) ? $_POST['add_time'] : date('Y-m-d H:i:s',time());
     $content = !empty($_POST['content']) ? $_POST['content'] : '';
     $sort_order=!empty($_POST['sort_order']) ? $_POST['sort_order'] : 50;
-    $dataArray = array("title"=>$title,"company_title"=>$company_title,"cat_id"=>$cat_id,"picture"=>$picture,"laiyuan"=>$laiyuan,"tags"=>$tags,"sort_order"=>$sort_order,"note"=>$note,"content"=>$content,"add_time"=>$add_time);
+    $dataArray = array(
+        "title"=>$title,
+        "company_title"=>$company_title,
+        "cat_id"=>$cat_id,
+        "picture"=>$picture,
+        "laiyuan"=>$laiyuan,
+        "tags"=>$tags,
+        "sort_order"=>$sort_order,
+        "note"=>$note,
+        "content"=>$content,
+        "add_time"=>$add_time
+    );
 	$mysql->insert("news",$dataArray);
 	echo '<script>alert("操作成功");location.href="about_add.php?cat_id='.$cat_id.'";</script>';
 	exit;
@@ -38,7 +49,7 @@ if($_REQUEST["action"]=="add")
           </tr>
           <tr>
             <td class="label">上传图片</td>
-            <td><input type="text" name="picture" id="picture" class="input_text" value="" />&nbsp;<input name="upfile" type="button" class="button" onClick="javascript:opw('includes/pic_upload_form.php?text_id=picture&saveTo=../../upload/images/&showPath=upload/images/','picture',500,250)" value="上传图片"> (611*497)</td>
+            <td><input type="text" name="picture" id="picture" class="input_text" value="" />&nbsp;<input name="upfile" type="button" class="button" onClick="javascript:opw('includes/pic_upload_form.php?text_id=picture&saveTo=../../upload/images/&showPath=upload/images/','picture',500,250)" value="上传图片"> (487*550)</td>
           </tr>
           <tr>
             <td width="17%" class="label">排序</td>
