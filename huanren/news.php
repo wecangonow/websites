@@ -81,7 +81,7 @@ $cat_id = !empty($_REQUEST['cat_id']) ? $_REQUEST['cat_id'] : 0;
 	<ul class="qing">
         <?php
         $this_page_url="news.php";
-        $maxnum = 4;  //每页显示记录条数
+        $maxnum = 8;  //每页显示记录条数
         $sql = "SELECT * FROM news where 1=1 and parent_id=2";
         if($cat_id !=0 )
         {
@@ -120,13 +120,23 @@ $cat_id = !empty($_REQUEST['cat_id']) ? $_REQUEST['cat_id'] : 0;
     	<li class="lf">
        	  	<div class="qing news_jie">
            		<div class="qing n_date">
-                	<div class="lf">2016.02</div>
-                    <span class="rf">16</span>
+                	<div class="lf">
+                        <?php echo date('Y-m',strtotime($row_list['add_time'])); ?>
+                    </div>
+                    <span class="rf">
+                        <?php echo date('d',strtotime($row_list['add_time'])); ?>
+                    </span>
               	</div>
               	<a href="news_view.php" class="qing news_img">
+                        <?php if($row_list['picture'] != ""){?>
                     <span class="qing">
-                        <img src="<?php echo $row_list['picture'];?>" width="244" height="175" />
+                        <img src="
+                        <?php
+                        echo $row_list['picture'];
+                        ?>
+                        " width="244" height="175" />
                     </span>
+                        <?php }?>
                 </a>
                 <a href="news_view.php" class="qing ab_bt news_bt">
                     <?php echo $row_list['note'];?>

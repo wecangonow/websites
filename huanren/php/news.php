@@ -110,7 +110,7 @@ foreach($row as $row_list)
 ?>
 	<li class="qing">
     	<div class="lf news_date">
-        	<div class="qing news01" style="border-bottom:1px solid #dcdcdc;"><a class="qing news1" data-hover="<?php echo date("d",strtotime($row_list["add_time"])); ?>"><?php echo date("d",strtotime($row_list["add_time"])); ?></a></div>
+        	<div class="qing news01" style="border-bottom:1px solid #dcdcdc;"><a class="qing news1" data-hover="<?php echo date('d',strtotime($row_list['add_time'])); ?>"><?php echo date("d",strtotime($row_list["add_time"])); ?></a></div>
             <a class="qing news2" data-hover="<?php echo date("Y / m",strtotime($row_list["add_time"])); ?>"><?php echo date("Y / m",strtotime($row_list["add_time"])); ?></a>
         </div>
         <a href="news_view.php?id=<?php echo $row_list["id"];?>" class="lf news_img"><span class="qing"><img src="<?php echo $row_list["picture"];?>" width="283" height="173" /></span></a>

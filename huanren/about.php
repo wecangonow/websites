@@ -37,7 +37,7 @@ $top=2;
                 <div class="qing hui5"></div>
             </div>
             <div class="rf ti_jie">
-            	<span>当前位置： </span><a href="index.html">首页</a><span class="song"> > </span><span>关于我们</span>
+            	<span>当前位置： </span><a href="index.php">首页</a><span class="song"> > </span><span>关于我们</span>
             </div>
         </div>
     </div>
