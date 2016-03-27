@@ -2,6 +2,7 @@
 require(dirname(__FILE__) . '/includes/home_config.php');
 require(dirname(__FILE__) . '/includes/lib_common.php');
 $top=3;
+$id=$_REQUEST['id'];
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -47,7 +48,7 @@ $(function(){
                 <div class="qing hui5"></div>
             </div>
             <div class="rf ti_jie">
-            	<span>当前位置： </span><a href="index.html">首页</a><span class="song"> > </span><span>会议通知</span>
+            	<span>当前位置： </span><a href="index.php">首页</a><span class="song"> > </span><span>会议通知</span>
             </div>
         </div>
     </div>
@@ -55,77 +56,80 @@ $(function(){
 <!-- 内容区 -->
 <div class="qing center">
 	<!--展开开始-->
+    <?php
+    $this_page_url="meeting.php";
+    $maxnum = 8;  //每页显示记录条数
+    $sql = "SELECT * FROM news where 1=1 and cat_id=6";
+    $sql = $sql." order by sort_order asc,id desc";
+    $totalRows1 =$mysql->num_rows($mysql->query($sql));//数据集数据总条数
+    $totalpages = ceil($totalRows1/$maxnum);//计算可分页总数，ceil()为上舍函数
+    if($totalpages<1)
+    {
+        $totalpages=1;
+    }
+    if(!isset($_GET['page']) || !intval($_GET['page']) || $_GET['page'] < 1)
+    {
+        $page = 1;
+    }
+    elseif($_GET['page'] > $totalpages)
+    {
+        $page = $totalpages;
+    }
+    else
+    {
+        $page = intval($_GET['page']);
+    }
+    if($page<=0)
+    {
+        $page=1;
+    }
+    $startnum = ($page - 1)*$maxnum; //从数据集第$startnum条开始取，注意数据集是从0开始的
+    $sql=$sql." limit $startnum,$maxnum";
+    $row=$mysql->get_all($sql);
+    $i=1;
+    foreach($row as $key => $row_list)
+    {
+    ?>
     <div class="subNavBox">
-        <div class="subNav currentDd currentDt"><div class="qing ab_bt me_bt">李克强：充实中伊战略伙伴关系内涵 打造互利合作升级版</div></div>
-        <div class="navContent" style="display:block">
+        <div class="subNav <?php if($id == $row_list['id']){?>currentDd currentDt<?php }?>"><div class="qing ab_bt me_bt">
+                <?php echo $row_list['title'];?>
+            </div>
+        </div>
+        <div class="navContent" <?php if($id==$row_list['id']){?>style="display:block"<?php }?>>
         	<div class="ab_jian me_jian">
-　　国务院总理李克强22日下午在人民大会堂同来华进行正式访问的伊拉克总理阿巴迪举行会谈。阿巴迪首先对深圳工业园山体滑坡事故造成的人员伤亡和财产损失表示慰问。李克强感谢阿巴迪的慰问，表示中国政府正在全力以赴组织抢救人员工作，将尽最大努力减少伤亡。李克强表示，伊拉克是中国在西亚北非地区的重要合作伙伴。中方高度重视发展中伊关系，坚定支持伊拉克维护国家主权...
+                <?php echo $row_list['content'];?>
             </div>
         </div>
         <div class="qing" style="height:8px;"></div>
-       	<div class="subNav"><div class="qing ab_bt me_bt">开局之年，中国经济如何实现二次换挡</div></div>
-        <div class="navContent">
-        	<div class="ab_jian me_jian">
-　　国务院总理李克强22日下午在人民大会堂同来华进行正式访问的伊拉克总理阿巴迪举行会谈。阿巴迪首先对深圳工业园山体滑坡事故造成的人员伤亡和财产损失表示慰问。李克强感谢阿巴迪的慰问，表示中国政府正在全力以赴组织抢救人员工作，将尽最大努力减少伤亡。李克强表示，伊拉克是中国在西亚北非地区的重要合作伙伴。中方高度重视发展中伊关系，坚定支持伊拉克维护国家主权...
-            </div>
-        </div>
-        <div class="qing" style="height:8px;"></div>
-        <div class="subNav"><div class="qing ab_bt me_bt">中共中央、国务院在南京举行2015年南京大屠杀死难者国家公祭仪式</div></div>
-        <div class="navContent">
-        	<div class="ab_jian me_jian">
-　　国务院总理李克强22日下午在人民大会堂同来华进行正式访问的伊拉克总理阿巴迪举行会谈。阿巴迪首先对深圳工业园山体滑坡事故造成的人员伤亡和财产损失表示慰问。李克强感谢阿巴迪的慰问，表示中国政府正在全力以赴组织抢救人员工作，将尽最大努力减少伤亡。李克强表示，伊拉克是中国在西亚北非地区的重要合作伙伴。中方高度重视发展中伊关系，坚定支持伊拉克维护国家主权...
-            </div>
-        </div>
-        <div class="qing" style="height:8px;"></div>
-        <div class="subNav"><div class="qing ab_bt me_bt">开出高质量的民主生活会</div></div>
-        <div class="navContent">
-        	<div class="ab_jian me_jian">
-　　国务院总理李克强22日下午在人民大会堂同来华进行正式访问的伊拉克总理阿巴迪举行会谈。阿巴迪首先对深圳工业园山体滑坡事故造成的人员伤亡和财产损失表示慰问。李克强感谢阿巴迪的慰问，表示中国政府正在全力以赴组织抢救人员工作，将尽最大努力减少伤亡。李克强表示，伊拉克是中国在西亚北非地区的重要合作伙伴。中方高度重视发展中伊关系，坚定支持伊拉克维护国家主权...
-            </div>
-        </div>
-        <div class="qing" style="height:8px;"></div> 
-        <div class="subNav"><div class="qing ab_bt me_bt">李克强将主持的“上合总理会”，有多重要？有啥讲究？</div></div>
-        <div class="navContent">
-        	<div class="ab_jian me_jian">
-　　国务院总理李克强22日下午在人民大会堂同来华进行正式访问的伊拉克总理阿巴迪举行会谈。阿巴迪首先对深圳工业园山体滑坡事故造成的人员伤亡和财产损失表示慰问。李克强感谢阿巴迪的慰问，表示中国政府正在全力以赴组织抢救人员工作，将尽最大努力减少伤亡。李克强表示，伊拉克是中国在西亚北非地区的重要合作伙伴。中方高度重视发展中伊关系，坚定支持伊拉克维护国家主权...
-            </div>
-        </div>
-        <div class="qing" style="height:8px;"></div>
-        <div class="subNav"><div class="qing ab_bt me_bt">习近平心中的“城市中国”</div></div>
-        <div class="navContent">
-        	<div class="ab_jian me_jian">
-　　国务院总理李克强22日下午在人民大会堂同来华进行正式访问的伊拉克总理阿巴迪举行会谈。阿巴迪首先对深圳工业园山体滑坡事故造成的人员伤亡和财产损失表示慰问。李克强感谢阿巴迪的慰问，表示中国政府正在全力以赴组织抢救人员工作，将尽最大努力减少伤亡。李克强表示，伊拉克是中国在西亚北非地区的重要合作伙伴。中方高度重视发展中伊关系，坚定支持伊拉克维护国家主权...
-            </div>
-        </div>
-        <div class="qing" style="height:8px;"></div>
-        <div class="subNav"><div class="qing ab_bt me_bt">习近平主持召开中央全面深化改革领导小组第十九次会议</div></div>
-        <div class="navContent">
-        	<div class="ab_jian me_jian">
-　　国务院总理李克强22日下午在人民大会堂同来华进行正式访问的伊拉克总理阿巴迪举行会谈。阿巴迪首先对深圳工业园山体滑坡事故造成的人员伤亡和财产损失表示慰问。李克强感谢阿巴迪的慰问，表示中国政府正在全力以赴组织抢救人员工作，将尽最大努力减少伤亡。李克强表示，伊拉克是中国在西亚北非地区的重要合作伙伴。中方高度重视发展中伊关系，坚定支持伊拉克维护国家主权...
-            </div>
-        </div>
-        <div class="qing" style="height:8px;"></div>
-        <div class="subNav"><div class="qing ab_bt me_bt">“黄金之城”迎来“黄金时刻”——非洲领导人高度评价习近平在中...</div></div>
-        <div class="navContent">
-        	<div class="ab_jian me_jian">
-　　国务院总理李克强22日下午在人民大会堂同来华进行正式访问的伊拉克总理阿巴迪举行会谈。阿巴迪首先对深圳工业园山体滑坡事故造成的人员伤亡和财产损失表示慰问。李克强感谢阿巴迪的慰问，表示中国政府正在全力以赴组织抢救人员工作，将尽最大努力减少伤亡。李克强表示，伊拉克是中国在西亚北非地区的重要合作伙伴。中方高度重视发展中伊关系，坚定支持伊拉克维护国家主权...
-            </div>
-        </div>
-        <div class="qing" style="height:8px;"></div>
-        <div class="subNav"><div class="qing ab_bt me_bt">习近平就2016年二十国集团峰会发表致辞</div></div>
-        <div class="navContent">
-        	<div class="ab_jian me_jian">
-　　国务院总理李克强22日下午在人民大会堂同来华进行正式访问的伊拉克总理阿巴迪举行会谈。阿巴迪首先对深圳工业园山体滑坡事故造成的人员伤亡和财产损失表示慰问。李克强感谢阿巴迪的慰问，表示中国政府正在全力以赴组织抢救人员工作，将尽最大努力减少伤亡。李克强表示，伊拉克是中国在西亚北非地区的重要合作伙伴。中方高度重视发展中伊关系，坚定支持伊拉克维护国家主权...
-            </div>
-        </div>
-        <div class="qing" style="height:8px;"></div>
+        <?php
+        $i=$i+1;
+        }
+        ?>
 	</div>
     <!--展开结束-->
     <div class="qing yema">
         <table border="0" cellspacing="0" cellpadding="0" style="margin-left:auto; margin-right:auto;">
             <tr>
                 <td align="center" valign="top">
-                    <a href="#"><span class="song"><</span></a><a href="#" class="yenn">1</a><a href="#">2</a><a href="#">3</a><a href="#"><span class="song">></span></a>
+                    <?php if($page != 1){?>
+                        <a href="<?php echo $this_page_url.'?page='.($page-1).'&cat_id='.$cat_id;?>">
+                            <span class="song"><</span>
+                        </a>
+                    <?php }?>
+                    <?php
+                    for($p=1;$p<=$totalpages;$p++)
+                    {
+                        ?>
+                        <a href="<?php echo $this_page_url.'?page='.$p.'&cat_id='.$cat_id;?>"<?php if($p==$page) {?> class="yenn"<?php }?>><?php echo $p;?></a>
+                    <?php
+                    }
+                    ?>
+
+                    <?php if($page <= $totalpages-1){?>
+                        <a href="<?php echo $this_page_url.'?page='.($page+1).'&cat_id='.$cat_id;?>">
+                            <span class="song">></span>
+                        </a>
+                    <?php }?>
                 </td>
             </tr>
         </table>

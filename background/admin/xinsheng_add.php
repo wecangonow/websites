@@ -15,7 +15,7 @@ if($_REQUEST["action"]=="add")
     $sort_order=!empty($_POST['sort_order']) ? $_POST['sort_order'] : 50;
     $dataArray = array("title"=>$title,"company_title"=>$company_title,"cat_id"=>$cat_id,"picture"=>$picture,"laiyuan"=>$laiyuan,"tags"=>$tags,"sort_order"=>$sort_order,"note"=>$note,"content"=>$content,"jzxs_content"=>$jzxs_content,"add_time"=>$add_time);
 	$mysql->insert("news",$dataArray);
-	echo '<script>alert("操作成功");location.href="xinsheng_add.php?cat_id='.$cat_id.'";</script>';
+	echo '<script>alert("操作成功");location.href="meeting_add.php?cat_id='.$cat_id.'";</script>';
 	exit;
 }
 

@@ -11,11 +11,21 @@ if($_REQUEST["action"]=="add")
 	$note = !empty($_POST['note']) ? Textarea_Out($_POST['note']) : '';
     $add_time = !empty($_POST['add_time']) ? $_POST['add_time'] : date('Y-m-d H:i:s',time());
     $content = !empty($_POST['content']) ? $_POST['content'] : '';
-	$jzxs_content = !empty($_POST['jzxs_content']) ? Textarea_Out($_POST['jzxs_content']) : '';
     $sort_order=!empty($_POST['sort_order']) ? $_POST['sort_order'] : 50;
-    $dataArray = array("title"=>$title,"company_title"=>$company_title,"cat_id"=>$cat_id,"picture"=>$picture,"laiyuan"=>$laiyuan,"tags"=>$tags,"sort_order"=>$sort_order,"note"=>$note,"content"=>$content,"jzxs_content"=>$jzxs_content,"add_time"=>$add_time);
+    $dataArray = array(
+        "title"=>$title,
+        "company_title"=>$company_title,
+        "cat_id"=>$cat_id,
+        "picture"=>$picture,
+        "laiyuan"=>$laiyuan,
+        "tags"=>$tags,
+        "sort_order"=>$sort_order,
+        "note"=>$note, //英文标题
+        "content"=>$content,
+        "add_time"=>$add_time
+    );
 	$mysql->insert("news",$dataArray);
-	echo '<script>alert("操作成功");location.href="xinsheng_add.php?cat_id='.$cat_id.'";</script>';
+	echo '<script>alert("操作成功");location.href="model_add.php?cat_id='.$cat_id.'";</script>';
 	exit;
 }
 
@@ -31,23 +41,19 @@ if($_REQUEST["action"]=="add")
 
     <!-- tab body -->
     <div id="tabbody-div">
-      <form action="xinsheng_add.php?action=add&cat_id=<?php echo $cat_id; ?>" method="post" name="theForm" onsubmit="return check_submit();">
+      <form action="model_add.php?action=add&cat_id=<?php echo $cat_id; ?>" method="post" name="theForm" onsubmit="return check_submit();">
         <table width="90%" id="general-table" align="center">
           <tr>
-            <td width="17%" class="label">标题</td>
+            <td width="17%" class="label">姓名</td>
             <td width="83%"><input type="text" name="title" id="title" class="input_text" value="" /></td>
           </tr>
+            <tr>
+                <td width="17%" class="label">职务</td>
+                <td width="83%"><input type="text" name="note" id="note" class="input_text" value="" /></td>
+            </tr>
           <tr>
             <td class="label">上传图片</td>
-            <td><input type="text" name="picture" id="picture" class="input_text" value="" />&nbsp;<input name="upfile" type="button" class="button" onClick="javascript:opw('includes/pic_upload_form.php?text_id=picture&saveTo=../../upload/images/&showPath=upload/images/','picture',500,250)" value="上传图片"> (70*70)</td>
-          </tr>
-          <tr>
-            <td width="17%" class="label">来源</td>
-            <td width="83%"><input type="text" name="laiyuan" id="laiyuan" class="input_text_3" value="" /></td>
-          </tr>
-          <tr>
-            <td width="17%" class="label">关键词</td>
-            <td width="83%"><input type="text" name="tags" id="tags" class="input_text_3" value="" /></td>
+            <td><input type="text" name="picture" id="picture" class="input_text" value="" />&nbsp;<input name="upfile" type="button" class="button" onClick="javascript:opw('includes/pic_upload_form.php?text_id=picture&saveTo=../../upload/images/&showPath=upload/images/','picture',500,250)" value="上传图片"> (487*550)</td>
           </tr>
           <tr>
             <td width="17%" class="label">排序</td>
@@ -56,10 +62,6 @@ if($_REQUEST["action"]=="add")
           <tr>
             <td width="17%" class="label">更新时间</td>
             <td width="83%"><input type="text" name="add_time" id="add_time" class="input_text_2" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" value="<?php echo date('Y-m-d H:i:s',time());?>" /></td>
-          </tr>
-          <tr>
-            <td class="label">简介</td>
-            <td><textarea name="note" id="note" class="input_textarea"></textarea></td>
           </tr>
           <tr>
             <td class="label">详情</td>

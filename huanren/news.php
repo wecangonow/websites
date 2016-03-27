@@ -127,7 +127,7 @@ $cat_id = !empty($_REQUEST['cat_id']) ? $_REQUEST['cat_id'] : 0;
                         <?php echo date('d',strtotime($row_list['add_time'])); ?>
                     </span>
               	</div>
-              	<a href="news_view.php" class="qing news_img">
+              	<a href="news_view.php?id=<?php echo $row_list['id'];?>" class="qing news_img">
                         <?php if($row_list['picture'] != ""){?>
                     <span class="qing">
                         <img src="
@@ -138,10 +138,10 @@ $cat_id = !empty($_REQUEST['cat_id']) ? $_REQUEST['cat_id'] : 0;
                     </span>
                         <?php }?>
                 </a>
-                <a href="news_view.php" class="qing ab_bt news_bt">
+                <a href="news_view.php?id=<?php echo $row_list['id'];?>" class="qing ab_bt news_bt">
                     <?php echo $row_list['note'];?>
                 </a>
-                <a href="news_view.php" class="qing ab_jian news_jian">
+                <a href="news_view.php?id=<?php echo $row_list['id'];?>" class="qing ab_jian news_jian">
                     <?php echo $row_list['content'];?>
                 </a>
             </div>

@@ -36,7 +36,7 @@ $top=6;
                 <div class="qing hui5"></div>
             </div>
             <div class="rf ti_jie">
-            	<span>当前位置： </span><a href="index.html">首页</a><span class="song"> > </span><span>活动掠影</span>
+            	<span>当前位置： </span><a href="index.php">首页</a><span class="song"> > </span><span>活动掠影</span>
             </div>
         </div>
     </div>
@@ -44,132 +44,82 @@ $top=6;
 <!-- 内容区 -->
 <div class="qing center acti">
 	<ul class="qing">
-    	<li class="lf">
-        	<div class="qing ac_jie">
-            	<div class="qing ac_img"><img src="images/hd1.jpg" width="275" height="198" /></div>
-                <div class="qing ac_bt">开出高质量的民主生活会</div>
-            </div>
-            <a href="#" class="qing ac_shao">
-            	<div class="qing ac_biao"><img src="images/ac_biao.png" width="27" height="27" /></div>
-                <div class="qing ac_jian">开出高质量的民主生活会</div>
-            </a>
-        </li>
+        <?php
+        $this_page_url="activity.php";
+        $maxnum = 12;  //每页显示记录条数
+        $sql = "SELECT * FROM news where 1=1 and cat_id=11";
+        $sql = $sql." order by sort_order asc,id desc";
+        $totalRows1 =$mysql->num_rows($mysql->query($sql));//数据集数据总条数
+        $totalpages = ceil($totalRows1/$maxnum);//计算可分页总数，ceil()为上舍函数
+        if($totalpages<1)
+        {
+            $totalpages=1;
+        }
+        if(!isset($_GET['page']) || !intval($_GET['page']) || $_GET['page'] < 1)
+        {
+            $page = 1;
+        }
+        elseif($_GET['page'] > $totalpages)
+        {
+            $page = $totalpages;
+        }
+        else
+        {
+            $page = intval($_GET['page']);
+        }
+        if($page<=0)
+        {
+            $page=1;
+        }
+        $startnum = ($page - 1)*$maxnum; //从数据集第$startnum条开始取，注意数据集是从0开始的
+        $sql=$sql." limit $startnum,$maxnum";
+        $row=$mysql->get_all($sql);
+        $i=1;
+        foreach($row as $row_list)
+        {
+        ?>
         <li class="lf">
         	<div class="qing ac_jie">
-            	<div class="qing ac_img"><img src="images/hd2.jpg" width="275" height="198" /></div>
-                <div class="qing ac_bt">开出高质量的民主生活会</div>
+            	<div class="qing ac_img"><img src="<?php echo $row_list['picture'];?>" width="275" height="198" /></div>
+                <div class="qing ac_bt">
+                    <?php echo $row_list['title'];?>
+                </div>
             </div>
-            <a href="#" class="qing ac_shao">
+            <a href="activity_view.php?id=<?php echo $row_list['id'];?>" class="qing ac_shao">
             	<div class="qing ac_biao"><img src="images/ac_biao.png" width="27" height="27" /></div>
-                <div class="qing ac_jian">开出高质量的民主生活会</div>
+                <div class="qing ac_jian">
+                    <?php echo $row_list['title'];?>
+                </div>
             </a>
         </li>
-        <li class="lf">
-        	<div class="qing ac_jie">
-            	<div class="qing ac_img"><img src="images/hd1.jpg" width="275" height="198" /></div>
-                <div class="qing ac_bt">开出高质量的民主生活会</div>
-            </div>
-            <a href="#" class="qing ac_shao">
-            	<div class="qing ac_biao"><img src="images/ac_biao.png" width="27" height="27" /></div>
-                <div class="qing ac_jian">开出高质量的民主生活会</div>
-            </a>
-        </li>
-        <li class="lf">
-        	<div class="qing ac_jie">
-            	<div class="qing ac_img"><img src="images/hd2.jpg" width="275" height="198" /></div>
-                <div class="qing ac_bt">开出高质量的民主生活会</div>
-            </div>
-            <a href="#" class="qing ac_shao">
-            	<div class="qing ac_biao"><img src="images/ac_biao.png" width="27" height="27" /></div>
-                <div class="qing ac_jian">开出高质量的民主生活会</div>
-            </a>
-        </li>
-        <li class="lf">
-        	<div class="qing ac_jie">
-            	<div class="qing ac_img"><img src="images/hd1.jpg" width="275" height="198" /></div>
-                <div class="qing ac_bt">开出高质量的民主生活会</div>
-            </div>
-            <a href="#" class="qing ac_shao">
-            	<div class="qing ac_biao"><img src="images/ac_biao.png" width="27" height="27" /></div>
-                <div class="qing ac_jian">开出高质量的民主生活会</div>
-            </a>
-        </li>
-        <li class="lf">
-        	<div class="qing ac_jie">
-            	<div class="qing ac_img"><img src="images/hd2.jpg" width="275" height="198" /></div>
-                <div class="qing ac_bt">开出高质量的民主生活会</div>
-            </div>
-            <a href="#" class="qing ac_shao">
-            	<div class="qing ac_biao"><img src="images/ac_biao.png" width="27" height="27" /></div>
-                <div class="qing ac_jian">开出高质量的民主生活会</div>
-            </a>
-        </li>
-        <li class="lf">
-        	<div class="qing ac_jie">
-            	<div class="qing ac_img"><img src="images/hd1.jpg" width="275" height="198" /></div>
-                <div class="qing ac_bt">开出高质量的民主生活会</div>
-            </div>
-            <a href="#" class="qing ac_shao">
-            	<div class="qing ac_biao"><img src="images/ac_biao.png" width="27" height="27" /></div>
-                <div class="qing ac_jian">开出高质量的民主生活会</div>
-            </a>
-        </li>
-        <li class="lf">
-        	<div class="qing ac_jie">
-            	<div class="qing ac_img"><img src="images/hd2.jpg" width="275" height="198" /></div>
-                <div class="qing ac_bt">开出高质量的民主生活会</div>
-            </div>
-            <a href="#" class="qing ac_shao">
-            	<div class="qing ac_biao"><img src="images/ac_biao.png" width="27" height="27" /></div>
-                <div class="qing ac_jian">开出高质量的民主生活会</div>
-            </a>
-        </li>
-        <li class="lf">
-        	<div class="qing ac_jie">
-            	<div class="qing ac_img"><img src="images/hd1.jpg" width="275" height="198" /></div>
-                <div class="qing ac_bt">开出高质量的民主生活会</div>
-            </div>
-            <a href="#" class="qing ac_shao">
-            	<div class="qing ac_biao"><img src="images/ac_biao.png" width="27" height="27" /></div>
-                <div class="qing ac_jian">开出高质量的民主生活会</div>
-            </a>
-        </li>
-        <li class="lf">
-        	<div class="qing ac_jie">
-            	<div class="qing ac_img"><img src="images/hd2.jpg" width="275" height="198" /></div>
-                <div class="qing ac_bt">开出高质量的民主生活会</div>
-            </div>
-            <a href="#" class="qing ac_shao">
-            	<div class="qing ac_biao"><img src="images/ac_biao.png" width="27" height="27" /></div>
-                <div class="qing ac_jian">开出高质量的民主生活会</div>
-            </a>
-        </li>
-        <li class="lf">
-        	<div class="qing ac_jie">
-            	<div class="qing ac_img"><img src="images/hd1.jpg" width="275" height="198" /></div>
-                <div class="qing ac_bt">开出高质量的民主生活会</div>
-            </div>
-            <a href="#" class="qing ac_shao">
-            	<div class="qing ac_biao"><img src="images/ac_biao.png" width="27" height="27" /></div>
-                <div class="qing ac_jian">开出高质量的民主生活会</div>
-            </a>
-        </li>
-        <li class="lf">
-        	<div class="qing ac_jie">
-            	<div class="qing ac_img"><img src="images/hd2.jpg" width="275" height="198" /></div>
-                <div class="qing ac_bt">开出高质量的民主生活会</div>
-            </div>
-            <a href="#" class="qing ac_shao">
-            	<div class="qing ac_biao"><img src="images/ac_biao.png" width="27" height="27" /></div>
-                <div class="qing ac_jian">开出高质量的民主生活会</div>
-            </a>
-        </li>
+            <?php
+            $i=$i+1;
+        }
+        ?>
     </ul>
     <div class="qing yema">
         <table border="0" cellspacing="0" cellpadding="0" style="margin-left:auto; margin-right:auto;">
             <tr>
                 <td align="center" valign="top">
-                    <a href="#"><span class="song"><</span></a><a href="#" class="yenn">1</a><a href="#">2</a><a href="#">3</a><a href="#"><span class="song">></span></a>
+                    <?php if($page != 1){?>
+                        <a href="<?php echo $this_page_url.'?page='.($page-1).'&cat_id='.$cat_id;?>">
+                            <span class="song"><</span>
+                        </a>
+                    <?php }?>
+                    <?php
+                    for($p=1;$p<=$totalpages;$p++)
+                    {
+                        ?>
+                        <a href="<?php echo $this_page_url.'?page='.$p.'&cat_id='.$cat_id;?>"<?php if($p==$page) {?> class="yenn"<?php }?>><?php echo $p;?></a>
+                    <?php
+                    }
+                    ?>
+
+                    <?php if($page <= $totalpages-1){?>
+                        <a href="<?php echo $this_page_url.'?page='.($page+1).'&cat_id='.$cat_id;?>">
+                            <span class="song">></span>
+                        </a>
+                    <?php }?>
                 </td>
             </tr>
         </table>

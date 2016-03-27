@@ -10,7 +10,7 @@ if ($_REQUEST['action'] == 'delete')
 	$L_page = empty($_REQUEST['L_page'])? '': trim($_REQUEST['L_page']);
 	$condition="id=".$id;
 	$mysql->delete("news",$condition);
-	echo '<script>alert("操作成功");location.href="xinsheng_list.php?cat_id='.$L_cat_id.'&keywords='.$L_keywords.'&page='.$L_page.'";</script>';
+	echo '<script>alert("操作成功");location.href="activity_list.php?cat_id='.$L_cat_id.'&keywords='.$L_keywords.'&page='.$L_page.'";</script>';
 	exit;
 }
 elseif ($_REQUEST['action'] == 'batch')
@@ -36,25 +36,37 @@ elseif ($_REQUEST['action'] == 'batch')
 		$dataArray = array("is_show"=>0);
 		$mysql->update("news",$dataArray,$condition);
 	}
-	echo '<script>alert("操作成功");location.href="xinsheng_list.php?cat_id='.$L_cat_id.'&keywords='.$L_keywords.'&page='.$L_page.'";</script>';
+	elseif($_REQUEST["types"]=='is_list')
+	{
+		$condition="id in ($selectdel)";
+		$dataArray = array("is_list"=>1);
+		$mysql->update("news",$dataArray,$condition);
+	}
+	elseif($_REQUEST["types"]=='not_is_list')
+	{
+		$condition="id in ($selectdel)";
+		$dataArray = array("is_list"=>0);
+		$mysql->update("news",$dataArray,$condition);
+	}
+	echo '<script>alert("操作成功");location.href="activity_list.php?cat_id='.$L_cat_id.'&keywords='.$L_keywords.'&page='.$L_page.'";</script>';
 	exit;
 }
 ?>
 
 <!-- 文章列表 -->
-<form method="post" action="xinsheng_list.php?L_cat_id=<?php echo $cat_id; ?>&L_keywords=<?php echo $keywords; ?>&L_page=<?php echo $page; ?>" name="listForm" onsubmit="return confirmSubmit(this)">
+<form method="post" action="activity_list.php?L_cat_id=<?php echo $cat_id; ?>&L_keywords=<?php echo $keywords; ?>&L_page=<?php echo $page; ?>" name="listForm" onsubmit="return confirmSubmit(this)">
   <!-- start goods list -->
   <div class="list-div" id="listDiv">
 <table width="1103" cellpadding="3" cellspacing="1">
   <tr>
-    <th width="36"><input name="checkall" id="checkall" type="checkbox" /></th>
-    <th width="52">ID</th>
-    <th width="435">标题</th>
-    <th width="136">所属分类</th>
-    <th width="85">是否推荐</th>
-    <th width="63">排序</th>
-    <th width="180">更新时间</th>
-    <th width="57">操作</th>
+    <th width="43"><input name="checkall" id="checkall" type="checkbox" /></th>
+    <th width="71">ID</th>
+    <th width="461">标题</th>
+      <th width="69">是否推荐</th>
+    <th width="146">所属分类</th>
+    <th width="68">排序</th>
+    <th width="188">更新时间</th>
+    <th width="74">操作</th>
   <tr>
 <?php 
 $maxnum = 50;  //每页显示记录条数
@@ -67,7 +79,7 @@ if($keywords!='')
 {
 	$sql = $sql." and (title like '%$keywords%' )";
 }
-$sql = $sql." order by sort_order asc,id desc";
+$sql = $sql." order by sort_order asc,id asc";
 $totalRows =$mysql->num_rows($mysql->query($sql));//数据集数据总条数
 $totalpages = ceil($totalRows/$maxnum);//计算可分页总数，ceil()为上舍函数
 if($totalpages<1)
@@ -104,22 +116,28 @@ foreach($row as $result)
   <tr>
     <td align="center"><input type="checkbox" name="selectdel[]" value="<?php echo $result['id']; ?>" /></td>
     <td align="center"><?php echo $result['id']; ?></td>
-    <td class="first-cell" style=""><a href="xinsheng_edit.php?id=<?php echo $result['id']; ?>&L_cat_id=<?php echo $cat_id; ?>&L_keywords=<?php echo $keywords; ?>&L_page=<?php echo $page; ?>"><?php echo $result['title']; ?></a></td>
+    <td class="first-cell" style="">
+        <a href="activity_edit.php?id=<?php echo $result['id']; ?>&L_cat_id=<?php echo $cat_id; ?>&L_keywords=<?php echo $keywords; ?>&L_page=<?php echo $page; ?>">
+            <?php echo $result['title']; ?>
+        </a>
+    </td>
+        <td align="center"><img src="images/<?php if($result['is_show']) {?>yes<?php } else {?>no<?php }?>.gif" /></td>
     <td align="center"><?php echo $result['cat_name']; ?></td>
-    <td align="center"><img src="images/<?php if($result['is_show']) {?>yes<?php } else {?>no<?php }?>.gif" /></td>
     <td align="center"><?php echo $result['sort_order']; ?></td>
     <td align="center"><?php echo $result['add_time']; ?></td>
     <td align="center">
-      <a href="xinsheng_edit.php?id=<?php echo $result['id']; ?>&L_cat_id=<?php echo $cat_id; ?>&L_keywords=<?php echo $keywords; ?>&L_page=<?php echo $page; ?>" title=""><img src="images/icon_edit.gif" width="16" height="16" border="0" /></a>
-      <a href="xinsheng_list.php?action=delete&id=<?php echo $result['id']; ?>&L_cat_id=<?php echo $cat_id; ?>&L_keywords=<?php echo $keywords; ?>&L_page=<?php echo $page; ?>" title="" onClick="return confirm('您确定进行删除操作吗？')"><img src="images/icon_trash.gif" width="16" height="16" border="0" /></a>
+      <a href="activity_edit.php?id=<?php echo $result['id']; ?>&L_cat_id=<?php echo $cat_id; ?>&L_keywords=<?php echo $keywords; ?>&L_page=<?php echo $page; ?>" title=""><img src="images/icon_edit.gif" width="16" height="16" border="0" /></a>
+        <!--
+      <a href="model_list.php?action=delete&id=<?php echo $result['id']; ?>&L_cat_id=<?php echo $cat_id; ?>&L_keywords=<?php echo $keywords; ?>&L_page=<?php echo $page; ?>" title="" onClick="return confirm('您确定进行删除操作吗？')"><img src="images/icon_trash.gif" width="16" height="16" border="0" /></a>
+      -->
     </td>
   </tr>
 <?php
 }
-$gotoPageFirst = "xinsheng_list.php?cat_id=".$cat_id."&keywords=".$keywords."&page=1";
-$gotoPagePrev = "xinsheng_list.php?cat_id=".$cat_id."&keywords=".$keywords."&page=".($page-1);
-$gotoPageNext = "xinsheng_list.php?cat_id=".$cat_id."&keywords=".$keywords."&page=".($page-1);
-$gotoPageFirst = "xinsheng_list.php?cat_id=".$cat_id."&keywords=".$keywords."&page=".$totalpages;
+$gotoPageFirst = "activity_list.php?cat_id=".$cat_id."&keywords=".$keywords."&page=1";
+$gotoPagePrev = "activity_list.php?cat_id=".$cat_id."&keywords=".$keywords."&page=".($page-1);
+$gotoPageNext = "activity_list.php?cat_id=".$cat_id."&keywords=".$keywords."&page=".($page-1);
+$gotoPageFirst = "activity_list.php?cat_id=".$cat_id."&keywords=".$keywords."&page=".$totalpages;
 ?>
 </table>
 <!-- end goods list -->
@@ -149,7 +167,7 @@ $gotoPageFirst = "xinsheng_list.php?cat_id=".$cat_id."&keywords=".$keywords."&pa
 <!--
 function gotopages()
 {
-	window.location.href='xinsheng_list.php?cat_id=<?php echo $cat_id; ?>&keywords='+$("#keywords").val()+'&page='+$("#gotoPage").val();
+	window.location.href='activity_list.php?cat_id=<?php echo $cat_id; ?>&keywords='+$("#keywords").val()+'&page='+$("#gotoPage").val();
 }
 function changeAction()
 {

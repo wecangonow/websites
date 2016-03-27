@@ -9,8 +9,12 @@
         <div class="rf ss">
             <div class="qing hy">欢迎您访问世界华人楷模联合会！</div>
             <div class="rf search">
-                <input type="text" class="lf souc" onblur="if(this.value==''){this.value='请输入关键词';}" onfocus="if(this.value=='请输入关键词'){this.value='';}" value="请输入关键词" />
-                <input type="submit" class="lf sous" value="" />
+
+                <form id="search" action="search_nlist.php" method="post" >
+                    <input type="text" class="lf souc" onblur="if(this.value==''){this.value='请输入关键字';}"
+                           onfocus="if(this.value=='请输入关键词'){this.value='';}" value="请输入关键词" name="keywords" id="keywords" />
+                    <input type="submit" id="searchBtn" class="lf sous" value="" />
+                </form>
             </div>
         </div>
     </div>

@@ -49,25 +49,24 @@ elseif ($_REQUEST['action'] == 'batch')
   <tr>
     <th width="44"><input name="checkall" id="checkall" type="checkbox" /></th>
     <th width="63">ID</th>
-    <th width="198">标题</th>
-    <th width="252">地址</th>
-    <th width="187">电话</th>
-    <th width="67">排序</th>
-    <th width="168">更新时间</th>
+    <th width="98">姓名</th>
+    <th width="252">公司名称</th>
+    <th width="97">电话</th>
+    <th width="127">EMAIL</th>
+    <th width="868">留言</th>
+      <th width="98">时间</th>
+      <!--
     <th width="65">操作</th>
+    -->
   <tr>
 <?php 
 $maxnum = 50;  //每页显示记录条数
-$sql = "SELECT * FROM news where 1=1";
-if($cat_id!=0)
-{
-	$sql = $sql." and cat_id=$cat_id";
-}
+$sql = "SELECT * FROM contact_list where 1=1";
 if($keywords!='')
 {
-	$sql = $sql." and (title like '%$keywords%' )";
+	$sql = $sql." and (name like '%$keywords%' )";
 }
-$sql = $sql." order by sort_order asc,id asc";
+$sql = $sql." order by id desc";
 $totalRows =$mysql->num_rows($mysql->query($sql));//数据集数据总条数
 $totalpages = ceil($totalRows/$maxnum);//计算可分页总数，ceil()为上舍函数
 if($totalpages<1)
@@ -93,25 +92,30 @@ if($page<=0)
 $startnum = ($page - 1)*$maxnum; //从数据集第$startnum条开始取，注意数据集是从0开始的
 $sql=$sql." limit $startnum,$maxnum";
 $row=$mysql->get_all($sql);
-foreach ($row AS $k => $v)
-{
-	$cat_name = $mysql->get_one("SELECT cat_name FROM news_category WHERE cat_id = ".$v['cat_id']);
-	$row[$k]['cat_name'] = $cat_name['cat_name'];
-}
+
+//foreach ($row AS $k => $v)
+//{
+//	$cat_name = $mysql->get_one("SELECT cat_name FROM news_category WHERE cat_id = ".$v['cat_id']);
+//	$row[$k]['cat_name'] = $cat_name['cat_name'];
+//}
 foreach($row as $result)
 {
 ?>
   <tr>
     <td align="center"><input type="checkbox" name="selectdel[]" value="<?php echo $result['id']; ?>" /></td>
     <td align="center"><?php echo $result['id']; ?></td>
+        <!--
     <td class="first-cell" style=""><a href="contact_edit.php?id=<?php echo $result['id']; ?>&L_cat_id=<?php echo $cat_id; ?>&L_keywords=<?php echo $keywords; ?>&L_page=<?php echo $page; ?>"><?php echo $result['title']; ?></a></td>
-    <td align="center"><?php echo $result['address']; ?></td>
-    <td align="center"><?php echo $result['tel']; ?></td>
-    <td align="center"><?php echo $result['sort_order']; ?></td>
+    -->
+    <td align="center"><?php echo $result['name']; ?></td>
+    <td align="center"><?php echo $result['company_name']; ?></td>
+    <td align="center"><?php echo $result['phone']; ?></td>
+        <td align="center"><?php echo $result['email']; ?></td>
+        <td align="center"><?php echo $result['beizhu']; ?></td>
     <td align="center"><?php echo $result['add_time']; ?></td>
     <td align="center">
+        <!--
       <a href="contact_edit.php?id=<?php echo $result['id']; ?>&L_cat_id=<?php echo $cat_id; ?>&L_keywords=<?php echo $keywords; ?>&L_page=<?php echo $page; ?>" title=""><img src="images/icon_edit.gif" width="16" height="16" border="0" /></a>
-	  <!--
       <a href="contact_list.php?action=delete&id=<?php echo $result['id']; ?>&L_cat_id=<?php echo $cat_id; ?>&L_keywords=<?php echo $keywords; ?>&L_page=<?php echo $page; ?>" title="" onClick="return confirm('您确定进行删除操作吗？')"><img src="images/icon_trash.gif" width="16" height="16" border="0" /></a>
 	  -->
     </td>

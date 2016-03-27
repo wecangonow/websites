@@ -123,8 +123,9 @@ body {
     <ul>
       <li class="menu-item"><a href="sys_config.php" target="main-frame">网站配置</a></li>
       <li class="menu-item"><a href="flash.php?cat_id=1" target="main-frame">PC首页焦点</a></li>
-      <li class="menu-item"><a href="links_pic.php?cat_id=2" target="main-frame">友情链接</a></li>
+      <li class="menu-item"><a href="hezuohuoban_list.php?cat_id=4" target="main-frame">友情链接</a></li>
 	  <!--
+      <li class="menu-item"><a href="links_pic.php?cat_id=2" target="main-frame">友情链接</a></li>
       <li class="menu-item"><a href="flash.php?cat_id=3" target="main-frame">手机首页焦点</a></li>
 	  -->
     </ul>
@@ -146,60 +147,99 @@ body {
   <li class="explode"><a href="javascript:;" target="main-frame">关于我们</a>
     <ul>
   <!--
-      <li class="menu-item"><a href="pic_view.php?id=21" target="main-frame">手机Banner图</a></li>
-      <li class="menu-item"><a href="pic_view.php?id=3" target="main-frame">PCBanner图</a></li>
-      <li class="menu-item"><a href="tuandui_list.php?cat_id=6" target="main-frame">精英团队列表</a></li>
-      <li class="menu-item"><a href="tuandui_add.php?cat_id=6" target="main-frame">添加精英团队</a></li>
 	  -->
       <li class="menu-item"><a href="about_list.php?cat_id=1" target="main-frame">信息列表</a></li>
       <li class="menu-item"><a href="about_add.php?cat_id=1" target="main-frame">添加信息</a></li>
     </ul>
   </li>
-  
+    <li class="explode"><a href="javascript:;" target="main-frame">会议通知</a>
+        <ul>
+            <li class="menu-item"><a href="meeting_list.php?cat_id=6" target="main-frame">信息列表</a></li>
+            <li class="menu-item"><a href="meeting_add.php?cat_id=6" target="main-frame">添加信息</a></li>
+        </ul>
+    </li>
+
   <li class="explode"><a href="javascript:;" target="main-frame">华人新闻</a>
     <ul>
-	  <!--
-      <li class="menu-item"><a href="pic_view.php?id=22" target="main-frame">手机Banner图</a></li>
-      <li class="menu-item"><a href="pic_view.php?id=4" target="main-frame">PCBanner图</a></li>
-	  -->
       <li class="menu-item"><a href="news_category.php?parent_id=2" target="main-frame">分类管理</a></li>
       <li class="menu-item"><a href="dongtai_list.php?parent_id=2" target="main-frame">信息列表</a></li>
       <li class="menu-item"><a href="dongtai_add.php?parent_id=2" target="main-frame">添加信息</a></li>
     </ul>
   </li>
-    <li class="explode"><a href="javascript:;" target="main-frame">联信产品</a>
+    <li class="explode"><a href="javascript:;" target="main-frame">华人楷模</a>
         <ul>
             <!--
-            <li class="menu-item"><a href="pic_view.php?id=4" target="main-frame">PCBanner图</a></li>
-            <li class="menu-item"><a href="pic_view.php?id=22" target="main-frame">手机Banner图</a></li>
-            -->
-            <li class="menu-item"><a href="news_category.php?parent_id=11" target="main-frame">分类管理</a></li>
-            <li class="menu-item"><a href="product_list.php?parent_id=11" target="main-frame">信息列表</a></li>
-            <li class="menu-item"><a href="product_add.php?parent_id=11" target="main-frame">添加信息</a></li>
+                <li class="menu-item"><a href="pic_view.php?id=21" target="main-frame">手机Banner图</a></li>
+                <li class="menu-item"><a href="pic_view.php?id=3" target="main-frame">PCBanner图</a></li>
+                <li class="menu-item"><a href="tuandui_list.php?cat_id=6" target="main-frame">精英团队列表</a></li>
+                <li class="menu-item"><a href="tuandui_add.php?cat_id=6" target="main-frame">添加精英团队</a></li>
+                -->
+            <li class="menu-item"><a href="model_list.php?cat_id=7" target="main-frame">信息列表</a></li>
+            <li class="menu-item"><a href="model_add.php?cat_id=7" target="main-frame">添加信息</a></li>
         </ul>
     </li>
-
-  <li class="explode"><a href="javascript:;" target="main-frame">联信优势</a>
-    <ul>
-      <li class="menu-item"><a href="youshi_list.php?cat_id=14" target="main-frame">联信优势</a></li>
-    </ul>
-  </li>
-  <li class="explode"><a href="javascript:;" target="main-frame">招贤纳士</a>
-    <ul>
-      <li class="menu-item"><a href="pic_view.php?id=8" target="main-frame">PCBanner图</a></li>
-  <!--
-      <li class="menu-item"><a href="pic_view.php?id=26" target="main-frame">手机Banner图</a></li>
-  -->
-      <li class="menu-item"><a href="job_list.php?cat_id=9" target="main-frame">职位列表</a></li>
-      <li class="menu-item"><a href="job_add.php?cat_id=9" target="main-frame">添加职位</a></li>
-        <li class="menu-item"><a href="request_list.php" target="main-frame">申请列表</a></li>
-    </ul>
-  </li>
+    <li class="explode"><a href="javascript:;" target="main-frame">活动掠影</a>
+        <ul>
+            <li class="menu-item"><a href="activity_list.php?cat_id=11" target="main-frame">信息列表</a></li>
+            <li class="menu-item"><a href="activity_add.php?cat_id=11" target="main-frame">添加信息</a></li>
+        </ul>
+    </li>
+    <li class="explode"><a href="javascript:;" target="main-frame">活动视频</a>
+        <ul>
+            <li class="menu-item"><a href="activity_list.php?cat_id=12" target="main-frame">信息列表</a></li>
+            <li class="menu-item"><a href="activity_add.php?cat_id=12" target="main-frame">添加信息</a></li>
+        </ul>
+    </li>
+    <li class="explode"><a href="javascript:;" target="main-frame">合作对接</a>
+        <ul>
+            <li class="menu-item"><a href="meeting_list.php?cat_id=8" target="main-frame">信息列表</a></li>
+            <li class="menu-item"><a href="meeting_add.php?cat_id=8" target="main-frame">添加信息</a></li>
+        </ul>
+    </li>
+    <li class="explode"><a href="javascript:;" target="main-frame">会员专区</a>
+        <ul>
+            <li class="menu-item"><a href="meeting_edit.php?id=132&L_cat_id=14" target="main-frame">入会指南</a></li>
+            <li class="menu-item"><a href="meeting_edit.php?id=160&L_cat_id=14" target="main-frame">入会邀请</a></li>
+            <li class="menu-item"><a href="member_list.php" target="main-frame">在线申请列表列表</a></li>
+            <li class="menu-item"><a href="meeting_list.php?cat_id=14" target="main-frame">会员信息列表</a></li>
+            <li class="menu-item"><a href="meeting_add.php?cat_id=14" target="main-frame">添加会员信息</a></li>
+        </ul>
+    </li>
+    <li class="explode"><a href="javascript:;" target="main-frame">企业风采</a>
+        <ul>
+            <li class="menu-item"><a href="activity_list.php?cat_id=13" target="main-frame">信息列表</a></li>
+            <li class="menu-item"><a href="activity_add.php?cat_id=13" target="main-frame">添加信息</a></li>
+        </ul>
+    </li>
   <li class="explode"><a href="javascript:;" target="main-frame">联系我们</a>
     <ul>
       <li class="menu-item"><a href="contact_list.php?cat_id=10" target="main-frame">信息列表</a></li>
     </ul>
   </li>
+    <!--
+  <li class="explode"><a href="javascript:;" target="main-frame">招贤纳士</a>
+    <ul>
+      <li class="menu-item"><a href="pic_view.php?id=8" target="main-frame">PCBanner图</a></li>
+      <li class="menu-item"><a href="job_list.php?cat_id=9" target="main-frame">职位列表</a></li>
+      <li class="menu-item"><a href="job_add.php?cat_id=9" target="main-frame">添加职位</a></li>
+        <li class="menu-item"><a href="request_list.php" target="main-frame">申请列表</a></li>
+    </ul>
+  </li>
+    <li class="explode"><a href="javascript:;" target="main-frame">联信产品</a>
+        <ul>
+            <li class="menu-item"><a href="pic_view.php?id=4" target="main-frame">PCBanner图</a></li>
+            <li class="menu-item"><a href="pic_view.php?id=22" target="main-frame">手机Banner图</a></li>
+    <li class="menu-item"><a href="news_category.php?parent_id=11" target="main-frame">分类管理</a></li>
+    <li class="menu-item"><a href="product_list.php?parent_id=11" target="main-frame">信息列表</a></li>
+    <li class="menu-item"><a href="product_add.php?parent_id=11" target="main-frame">添加信息</a></li>
+</ul>
+    </li>
+
+    <li class="explode"><a href="javascript:;" target="main-frame">联信优势</a>
+        <ul>
+            <li class="menu-item"><a href="youshi_list.php?cat_id=14" target="main-frame">联信优势</a></li>
+        </ul>
+    </li>
   <li class="explode"><a href="javascript:;" target="main-frame">合作服务</a>
     <ul>
       <li class="menu-item"><a href="index_info.php?id=22" target="main-frame">项目简介</a></li>
@@ -219,6 +259,7 @@ body {
     </ul>
   </li>
 
+-->
 
   
 </ul>
